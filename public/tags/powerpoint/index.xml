@@ -1,0 +1,451 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Powerpoint on Alison Hill, PhD</title>
+    <link>http://localhost:4321/tags/powerpoint/</link>
+    <description>Recent content in Powerpoint on Alison Hill, PhD</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en</language>
+    <lastBuildDate>Tue, 27 Jul 2021 00:00:00 +0000</lastBuildDate><atom:link href="http://localhost:4321/tags/powerpoint/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Up and running with officedown</title>
+      <link>http://localhost:4321/blog/2021-07-officedown/</link>
+      <pubDate>Tue, 27 Jul 2021 00:00:00 +0000</pubDate>
+      
+      <guid>http://localhost:4321/blog/2021-07-officedown/</guid>
+      <description>&lt;p&gt;Lately, I&amp;rsquo;ve been exploring the world of R Markdown through the lens of knitting to Microsoft output formats like Word and PowerPoint. I wanted to write down what I&amp;rsquo;ve learned so far about the officedown package for making PowerPoint (PPT) slides with R Markdown. It is extremely powerful, and I&amp;rsquo;ve now referred a lot of folks to it, but it was pretty hard for me to grasp at first. These notes are a rough account of my own personal 
+&lt;a href=&#34;https://www.trychameleon.com/blog/friction-logs&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;friction log&lt;/a&gt; for the next time I use officedown.&lt;/p&gt;
+
+
+
+
+&lt;h2 id=&#34;why-use-officedown&#34;&gt;Why use officedown?
+  &lt;a href=&#34;#why-use-officedown&#34;&gt;&lt;svg class=&#34;anchor-symbol&#34; aria-hidden=&#34;true&#34; height=&#34;26&#34; width=&#34;26&#34; viewBox=&#34;0 0 22 22&#34; xmlns=&#34;http://www.w3.org/2000/svg&#34;&gt;
+      &lt;path d=&#34;M0 0h24v24H0z&#34; fill=&#34;currentColor&#34;&gt;&lt;/path&gt;
+      &lt;path d=&#34;M3.9 12c0-1.71 1.39-3.1 3.1-3.1h4V7H7c-2.76.0-5 2.24-5 5s2.24 5 5 5h4v-1.9H7c-1.71.0-3.1-1.39-3.1-3.1zM8 13h8v-2H8v2zm9-6h-4v1.9h4c1.71.0 3.1 1.39 3.1 3.1s-1.39 3.1-3.1 3.1h-4V17h4c2.76.0 5-2.24 5-5s-2.24-5-5-5z&#34;&gt;&lt;/path&gt;
+    &lt;/svg&gt;&lt;/a&gt;
+&lt;/h2&gt;
+&lt;p&gt;Why use it? To knit to Microsoft PowerPoint (and Word). Naturally, you might ask, but Alison- there is an &lt;code&gt;rmarkdown::powerpoint_presentation&lt;/code&gt; output format already. Yes 
+&lt;a href=&#34;https://pkgs.rstudio.com/rmarkdown/reference/powerpoint_presentation.html&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;there is&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;Here is a great use case for not using that format though, from 
+&lt;a href=&#34;https://www.pipinghotdata.com/about.html&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;Shannon Pileggi&lt;/a&gt;:&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;&amp;ldquo;I don&amp;rsquo;t knit directly to ppt b/c editable graphics are key for finishing touches in our deliverables. If we could knit to powerpoint with an editable graphics option like in officer that would be a great feature.&amp;rdquo;&lt;/p&gt;
+&lt;p&gt;
+&lt;a href=&#34;https://github.com/rstudio/rmarkdown/issues/2158&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;Issue thread&lt;/a&gt;&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;So officedown is definitely the answer for many users who wish to go beyond what the rmarkdown package can offer. For more on editable graphic workflows with R, Shannon has a 
+&lt;a href=&#34;https://www.pipinghotdata.com/posts/2020-09-22-exporting-editable-ggplot-graphics-to-powerpoint-with-officer-and-purrr/&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;great blog post&lt;/a&gt;.&lt;/p&gt;
+
+
+
+
+&lt;h2 id=&#34;what-is-officedown&#34;&gt;What is officedown?
+  &lt;a href=&#34;#what-is-officedown&#34;&gt;&lt;svg class=&#34;anchor-symbol&#34; aria-hidden=&#34;true&#34; height=&#34;26&#34; width=&#34;26&#34; viewBox=&#34;0 0 22 22&#34; xmlns=&#34;http://www.w3.org/2000/svg&#34;&gt;
+      &lt;path d=&#34;M0 0h24v24H0z&#34; fill=&#34;currentColor&#34;&gt;&lt;/path&gt;
+      &lt;path d=&#34;M3.9 12c0-1.71 1.39-3.1 3.1-3.1h4V7H7c-2.76.0-5 2.24-5 5s2.24 5 5 5h4v-1.9H7c-1.71.0-3.1-1.39-3.1-3.1zM8 13h8v-2H8v2zm9-6h-4v1.9h4c1.71.0 3.1 1.39 3.1 3.1s-1.39 3.1-3.1 3.1h-4V17h4c2.76.0 5-2.24 5-5s-2.24-5-5-5z&#34;&gt;&lt;/path&gt;
+    &lt;/svg&gt;&lt;/a&gt;
+&lt;/h2&gt;
+&lt;p&gt;It is a package whose goal is to allows users to write Word and Powerpoint documents using R Markdown. Install from CRAN:&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-r&#34; data-lang=&#34;r&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#900;font-weight:bold&#34;&gt;install.packages&lt;/span&gt;(&lt;span style=&#34;color:#d14&#34;&gt;&amp;#34;officedown&amp;#34;&lt;/span&gt;)
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;(It will also download the officer package for you).&lt;/p&gt;
+&lt;p&gt;Note that the GitHub page for this package does not include an &lt;strong&gt;Issues&lt;/strong&gt; tab: 
+&lt;a href=&#34;https://github.com/davidgohel/officedown&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;https://github.com/davidgohel/officedown&lt;/a&gt; This means there is no way for users to file bug reports, feature requests, etc. This is definitely a developer&amp;rsquo;s choice, but I&amp;rsquo;m not sure how to find a community of users for officedown questions or to get help if you suspect a bug. RStudio Community has a tag but only two posts as of today, one of which was asked by an RStudio employee and never answered &amp;#x1f62d; : 
+&lt;a href=&#34;https://community.rstudio.com/tag/officedown&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;https://community.rstudio.com/tag/officedown&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;Officedown works with editable graphics &lt;em&gt;by default&lt;/em&gt;. This is huge plus for some workflows (like Shannon&amp;rsquo;s), but also a huge gotcha because it depends on another package that I didn&amp;rsquo;t know about and that officedown did not import for me: the 
+&lt;a href=&#34;https://davidgohel.github.io/rvg/&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;rvg package&lt;/a&gt;. You must install it separately:&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-r&#34; data-lang=&#34;r&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#900;font-weight:bold&#34;&gt;install.packages&lt;/span&gt;(&lt;span style=&#34;color:#d14&#34;&gt;&amp;#34;rvg&amp;#34;&lt;/span&gt;)
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;I suspect but cannot confirm that the name of the package is r + vg (vector graphics). Then there is a function in that package that you &lt;em&gt;must&lt;/em&gt; use: &lt;code&gt;rvg::dml()&lt;/code&gt;, which I can with certainty tell you stands for DrawingML.&lt;/p&gt;
+&lt;p&gt;What is DrawingML? Oh I&amp;rsquo;m so glad you asked, here is a link about it: 
+&lt;a href=&#34;http://officeopenxml.com/drwOverview.php&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;http://officeopenxml.com/drwOverview.php&lt;/a&gt;&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;&amp;ldquo;DrawingML is the language for defining graphical objects such as pictures, shapes, charts, and diagrams within ooxml documents.&amp;rdquo;&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;What is ooxml?&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;&amp;ldquo;Office Open XML, also known as OpenXML or OOXML, is an XML-based format for office documents, including word processing documents, spreadsheets, presentations, as well as charts, diagrams, shapes, and other graphical material.&amp;rdquo;&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;Want more weird acronyms?&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;&amp;ldquo;It is important to keep in mind that OOXML is not the same as Open Office XML or the Open Document Format (ODF) that underlies the OpenOffice.org and other open source office software. Office Open XML and Open Office XML or ODF are in some sense competing XML standards for office documents.&amp;rdquo;&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;What is XML?&lt;/p&gt;
+&lt;p&gt;Learn here: 
+&lt;a href=&#34;https://learnxinyminutes.com/docs/xml/&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;https://learnxinyminutes.com/docs/xml/&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;Still want more? A brief history here:&lt;/p&gt;
+&lt;p&gt;
+&lt;a href=&#34;https://en.wikipedia.org/wiki/Office_Open_XML_file_formats&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;https://en.wikipedia.org/wiki/Office_Open_XML_file_formats&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;Do you need to know much of these acronyms? No, not really, but you&amp;rsquo;ll want &lt;code&gt;rvg::dml()&lt;/code&gt; burned into your brain as you&amp;rsquo;ll be typing it often.&lt;/p&gt;
+
+
+
+
+&lt;h2 id=&#34;where-are-the-docs-at&#34;&gt;Where are the docs at?
+  &lt;a href=&#34;#where-are-the-docs-at&#34;&gt;&lt;svg class=&#34;anchor-symbol&#34; aria-hidden=&#34;true&#34; height=&#34;26&#34; width=&#34;26&#34; viewBox=&#34;0 0 22 22&#34; xmlns=&#34;http://www.w3.org/2000/svg&#34;&gt;
+      &lt;path d=&#34;M0 0h24v24H0z&#34; fill=&#34;currentColor&#34;&gt;&lt;/path&gt;
+      &lt;path d=&#34;M3.9 12c0-1.71 1.39-3.1 3.1-3.1h4V7H7c-2.76.0-5 2.24-5 5s2.24 5 5 5h4v-1.9H7c-1.71.0-3.1-1.39-3.1-3.1zM8 13h8v-2H8v2zm9-6h-4v1.9h4c1.71.0 3.1 1.39 3.1 3.1s-1.39 3.1-3.1 3.1h-4V17h4c2.76.0 5-2.24 5-5s-2.24-5-5-5z&#34;&gt;&lt;/path&gt;
+    &lt;/svg&gt;&lt;/a&gt;
+&lt;/h2&gt;
+&lt;p&gt;The creator of the officeverse collection of packages, which officedown is a part of, is named David Gohel. He has a bookdown book with a chapter on officedown, but it is only about Word rather than PPT output:&lt;/p&gt;
+&lt;p&gt;
+&lt;a href=&#34;https://ardata-fr.github.io/officeverse/officedown-for-word.html&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;https://ardata-fr.github.io/officeverse/officedown-for-word.html&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;For this reason alone, you may not realize you can use officedown to knit to PPT! I certainly didn&amp;rsquo;t until my colleague 
+&lt;a href=&#34;https://cderv.rbind.io/about/&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;Christophe Dervieux&lt;/a&gt; gave me enough support to try it on my own.&lt;/p&gt;
+&lt;p&gt;Here is the documentation for the PPT output format, although I found it minimally helpful:
+
+&lt;a href=&#34;https://davidgohel.github.io/officedown/reference/rpptx_document.html&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;https://davidgohel.github.io/officedown/reference/rpptx_document.html&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;I also found this video from a recent meetup by the package author helpful to watch:&lt;/p&gt;
+
+
+    
+    &lt;div style=&#34;position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden;&#34;&gt;
+      &lt;iframe allow=&#34;accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share&#34; allowfullscreen=&#34;allowfullscreen&#34; loading=&#34;eager&#34; referrerpolicy=&#34;strict-origin-when-cross-origin&#34; src=&#34;https://www.youtube-nocookie.com/embed/sWDhPI8gKGg?autoplay=0&amp;controls=1&amp;end=0&amp;loop=0&amp;mute=0&amp;start=0&#34; style=&#34;position: absolute; top: 0; left: 0; width: 100%; height: 100%; border:0;&#34; title=&#34;YouTube video&#34;
+      &gt;&lt;/iframe&gt;
+    &lt;/div&gt;
+
+
+
+
+
+&lt;h2 id=&#34;so-how-do-i-use-it&#34;&gt;So how do I use it?
+  &lt;a href=&#34;#so-how-do-i-use-it&#34;&gt;&lt;svg class=&#34;anchor-symbol&#34; aria-hidden=&#34;true&#34; height=&#34;26&#34; width=&#34;26&#34; viewBox=&#34;0 0 22 22&#34; xmlns=&#34;http://www.w3.org/2000/svg&#34;&gt;
+      &lt;path d=&#34;M0 0h24v24H0z&#34; fill=&#34;currentColor&#34;&gt;&lt;/path&gt;
+      &lt;path d=&#34;M3.9 12c0-1.71 1.39-3.1 3.1-3.1h4V7H7c-2.76.0-5 2.24-5 5s2.24 5 5 5h4v-1.9H7c-1.71.0-3.1-1.39-3.1-3.1zM8 13h8v-2H8v2zm9-6h-4v1.9h4c1.71.0 3.1 1.39 3.1 3.1s-1.39 3.1-3.1 3.1h-4V17h4c2.76.0 5-2.24 5-5s-2.24-5-5-5z&#34;&gt;&lt;/path&gt;
+    &lt;/svg&gt;&lt;/a&gt;
+&lt;/h2&gt;
+&lt;p&gt;The new output format officedown gives you is:&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-.yaml&#34; data-lang=&#34;.yaml&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#555&#34;&gt;---&lt;/span&gt;&lt;span style=&#34;color:#bbb&#34;&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#bbb&#34;&gt;&lt;/span&gt;&lt;span style=&#34;color:#000080&#34;&gt;output&lt;/span&gt;:&lt;span style=&#34;color:#bbb&#34;&gt; &lt;/span&gt;officedown::rpptx_document&lt;span style=&#34;color:#bbb&#34;&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#bbb&#34;&gt;&lt;/span&gt;&lt;span style=&#34;color:#555&#34;&gt;---&lt;/span&gt;&lt;span style=&#34;color:#bbb&#34;&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;Christophe shared this link with me, and it helped lot: 
+&lt;a href=&#34;https://github.com/davidgohel/officedown/blob/master/inst/examples/minimal_powerpoint.Rmd&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;https://github.com/davidgohel/officedown/blob/master/inst/examples/minimal_powerpoint.Rmd&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;I didn&amp;rsquo;t realize at first that the package contains built-in R Markdown templates, which is now where I wish I had started. Use RStudio to access: &lt;em&gt;File &amp;gt; New File &amp;gt; R Markdown &amp;gt; From Template&lt;/em&gt; then find:&lt;/p&gt;
+&lt;img src=&#34;template.png&#34; width=&#34;662&#34; /&gt;
+&lt;p&gt;Once you are inside, go ahead and knit freely. I also recommend loading up a reference template sooner rather than later so you aren&amp;rsquo;t looking at that default deck for long. Here is how you add a reference template:&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-.yaml&#34; data-lang=&#34;.yaml&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#555&#34;&gt;---&lt;/span&gt;&lt;span style=&#34;color:#bbb&#34;&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#bbb&#34;&gt;&lt;/span&gt;&lt;span style=&#34;color:#000080&#34;&gt;output&lt;/span&gt;:&lt;span style=&#34;color:#bbb&#34;&gt; 
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#bbb&#34;&gt;  &lt;/span&gt;&lt;span style=&#34;color:#000080&#34;&gt;officedown::rpptx_document&lt;/span&gt;:&lt;span style=&#34;color:#bbb&#34;&gt; 
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#bbb&#34;&gt;    &lt;/span&gt;&lt;span style=&#34;color:#000080&#34;&gt;reference_doc&lt;/span&gt;:&lt;span style=&#34;color:#bbb&#34;&gt; &lt;/span&gt;alison-template.pptx&lt;span style=&#34;color:#bbb&#34;&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#bbb&#34;&gt;&lt;/span&gt;&lt;span style=&#34;color:#555&#34;&gt;---&lt;/span&gt;&lt;span style=&#34;color:#bbb&#34;&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;You can download my simple one here: 
+&lt;a href=&#34;https://github.com/apreshill/rmd2ppt/tree/main/templates&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;https://github.com/apreshill/rmd2ppt/tree/main/templates&lt;/a&gt;&lt;/p&gt;
+
+
+
+
+&lt;h2 id=&#34;a-brief-walk-through-the-template&#34;&gt;A brief walk through the template
+  &lt;a href=&#34;#a-brief-walk-through-the-template&#34;&gt;&lt;svg class=&#34;anchor-symbol&#34; aria-hidden=&#34;true&#34; height=&#34;26&#34; width=&#34;26&#34; viewBox=&#34;0 0 22 22&#34; xmlns=&#34;http://www.w3.org/2000/svg&#34;&gt;
+      &lt;path d=&#34;M0 0h24v24H0z&#34; fill=&#34;currentColor&#34;&gt;&lt;/path&gt;
+      &lt;path d=&#34;M3.9 12c0-1.71 1.39-3.1 3.1-3.1h4V7H7c-2.76.0-5 2.24-5 5s2.24 5 5 5h4v-1.9H7c-1.71.0-3.1-1.39-3.1-3.1zM8 13h8v-2H8v2zm9-6h-4v1.9h4c1.71.0 3.1 1.39 3.1 3.1s-1.39 3.1-3.1 3.1h-4V17h4c2.76.0 5-2.24 5-5s-2.24-5-5-5z&#34;&gt;&lt;/path&gt;
+    &lt;/svg&gt;&lt;/a&gt;
+&lt;/h2&gt;
+&lt;p&gt;First, you have the packages loaded. Both &lt;code&gt;officedown&lt;/code&gt; and &lt;code&gt;rvg&lt;/code&gt; are critical here.&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-r&#34; data-lang=&#34;r&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;```{r setup, include=FALSE}
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;knitr::opts_chunk$set(echo = FALSE, fig.cap = TRUE)
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;library(officedown)
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;library(ggplot2)
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;library(rvg)
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;```
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;If you try to knit the same deck without the &lt;code&gt;officedown&lt;/code&gt; package loaded, you will see slides like this:&lt;/p&gt;
+&lt;div class=&#34;figure&#34;&gt;
+&lt;img src=&#34;oops-plot1.png&#34; alt=&#34;Two bad slides.&#34; width=&#34;49%&#34; /&gt;&lt;img src=&#34;oops-plot2.png&#34; alt=&#34;Two bad slides.&#34; width=&#34;49%&#34; /&gt;
+&lt;p class=&#34;caption&#34;&gt;Figure 1: Two bad slides.&lt;/p&gt;
+&lt;/div&gt;
+&lt;p&gt;With officedown loaded, you should instead see:&lt;/p&gt;
+&lt;img src=&#34;good-tabs.png&#34; width=&#34;1065&#34; /&gt;
+&lt;p&gt;Next up, you&amp;rsquo;ll see slide number 1 (not to be confused with your title slide, which is populated from the YAML):&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-md&#34; data-lang=&#34;md&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#aaa&#34;&gt;## Table
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#aaa&#34;&gt;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;```{r layout=&amp;#39;Two Content&amp;#39;, ph=officer::ph_location_left()}
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;head(cars)
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#d14&#34;&gt;```
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#d14&#34;&gt;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;```{r layout=&amp;#39;Two Content&amp;#39;, ph=officer::ph_location_right()}
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;head(iris)
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#d14&#34;&gt;```&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;The above creates two columns of R-based content. You won&amp;rsquo;t be able to add normal text to this slide. If you want normal text in one column opposite a plot, scroll down to this text in the template to see how:&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-md&#34; data-lang=&#34;md&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#aaa&#34;&gt;## ggplot in right column
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#aaa&#34;&gt;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;-&lt;/span&gt; Some
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;-&lt;/span&gt; Bullets
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;```{r ph=officer::ph_location_right()}
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;mygg &amp;lt;&lt;span style=&#34;color:#000080&#34;&gt;-&lt;/span&gt; &lt;span style=&#34;color:#008080&#34;&gt;ggplot&lt;/span&gt;&lt;span style=&#34;color:#a61717;background-color:#e3d2d2&#34;&gt;(&lt;/span&gt;&lt;span style=&#34;color:#008080&#34;&gt;pressure&lt;/span&gt;&lt;span style=&#34;color:#a61717;background-color:#e3d2d2&#34;&gt;,&lt;/span&gt; &lt;span style=&#34;color:#008080&#34;&gt;aes&lt;/span&gt;&lt;span style=&#34;color:#a61717;background-color:#e3d2d2&#34;&gt;(&lt;/span&gt;&lt;span style=&#34;color:#008080&#34;&gt;x &lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;=&lt;/span&gt; &lt;span style=&#34;color:#d14&#34;&gt;temperature,&lt;/span&gt; &lt;span style=&#34;color:#008080&#34;&gt;y &lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;=&lt;/span&gt; &lt;span style=&#34;color:#d14&#34;&gt;pressure))&lt;/span&gt; &lt;span style=&#34;color:#a61717;background-color:#e3d2d2&#34;&gt;+&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;  &lt;span style=&#34;color:#008080&#34;&gt;geom_point&lt;/span&gt;&lt;span style=&#34;color:#a61717;background-color:#e3d2d2&#34;&gt;()&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#008080&#34;&gt;dml&lt;/span&gt;&lt;span style=&#34;color:#a61717;background-color:#e3d2d2&#34;&gt;(&lt;/span&gt;&lt;span style=&#34;color:#008080&#34;&gt;ggobj &lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;=&lt;/span&gt; &lt;span style=&#34;color:#d14&#34;&gt;mygg)&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#a61717;background-color:#e3d2d2&#34;&gt;```&lt;/span&gt; 
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;Which produces:&lt;/p&gt;
+&lt;img src=&#34;two-col.png&#34; width=&#34;1068&#34; style=&#34;display: block; margin: auto;&#34; /&gt;
+&lt;p&gt;If you only wanted to use Markdown in each column, you&amp;rsquo;ll need to fall back on Pandoc&amp;rsquo;s two column syntax:&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-md&#34; data-lang=&#34;md&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#aaa&#34;&gt;## Pandoc columns
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#aaa&#34;&gt;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;:::: {.columns}
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;::: {.column}
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;over here
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;:::
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;::: {.column}
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;over there
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;:::
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;::::
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;Before you get any further, let&amp;rsquo;s explain these &lt;code&gt;ph&lt;/code&gt; things.&lt;/p&gt;
+
+
+
+
+&lt;h3 id=&#34;placeholders&#34;&gt;Placeholders
+  &lt;a href=&#34;#placeholders&#34;&gt;&lt;svg class=&#34;anchor-symbol&#34; aria-hidden=&#34;true&#34; height=&#34;26&#34; width=&#34;26&#34; viewBox=&#34;0 0 22 22&#34; xmlns=&#34;http://www.w3.org/2000/svg&#34;&gt;
+      &lt;path d=&#34;M0 0h24v24H0z&#34; fill=&#34;currentColor&#34;&gt;&lt;/path&gt;
+      &lt;path d=&#34;M3.9 12c0-1.71 1.39-3.1 3.1-3.1h4V7H7c-2.76.0-5 2.24-5 5s2.24 5 5 5h4v-1.9H7c-1.71.0-3.1-1.39-3.1-3.1zM8 13h8v-2H8v2zm9-6h-4v1.9h4c1.71.0 3.1 1.39 3.1 3.1s-1.39 3.1-3.1 3.1h-4V17h4c2.76.0 5-2.24 5-5s-2.24-5-5-5z&#34;&gt;&lt;/path&gt;
+    &lt;/svg&gt;&lt;/a&gt;
+&lt;/h3&gt;
+&lt;p&gt;These &lt;code&gt;ph&lt;/code&gt; knitr code chunk options are part of the officedown package, so in order to use them you must load the package! &lt;code&gt;ph&lt;/code&gt; stands for placeholder, and this is a specific way that Microsoft pours your 
+&lt;a href=&#34;https://support.microsoft.com/en-us/office/add-edit-or-remove-a-placeholder-on-a-slide-layout-a8d93d28-66cb-43fd-9f9d-e12d0a7a1f06&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;slide content into a PowerPoint template&lt;/a&gt;.&lt;/p&gt;
+&lt;img src=&#34;ph.png&#34; width=&#34;276&#34; style=&#34;display: block; margin: auto;&#34; /&gt;
+&lt;p&gt;It is essentially a bunch of rectangles on a slide, each called a placeholder. Placeholders typically can hold either text or an image, but not both. For example, in a typical PowerPoint slide like the one above, you can insert either text (often with bullets) or an image &amp;ndash; but that is &lt;strong&gt;it&lt;/strong&gt;! The title is text, and is a separate placeholder.&lt;/p&gt;
+&lt;p&gt;Placeholder values are themselves functions from the officer package with optional function arguments. Now I personally feel that &lt;code&gt;officer::ph_location_left()&lt;/code&gt; and &lt;code&gt;officer::ph_location_right()&lt;/code&gt; are a little long to type over and over again, which you will. Obviously you could load the officer package at the top, but still that function name is lengthy. I don&amp;rsquo;t have an answer for simplifying because there is no code completion for knitr chunk options. Maybe 
+&lt;a href=&#34;https://github.com/gadenbuie/snippets&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;snippets&lt;/a&gt;?&lt;/p&gt;
+&lt;p&gt;Technically you can do left vs right with &lt;code&gt;rmarkdown::powerpoint_presentation&lt;/code&gt; too, but you have more options here:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;code&gt;ph_location_type(type=&amp;quot;body&amp;quot;)&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;ph_location_fullsize()&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;ph_location(width = 2, height = 2, left = 2, top = 2)&lt;/code&gt; (for example)&lt;/li&gt;
+&lt;li&gt;More documented here: 
+&lt;a href=&#34;https://davidgohel.github.io/officer/reference/index.html#section-slide-content&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;https://davidgohel.github.io/officer/reference/index.html#section-slide-content&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+
+
+
+&lt;h3 id=&#34;layouts&#34;&gt;Layouts
+  &lt;a href=&#34;#layouts&#34;&gt;&lt;svg class=&#34;anchor-symbol&#34; aria-hidden=&#34;true&#34; height=&#34;26&#34; width=&#34;26&#34; viewBox=&#34;0 0 22 22&#34; xmlns=&#34;http://www.w3.org/2000/svg&#34;&gt;
+      &lt;path d=&#34;M0 0h24v24H0z&#34; fill=&#34;currentColor&#34;&gt;&lt;/path&gt;
+      &lt;path d=&#34;M3.9 12c0-1.71 1.39-3.1 3.1-3.1h4V7H7c-2.76.0-5 2.24-5 5s2.24 5 5 5h4v-1.9H7c-1.71.0-3.1-1.39-3.1-3.1zM8 13h8v-2H8v2zm9-6h-4v1.9h4c1.71.0 3.1 1.39 3.1 3.1s-1.39 3.1-3.1 3.1h-4V17h4c2.76.0 5-2.24 5-5s-2.24-5-5-5z&#34;&gt;&lt;/path&gt;
+    &lt;/svg&gt;&lt;/a&gt;
+&lt;/h3&gt;
+&lt;p&gt;The &lt;code&gt;layout&lt;/code&gt; chunk option is harder. I think this name comes from the template you are using. To see your &lt;em&gt;actual&lt;/em&gt; options, I recommend now using the officer package directly to &lt;code&gt;read_pptx()&lt;/code&gt; of your template file, and the using &lt;code&gt;layout_summary()&lt;/code&gt;:&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-r&#34; data-lang=&#34;r&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#998;font-style:italic&#34;&gt;## Seeing my layout options&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;This is handy, `officer::layout_summary()`
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;```{r echo=FALSE}
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;library(officer)
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;my_template &amp;lt;- read_pptx(&amp;#34;alison-template.pptx&amp;#34;) 
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;layout_summary(my_template) %&amp;gt;% knitr::kable()
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;```
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;Here was my output:&lt;/p&gt;
+&lt;table&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th style=&#34;text-align:left&#34;&gt;layout&lt;/th&gt;
+&lt;th style=&#34;text-align:left&#34;&gt;master&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td style=&#34;text-align:left&#34;&gt;Title Slide&lt;/td&gt;
+&lt;td style=&#34;text-align:left&#34;&gt;Office Theme&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td style=&#34;text-align:left&#34;&gt;Title and Vertical Text&lt;/td&gt;
+&lt;td style=&#34;text-align:left&#34;&gt;Office Theme&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td style=&#34;text-align:left&#34;&gt;Vertical Title and Text&lt;/td&gt;
+&lt;td style=&#34;text-align:left&#34;&gt;Office Theme&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td style=&#34;text-align:left&#34;&gt;Title and Content&lt;/td&gt;
+&lt;td style=&#34;text-align:left&#34;&gt;Office Theme&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td style=&#34;text-align:left&#34;&gt;Section Header&lt;/td&gt;
+&lt;td style=&#34;text-align:left&#34;&gt;Office Theme&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td style=&#34;text-align:left&#34;&gt;Two Content&lt;/td&gt;
+&lt;td style=&#34;text-align:left&#34;&gt;Office Theme&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td style=&#34;text-align:left&#34;&gt;Comparison&lt;/td&gt;
+&lt;td style=&#34;text-align:left&#34;&gt;Office Theme&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td style=&#34;text-align:left&#34;&gt;Title Only&lt;/td&gt;
+&lt;td style=&#34;text-align:left&#34;&gt;Office Theme&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td style=&#34;text-align:left&#34;&gt;Blank&lt;/td&gt;
+&lt;td style=&#34;text-align:left&#34;&gt;Office Theme&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td style=&#34;text-align:left&#34;&gt;Content with Caption&lt;/td&gt;
+&lt;td style=&#34;text-align:left&#34;&gt;Office Theme&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td style=&#34;text-align:left&#34;&gt;Picture with Caption&lt;/td&gt;
+&lt;td style=&#34;text-align:left&#34;&gt;Office Theme&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+&lt;p&gt;You can use any of these as valid &lt;code&gt;layout&lt;/code&gt;s. This is another difference between &lt;code&gt;rmarkdown::powerpoint_presentation&lt;/code&gt; which only supports four layouts:&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;Title Slide&lt;/li&gt;
+&lt;li&gt;Title and Content&lt;/li&gt;
+&lt;li&gt;Section Header&lt;/li&gt;
+&lt;li&gt;Two Content&lt;/li&gt;
+&lt;/ol&gt;
+
+
+
+
+&lt;h3 id=&#34;new-slides&#34;&gt;New slides
+  &lt;a href=&#34;#new-slides&#34;&gt;&lt;svg class=&#34;anchor-symbol&#34; aria-hidden=&#34;true&#34; height=&#34;26&#34; width=&#34;26&#34; viewBox=&#34;0 0 22 22&#34; xmlns=&#34;http://www.w3.org/2000/svg&#34;&gt;
+      &lt;path d=&#34;M0 0h24v24H0z&#34; fill=&#34;currentColor&#34;&gt;&lt;/path&gt;
+      &lt;path d=&#34;M3.9 12c0-1.71 1.39-3.1 3.1-3.1h4V7H7c-2.76.0-5 2.24-5 5s2.24 5 5 5h4v-1.9H7c-1.71.0-3.1-1.39-3.1-3.1zM8 13h8v-2H8v2zm9-6h-4v1.9h4c1.71.0 3.1 1.39 3.1 3.1s-1.39 3.1-3.1 3.1h-4V17h4c2.76.0 5-2.24 5-5s-2.24-5-5-5z&#34;&gt;&lt;/path&gt;
+    &lt;/svg&gt;&lt;/a&gt;
+&lt;/h3&gt;
+&lt;p&gt;You might be wondering at this point is &amp;ldquo;how do I make new slides?&amp;rdquo; and &amp;ldquo;how does it know where a new slide starts?&amp;rdquo; This format derives from &lt;code&gt;rmarkdown::powerpoint_presentation&lt;/code&gt;, which derives from Pandoc. Pandoc documents 
+&lt;a href=&#34;https://pandoc.org/MANUAL.html#structuring-the-slide-show&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;slide separators&lt;/a&gt; as follows:&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;By default, the slide level is the highest heading level in the hierarchy that is followed immediately by content, and not another heading, somewhere in the document. In the example above, level-1 headings are always followed by level-2 headings, which are followed by content, so the slide level is 2. This default can be overridden using the &amp;ndash;slide-level option.&lt;/p&gt;
+&lt;p&gt;The document is carved up into slides according to the following rules:&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;
+&lt;p&gt;A horizontal rule always starts a new slide.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;A heading at the slide level always starts a new slide.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Headings below the slide level in the hierarchy create headings within a slide.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Headings above the slide level in the hierarchy create “title slides,” which just contain the section title and help to break the slide show into sections. Non-slide content under these headings will be included on the title slide (for HTML slide shows) or in a subsequent slide with the same title (for beamer).&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;A title page is constructed automatically from the document’s title block, if present. (In the case of beamer, this can be disabled by commenting out some lines in the default template.)&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;Clear? Right, yea it confuses me too every time.&lt;/p&gt;
+&lt;p&gt;The default &lt;code&gt;slide_level&lt;/code&gt; is 2, which means that you should expect to start new slides with &lt;code&gt;## My slide title&lt;/code&gt;. Starting a slide with &lt;code&gt;# A level 1 header&lt;/code&gt; will create a section title slide, using your section header layout (see 
+&lt;a href=&#34;#layouts&#34;&gt;layouts above&lt;/a&gt;), and none of your body text will be displayed. You could change this in your YAML, but I recommend keeping the default:&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-.yaml&#34; data-lang=&#34;.yaml&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#555&#34;&gt;---&lt;/span&gt;&lt;span style=&#34;color:#bbb&#34;&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#bbb&#34;&gt;&lt;/span&gt;&lt;span style=&#34;color:#000080&#34;&gt;output&lt;/span&gt;:&lt;span style=&#34;color:#bbb&#34;&gt; 
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#bbb&#34;&gt;  &lt;/span&gt;&lt;span style=&#34;color:#000080&#34;&gt;officedown::rpptx_document&lt;/span&gt;:&lt;span style=&#34;color:#bbb&#34;&gt; 
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#bbb&#34;&gt;    &lt;/span&gt;&lt;span style=&#34;color:#000080&#34;&gt;reference_doc&lt;/span&gt;:&lt;span style=&#34;color:#bbb&#34;&gt; &lt;/span&gt;alison-template.pptx&lt;span style=&#34;color:#bbb&#34;&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#bbb&#34;&gt;    &lt;/span&gt;&lt;span style=&#34;color:#000080&#34;&gt;slide_level&lt;/span&gt;:&lt;span style=&#34;color:#bbb&#34;&gt; &lt;/span&gt;&lt;span style=&#34;color:#099&#34;&gt;2&lt;/span&gt;&lt;span style=&#34;color:#bbb&#34;&gt; &lt;/span&gt;&lt;span style=&#34;color:#998;font-style:italic&#34;&gt;# default + recommended&lt;/span&gt;&lt;span style=&#34;color:#bbb&#34;&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#bbb&#34;&gt;&lt;/span&gt;&lt;span style=&#34;color:#555&#34;&gt;---&lt;/span&gt;&lt;span style=&#34;color:#bbb&#34;&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;With that default, if you added:&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-md&#34; data-lang=&#34;md&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#999&#34;&gt;# Let&amp;#39;s goooo
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#999&#34;&gt;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#aaa&#34;&gt;## Tables
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;You would see:&lt;/p&gt;
+&lt;img src=&#34;title-slide.png&#34; width=&#34;479&#34; /&gt;
+&lt;p&gt;You cannot have normal body text on a section slide, so don&amp;rsquo;t add anything between those two slides or Pandoc will helpfully split off a new slide:&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-md&#34; data-lang=&#34;md&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#999&#34;&gt;# Let&amp;#39;s goooo
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#999&#34;&gt;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;anybody home?  &amp;lt;&lt;span style=&#34;color:#000080&#34;&gt;-&lt;/span&gt; &lt;span style=&#34;color:#008080&#34;&gt;don&lt;/span&gt;&lt;span style=&#34;color:#a61717;background-color:#e3d2d2&#34;&gt;&amp;#39;&lt;/span&gt;&lt;span style=&#34;color:#008080&#34;&gt;t&lt;/span&gt; &lt;span style=&#34;color:#008080&#34;&gt;do&lt;/span&gt; &lt;span style=&#34;color:#008080&#34;&gt;this&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#aaa&#34;&gt;## Table
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;With &lt;code&gt;slide_level: 2&lt;/code&gt;, here is how a deck gets chopped up:&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-md&#34; data-lang=&#34;md&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#999&#34;&gt;# I&amp;#39;m a new slide- a section header
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#999&#34;&gt;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#aaa&#34;&gt;## I&amp;#39;m slide number 2, with content
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#aaa&#34;&gt;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#aaa&#34;&gt;### I&amp;#39;m also slide number 2, text is slightly bold
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#aaa&#34;&gt;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;I&amp;#39;m content on slide number 2
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#aaa&#34;&gt;## I&amp;#39;m slide number 3
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#aaa&#34;&gt;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#999&#34;&gt;# I&amp;#39;m slide number 4- another section header
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;You can force a slide break using &lt;code&gt;---&lt;/code&gt;, but headers will still work the same way.&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-md&#34; data-lang=&#34;md&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#999&#34;&gt;# I&amp;#39;m a new slide- a section header
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#999&#34;&gt;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#aaa&#34;&gt;## I&amp;#39;m slide number 2, with content
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#aaa&#34;&gt;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#aaa&#34;&gt;### I&amp;#39;m also slide number 2, text is slightly bold
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#aaa&#34;&gt;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;---
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;I&amp;#39;m slide number 3
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;---
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#aaa&#34;&gt;## I&amp;#39;m slide number 4
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#aaa&#34;&gt;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#999&#34;&gt;# I&amp;#39;m slide number 5- another section header
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+
+
+&lt;h3 id=&#34;plots&#34;&gt;Plots
+  &lt;a href=&#34;#plots&#34;&gt;&lt;svg class=&#34;anchor-symbol&#34; aria-hidden=&#34;true&#34; height=&#34;26&#34; width=&#34;26&#34; viewBox=&#34;0 0 22 22&#34; xmlns=&#34;http://www.w3.org/2000/svg&#34;&gt;
+      &lt;path d=&#34;M0 0h24v24H0z&#34; fill=&#34;currentColor&#34;&gt;&lt;/path&gt;
+      &lt;path d=&#34;M3.9 12c0-1.71 1.39-3.1 3.1-3.1h4V7H7c-2.76.0-5 2.24-5 5s2.24 5 5 5h4v-1.9H7c-1.71.0-3.1-1.39-3.1-3.1zM8 13h8v-2H8v2zm9-6h-4v1.9h4c1.71.0 3.1 1.39 3.1 3.1s-1.39 3.1-3.1 3.1h-4V17h4c2.76.0 5-2.24 5-5s-2.24-5-5-5z&#34;&gt;&lt;/path&gt;
+    &lt;/svg&gt;&lt;/a&gt;
+&lt;/h3&gt;
+&lt;p&gt;Including plots for me was sadly a long drawn-out affair. I didn&amp;rsquo;t understand:&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;
+&lt;p&gt;I had to use the &lt;code&gt;rvg::dml()&lt;/code&gt; wrapper for plots, even if I didn&amp;rsquo;t care if they were editable or not. This is &lt;em&gt;required&lt;/em&gt; if you don&amp;rsquo;t want &lt;strong&gt;TRUE&lt;/strong&gt; printed after each plot. In a two-column slide layout, non-&lt;code&gt;dml()&lt;/code&gt; wrapped plots will also appear on a slide by themselves, without an error.&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;true-plot1.png&#34; width=&#34;49%&#34; /&gt;&lt;img src=&#34;true-plot2.png&#34; width=&#34;49%&#34; /&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;If you further want to use ggplot2, you &lt;em&gt;also&lt;/em&gt; cannot just print your plot object, you must use &lt;code&gt;dml(ggobj = my_plot)&lt;/code&gt;. This one &lt;em&gt;really&lt;/em&gt; got me. Again, in the template, but less well-documented elsewhere. If you try to wrap a ggplot2 object in &lt;code&gt;dml()&lt;/code&gt; only, you might see this error:&lt;/p&gt;
+ &lt;img src=&#34;dml-error.png&#34; width=&#34;730&#34; /&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;You cannot combine text and code or plots inside the same placeholder. They cannot co-exist. If you do, the text is either overlaid or covered up by your code/output. This is how &lt;code&gt;rmarkdown::powerpoint_presentation&lt;/code&gt; works as well. A way around it is to use figure and table captions.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;I use &lt;code&gt;ref.label&lt;/code&gt; all the time to 
+&lt;a href=&#34;https://yihui.org/en/2021/05/knitr-reuse/&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;reuse code chunks&lt;/a&gt;, especially for plots. Because of the above, you&amp;rsquo;ll need to always create and save a plot object, then wrap it is &lt;code&gt;rvg::dml(ggobj=mygg)&lt;/code&gt; in the origin chunk. I get an error if I try to use the magrittr pipe here (&lt;code&gt;%&amp;gt;%&lt;/code&gt; , so this gets a bit laborious to change your plotting ways. For example:&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-r&#34; data-lang=&#34;r&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#998;font-style:italic&#34;&gt;## Testing officedown&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;```{r flipper-hist, include=FALSE}
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;library(palmerpenguins)
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;library(dplyr)
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;library(ggplot2)
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;# Histogram example: flipper length by species
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;flipper-hist &amp;lt;- ggplot(data = penguins, 
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;       aes(x = flipper_length_mm)) +
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;  geom_histogram(
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    aes(fill = species),
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    alpha = 0.5, 
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    position = &amp;#34;identity&amp;#34;) + 
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;  scale_fill_manual(values = c(&amp;#34;darkorange&amp;#34;,&amp;#34;darkorchid&amp;#34;,&amp;#34;cyan4&amp;#34;)) 
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;rvg::dml(ggobj = flipper-hist) # you must do this!
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;```
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;```{r layout=&amp;#39;Two Content&amp;#39;, width=2, ph=officer::ph_location_left(), warning=FALSE, message=FALSE, echo=FALSE}
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;penguins %&amp;gt;% 
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;  count(species)
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;```
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;```{r ref.label=&amp;#39;flipper-hist&amp;#39;, width=2, layout=&amp;#39;Two Content&amp;#39;, ph=officer::ph_location_right(), echo=FALSE, warning=FALSE, message=FALSE}
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;```
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+
+
+&lt;h2 id=&#34;wrapping-up&#34;&gt;Wrapping up
+  &lt;a href=&#34;#wrapping-up&#34;&gt;&lt;svg class=&#34;anchor-symbol&#34; aria-hidden=&#34;true&#34; height=&#34;26&#34; width=&#34;26&#34; viewBox=&#34;0 0 22 22&#34; xmlns=&#34;http://www.w3.org/2000/svg&#34;&gt;
+      &lt;path d=&#34;M0 0h24v24H0z&#34; fill=&#34;currentColor&#34;&gt;&lt;/path&gt;
+      &lt;path d=&#34;M3.9 12c0-1.71 1.39-3.1 3.1-3.1h4V7H7c-2.76.0-5 2.24-5 5s2.24 5 5 5h4v-1.9H7c-1.71.0-3.1-1.39-3.1-3.1zM8 13h8v-2H8v2zm9-6h-4v1.9h4c1.71.0 3.1 1.39 3.1 3.1s-1.39 3.1-3.1 3.1h-4V17h4c2.76.0 5-2.24 5-5s-2.24-5-5-5z&#34;&gt;&lt;/path&gt;
+    &lt;/svg&gt;&lt;/a&gt;
+&lt;/h2&gt;
+&lt;p&gt;This is as far as I got with officedown. I can see it being very useful to users who need more control over their Microsoft outputs than base rmarkdown and Pandoc can provide. However, there are definitely some places where a typical R Markdown user will accumulate pretty serious papercuts.&lt;/p&gt;
+&lt;p&gt;I&amp;rsquo;d love to hear about happy officedown use cases and the problems it solves for teams! I know a lot of organizations run on Microsoft Office products, so I appreciate the hard work that has gone into this suite of tools.&lt;/p&gt;
+</description>
+    </item>
+    
+  </channel>
+</rss>
+
+

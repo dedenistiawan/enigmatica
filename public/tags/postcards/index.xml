@@ -1,0 +1,305 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Postcards on Alison Hill, PhD</title>
+    <link>http://localhost:4321/tags/postcards/</link>
+    <description>Recent content in Postcards on Alison Hill, PhD</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en</language>
+    <lastBuildDate>Tue, 22 Dec 2020 00:00:00 +0000</lastBuildDate><atom:link href="http://localhost:4321/tags/postcards/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>M-F-E-O: postcards &#43; distill</title>
+      <link>http://localhost:4321/blog/2020-12-postcards-distill/</link>
+      <pubDate>Tue, 22 Dec 2020 00:00:00 +0000</pubDate>
+      
+      <guid>http://localhost:4321/blog/2020-12-postcards-distill/</guid>
+      <description>&lt;p&gt;This is a very brief &amp;ldquo;postcard to myself&amp;rdquo; about how to use the new 
+&lt;a href=&#34;https://github.com/seankross/postcards&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;postcards package&lt;/a&gt; by Sean Kross. What problem does postcards solve?&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;&amp;ldquo;Create simple, beautiful personal websites and landing pages using only R Markdown.&amp;rdquo;&lt;/p&gt;
+&lt;p&gt;&amp;mdash; postcards 
+&lt;a href=&#34;https://github.com/seankross/postcards#postcards&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;README.md&lt;/a&gt;&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;Postcards includes four templates:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;a href=&#34;https://seankross.com/postcards-templates/jolla/&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;Jolla&lt;/a&gt;,&lt;/li&gt;
+&lt;li&gt;
+&lt;a href=&#34;https://seankross.com/postcards-templates/jolla-blue/&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;Jolla Blue&lt;/a&gt;,&lt;/li&gt;
+&lt;li&gt;
+&lt;a href=&#34;https://seankross.com/postcards-templates/trestles/&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;Trestles&lt;/a&gt;, and&lt;/li&gt;
+&lt;li&gt;
+&lt;a href=&#34;https://seankross.com/postcards-templates/onofre/&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;Onofre&lt;/a&gt;.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;You can see &lt;code&gt;postcards::trestles&lt;/code&gt; in action here: 
+&lt;a href=&#34;http://jtleek.com/&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;http://jtleek.com/&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;And here (this is where we are headed!):&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;final-trestles.png&#34; alt=&#34;&#34;&gt;&lt;/p&gt;
+&lt;p&gt;
+&lt;a href=&#34;https://rstudio.github.io/distill/&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;Distill&lt;/a&gt; is a package that &lt;em&gt;also&lt;/em&gt; helps you make simple, beautiful websites and blogs using only R Markdown. They are M-F-E-O (&amp;lsquo;made for each other&amp;rsquo;: this is a &amp;ldquo;Sleepless in Seattle&amp;rdquo; reference with sadly, a complete lack of video to support). But if you&amp;rsquo;ve seen the movie this scene may sound familiar:&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;Becky: So I mailed your letter.&lt;/p&gt;
+&lt;p&gt;Annie: &amp;ldquo;Dear Annie, thanks for your letter. It was great. You sound neat. We&amp;rsquo;re very excited about meeting you in New York on Valentine&amp;rsquo;s Day and seeing if we are M-F-E-O. See you soon. Sleepless in Seattle.&amp;rdquo;&lt;/p&gt;
+&lt;p&gt;Becky: M-F-E-O?&lt;/p&gt;
+&lt;p&gt;Annie: &amp;ldquo;Made for each other.&amp;rdquo;&lt;/p&gt;
+&lt;p&gt;Becky: It&amp;rsquo;s cute. It&amp;rsquo;s like a little clue. So he can&amp;rsquo;t write. Big deal. Verbal ability is a highly over-rated thing in a guy and our pathetic need for it is what gets us into so much trouble.&lt;/p&gt;
+&lt;p&gt;&amp;mdash; &lt;em&gt;Sleepless in Seattle&lt;/em&gt;, script from 
+&lt;a href=&#34;https://plantyourstory.com/mfeo-its-like-a-little-clue/&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;https://plantyourstory.com/mfeo-its-like-a-little-clue/&lt;/a&gt;&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;Consider this post like a little clue (I&amp;rsquo;m using it as a sandbox before updating our distill documentation for this new feature). Here is our existing signpost in the 
+&lt;a href=&#34;https://rstudio.github.io/distill/website.html#alternate-formats&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;distill docs&lt;/a&gt;. With the CRAN versions of all three packages now, you can embed a postcards page within your distill site. This means the page will come with all your distill goodies like site navigation, theme, and google-analytics support.&lt;/p&gt;
+&lt;div class=&#34;alert alert-note&#34;&gt;
+  &lt;div&gt;
+    You can see the demo site I made alongside this post here: 
+&lt;a href=&#34;https://apreshill.github.io/mfeo/&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;https://apreshill.github.io/mfeo/&lt;/a&gt; (source: 
+&lt;a href=&#34;https://github.com/apreshill/mfeo&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;https://github.com/apreshill/mfeo&lt;/a&gt;).
+  &lt;/div&gt;
+&lt;/div&gt;
+
+
+
+
+&lt;h2 id=&#34;pre-requisites&#34;&gt;Pre-requisites
+  &lt;a href=&#34;#pre-requisites&#34;&gt;&lt;svg class=&#34;anchor-symbol&#34; aria-hidden=&#34;true&#34; height=&#34;26&#34; width=&#34;26&#34; viewBox=&#34;0 0 22 22&#34; xmlns=&#34;http://www.w3.org/2000/svg&#34;&gt;
+      &lt;path d=&#34;M0 0h24v24H0z&#34; fill=&#34;currentColor&#34;&gt;&lt;/path&gt;
+      &lt;path d=&#34;M3.9 12c0-1.71 1.39-3.1 3.1-3.1h4V7H7c-2.76.0-5 2.24-5 5s2.24 5 5 5h4v-1.9H7c-1.71.0-3.1-1.39-3.1-3.1zM8 13h8v-2H8v2zm9-6h-4v1.9h4c1.71.0 3.1 1.39 3.1 3.1s-1.39 3.1-3.1 3.1h-4V17h4c2.76.0 5-2.24 5-5s-2.24-5-5-5z&#34;&gt;&lt;/path&gt;
+    &lt;/svg&gt;&lt;/a&gt;
+&lt;/h2&gt;
+&lt;p&gt;You&amp;rsquo;ll need the CRAN versions of three packages:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;distill (v &amp;gt;= 1.2) (see: 
+&lt;a href=&#34;https://pkgs.rstudio.com/distill/news/index.html#distill-v1-2-cran-&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;https://pkgs.rstudio.com/distill/news/index.html#distill-v1-2-cran-&lt;/a&gt;)&lt;/li&gt;
+&lt;li&gt;rmarkdown (v &amp;gt;= 2.7)&lt;/li&gt;
+&lt;li&gt;postcards (v &amp;gt;= 0.2.0)&lt;/li&gt;
+&lt;/ul&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-r&#34; data-lang=&#34;r&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#900;font-weight:bold&#34;&gt;install.packages&lt;/span&gt;(&lt;span style=&#34;color:#900;font-weight:bold&#34;&gt;c&lt;/span&gt;(&lt;span style=&#34;color:#d14&#34;&gt;&amp;#34;distill&amp;#34;&lt;/span&gt;, &lt;span style=&#34;color:#d14&#34;&gt;&amp;#34;rmarkdown&amp;#34;&lt;/span&gt;, &lt;span style=&#34;color:#d14&#34;&gt;&amp;#34;postcards&amp;#34;&lt;/span&gt;))
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;You can check these package versions as follows:&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-r&#34; data-lang=&#34;r&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#900;font-weight:bold&#34;&gt;packageVersion&lt;/span&gt;(&lt;span style=&#34;color:#d14&#34;&gt;&amp;#34;distill&amp;#34;&lt;/span&gt;)
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#900;font-weight:bold&#34;&gt;packageVersion&lt;/span&gt;(&lt;span style=&#34;color:#d14&#34;&gt;&amp;#34;rmarkdown&amp;#34;&lt;/span&gt;)
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#900;font-weight:bold&#34;&gt;packageVersion&lt;/span&gt;(&lt;span style=&#34;color:#d14&#34;&gt;&amp;#34;postcards&amp;#34;&lt;/span&gt;)
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+
+
+&lt;h2 id=&#34;make-a-website&#34;&gt;Make a website
+  &lt;a href=&#34;#make-a-website&#34;&gt;&lt;svg class=&#34;anchor-symbol&#34; aria-hidden=&#34;true&#34; height=&#34;26&#34; width=&#34;26&#34; viewBox=&#34;0 0 22 22&#34; xmlns=&#34;http://www.w3.org/2000/svg&#34;&gt;
+      &lt;path d=&#34;M0 0h24v24H0z&#34; fill=&#34;currentColor&#34;&gt;&lt;/path&gt;
+      &lt;path d=&#34;M3.9 12c0-1.71 1.39-3.1 3.1-3.1h4V7H7c-2.76.0-5 2.24-5 5s2.24 5 5 5h4v-1.9H7c-1.71.0-3.1-1.39-3.1-3.1zM8 13h8v-2H8v2zm9-6h-4v1.9h4c1.71.0 3.1 1.39 3.1 3.1s-1.39 3.1-3.1 3.1h-4V17h4c2.76.0 5-2.24 5-5s-2.24-5-5-5z&#34;&gt;&lt;/path&gt;
+    &lt;/svg&gt;&lt;/a&gt;
+&lt;/h2&gt;
+&lt;p&gt;In RStudio, create a new project using &lt;em&gt;File &amp;gt; New Project &amp;gt; New Directory &amp;gt; New Project&lt;/em&gt;. Then, inside your new empty project, use your R console to do the following:&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-r&#34; data-lang=&#34;r&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#900;font-weight:bold&#34;&gt;library&lt;/span&gt;(distill)
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#900;font-weight:bold&#34;&gt;create_website&lt;/span&gt;(dir &lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;=&lt;/span&gt; &lt;span style=&#34;color:#d14&#34;&gt;&amp;#34;.&amp;#34;&lt;/span&gt;, title &lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;=&lt;/span&gt; &lt;span style=&#34;color:#d14&#34;&gt;&amp;#34;mfeo&amp;#34;&lt;/span&gt;, gh_pages &lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;=&lt;/span&gt; &lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;TRUE&lt;/span&gt;)
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;At this point, I recommend closing RStudio completely and opening up your project again. This way you should see the &amp;ldquo;Build&amp;rdquo; tab.&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://rstudio-education.github.io/sharing-short-notice/images/screenshots/build-site.png&#34; alt=&#34;&#34;&gt;&lt;/p&gt;
+&lt;p&gt;Now build your site! You should see the &amp;ldquo;boilerplate&amp;rdquo; website template at this point.&lt;/p&gt;
+
+
+
+
+&lt;h2 id=&#34;add-a-postcard&#34;&gt;Add a postcard
+  &lt;a href=&#34;#add-a-postcard&#34;&gt;&lt;svg class=&#34;anchor-symbol&#34; aria-hidden=&#34;true&#34; height=&#34;26&#34; width=&#34;26&#34; viewBox=&#34;0 0 22 22&#34; xmlns=&#34;http://www.w3.org/2000/svg&#34;&gt;
+      &lt;path d=&#34;M0 0h24v24H0z&#34; fill=&#34;currentColor&#34;&gt;&lt;/path&gt;
+      &lt;path d=&#34;M3.9 12c0-1.71 1.39-3.1 3.1-3.1h4V7H7c-2.76.0-5 2.24-5 5s2.24 5 5 5h4v-1.9H7c-1.71.0-3.1-1.39-3.1-3.1zM8 13h8v-2H8v2zm9-6h-4v1.9h4c1.71.0 3.1 1.39 3.1 3.1s-1.39 3.1-3.1 3.1h-4V17h4c2.76.0 5-2.24 5-5s-2.24-5-5-5z&#34;&gt;&lt;/path&gt;
+    &lt;/svg&gt;&lt;/a&gt;
+&lt;/h2&gt;
+&lt;p&gt;In your R console, use the postcards package to create a new postcard:&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-r&#34; data-lang=&#34;r&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#900;font-weight:bold&#34;&gt;create_postcard&lt;/span&gt;(file &lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;=&lt;/span&gt; &lt;span style=&#34;color:#d14&#34;&gt;&amp;#34;tobi.Rmd&amp;#34;&lt;/span&gt;) &lt;span style=&#34;color:#998;font-style:italic&#34;&gt;# future name of .Rmd file&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;Alternatively, you could use &lt;code&gt;distill::create_article()&lt;/code&gt; to make a new page. To make a postcard, specify the &lt;code&gt;template&lt;/code&gt; (one of: &lt;code&gt;jolla&lt;/code&gt;, &lt;code&gt;jolla-blue&lt;/code&gt;, &lt;code&gt;onofre&lt;/code&gt;, &lt;code&gt;trestles&lt;/code&gt;) and &lt;code&gt;package = &#39;postcards&#39;&lt;/code&gt;:&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-r&#34; data-lang=&#34;r&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#900;font-weight:bold&#34;&gt;create_article&lt;/span&gt;(file &lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;=&lt;/span&gt; &lt;span style=&#34;color:#d14&#34;&gt;&amp;#34;tobi&amp;#34;&lt;/span&gt;,         &lt;span style=&#34;color:#998;font-style:italic&#34;&gt;# future name of .Rmd file&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;               template &lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;=&lt;/span&gt; &lt;span style=&#34;color:#d14&#34;&gt;&amp;#34;jolla&amp;#34;&lt;/span&gt;,    &lt;span style=&#34;color:#998;font-style:italic&#34;&gt;# name of template&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;               package &lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;=&lt;/span&gt; &lt;span style=&#34;color:#d14&#34;&gt;&amp;#34;postcards&amp;#34;&lt;/span&gt;) &lt;span style=&#34;color:#998;font-style:italic&#34;&gt;# package that includes the template&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;Let&amp;rsquo;s add a link to our new file in the top navbar. Open up your &lt;code&gt;_site.yml&lt;/code&gt; file and add:&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-yaml&#34; data-lang=&#34;yaml&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#000080&#34;&gt;name&lt;/span&gt;:&lt;span style=&#34;color:#bbb&#34;&gt; &lt;/span&gt;&lt;span style=&#34;color:#d14&#34;&gt;&amp;#34;.&amp;#34;&lt;/span&gt;&lt;span style=&#34;color:#bbb&#34;&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#bbb&#34;&gt;&lt;/span&gt;&lt;span style=&#34;color:#000080&#34;&gt;title&lt;/span&gt;:&lt;span style=&#34;color:#bbb&#34;&gt; &lt;/span&gt;&lt;span style=&#34;color:#d14&#34;&gt;&amp;#34;mfeo&amp;#34;&lt;/span&gt;&lt;span style=&#34;color:#bbb&#34;&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#bbb&#34;&gt;&lt;/span&gt;&lt;span style=&#34;color:#000080&#34;&gt;description&lt;/span&gt;:&lt;span style=&#34;color:#bbb&#34;&gt; &lt;/span&gt;|&lt;span style=&#34;color:#d14&#34;&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#d14&#34;&gt;  mfeo&lt;/span&gt;&lt;span style=&#34;color:#bbb&#34;&gt;  
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#bbb&#34;&gt;&lt;/span&gt;&lt;span style=&#34;color:#000080&#34;&gt;output_dir&lt;/span&gt;:&lt;span style=&#34;color:#bbb&#34;&gt; &lt;/span&gt;&lt;span style=&#34;color:#d14&#34;&gt;&amp;#34;docs&amp;#34;&lt;/span&gt;&lt;span style=&#34;color:#bbb&#34;&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#bbb&#34;&gt;&lt;/span&gt;&lt;span style=&#34;color:#000080&#34;&gt;navbar&lt;/span&gt;:&lt;span style=&#34;color:#bbb&#34;&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#bbb&#34;&gt;  &lt;/span&gt;&lt;span style=&#34;color:#000080&#34;&gt;right&lt;/span&gt;:&lt;span style=&#34;color:#bbb&#34;&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#bbb&#34;&gt;    &lt;/span&gt;- &lt;span style=&#34;color:#000080&#34;&gt;text&lt;/span&gt;:&lt;span style=&#34;color:#bbb&#34;&gt; &lt;/span&gt;&lt;span style=&#34;color:#d14&#34;&gt;&amp;#34;Home&amp;#34;&lt;/span&gt;&lt;span style=&#34;color:#bbb&#34;&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#bbb&#34;&gt;      &lt;/span&gt;&lt;span style=&#34;color:#000080&#34;&gt;href&lt;/span&gt;:&lt;span style=&#34;color:#bbb&#34;&gt; &lt;/span&gt;index.html&lt;span style=&#34;color:#bbb&#34;&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#bbb&#34;&gt;    &lt;/span&gt;- &lt;span style=&#34;color:#000080&#34;&gt;text&lt;/span&gt;:&lt;span style=&#34;color:#bbb&#34;&gt; &lt;/span&gt;&lt;span style=&#34;color:#d14&#34;&gt;&amp;#34;About&amp;#34;&lt;/span&gt;&lt;span style=&#34;color:#bbb&#34;&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#bbb&#34;&gt;      &lt;/span&gt;&lt;span style=&#34;color:#000080&#34;&gt;href&lt;/span&gt;:&lt;span style=&#34;color:#bbb&#34;&gt; &lt;/span&gt;about.html&lt;span style=&#34;color:#bbb&#34;&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#bbb&#34;&gt;    &lt;/span&gt;- &lt;span style=&#34;color:#000080&#34;&gt;text&lt;/span&gt;:&lt;span style=&#34;color:#bbb&#34;&gt; &lt;/span&gt;&lt;span style=&#34;color:#d14&#34;&gt;&amp;#34;Tobi&amp;#34;&lt;/span&gt;&lt;span style=&#34;color:#bbb&#34;&gt;              &lt;/span&gt;&lt;span style=&#34;color:#998;font-style:italic&#34;&gt;# add&lt;/span&gt;&lt;span style=&#34;color:#bbb&#34;&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#bbb&#34;&gt;      &lt;/span&gt;&lt;span style=&#34;color:#000080&#34;&gt;href&lt;/span&gt;:&lt;span style=&#34;color:#bbb&#34;&gt; &lt;/span&gt;tobi.html          &lt;span style=&#34;color:#bbb&#34;&gt; &lt;/span&gt;&lt;span style=&#34;color:#998;font-style:italic&#34;&gt;# add&lt;/span&gt;&lt;span style=&#34;color:#bbb&#34;&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#bbb&#34;&gt;&lt;/span&gt;&lt;span style=&#34;color:#000080&#34;&gt;output&lt;/span&gt;:&lt;span style=&#34;color:#bbb&#34;&gt; &lt;/span&gt;distill::distill_article&lt;span style=&#34;color:#bbb&#34;&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;Since my file is named &lt;code&gt;tobi.Rmd&lt;/code&gt;, that means the rendered file will be &lt;code&gt;tobi.html&lt;/code&gt;, so that is my &lt;code&gt;href&lt;/code&gt; key in the &lt;code&gt;_site.yml&lt;/code&gt;. If you save that file, you should see your website refresh, and look something like this!&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;tobi.png&#34; alt=&#34;Jolla postcard page in distill website&#34; title=&#34;Jolla postcard page in distill website&#34;&gt;&lt;/p&gt;
+
+
+
+
+&lt;h2 id=&#34;add-a-theme&#34;&gt;Add a theme
+  &lt;a href=&#34;#add-a-theme&#34;&gt;&lt;svg class=&#34;anchor-symbol&#34; aria-hidden=&#34;true&#34; height=&#34;26&#34; width=&#34;26&#34; viewBox=&#34;0 0 22 22&#34; xmlns=&#34;http://www.w3.org/2000/svg&#34;&gt;
+      &lt;path d=&#34;M0 0h24v24H0z&#34; fill=&#34;currentColor&#34;&gt;&lt;/path&gt;
+      &lt;path d=&#34;M3.9 12c0-1.71 1.39-3.1 3.1-3.1h4V7H7c-2.76.0-5 2.24-5 5s2.24 5 5 5h4v-1.9H7c-1.71.0-3.1-1.39-3.1-3.1zM8 13h8v-2H8v2zm9-6h-4v1.9h4c1.71.0 3.1 1.39 3.1 3.1s-1.39 3.1-3.1 3.1h-4V17h4c2.76.0 5-2.24 5-5s-2.24-5-5-5z&#34;&gt;&lt;/path&gt;
+    &lt;/svg&gt;&lt;/a&gt;
+&lt;/h2&gt;
+&lt;p&gt;For fun, let&amp;rsquo;s go ahead and add a custom distill theme while we&amp;rsquo;re at it.&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-r&#34; data-lang=&#34;r&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#900;font-weight:bold&#34;&gt;create_theme&lt;/span&gt;(&lt;span style=&#34;color:#d14&#34;&gt;&amp;#34;postcards&amp;#34;&lt;/span&gt;)
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;div class=&#34;alert alert-note&#34;&gt;
+  &lt;div&gt;
+    You can see copy my theme file from here: 
+&lt;a href=&#34;https://github.com/apreshill/mfeo/blob/master/postcards.css&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;https://github.com/apreshill/mfeo/blob/master/postcards.css&lt;/a&gt;.
+  &lt;/div&gt;
+&lt;/div&gt;
+&lt;p&gt;This should print to your R console:&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;v Created CSS file at postcards.css 
+o TODO: Customize it to suit your needs
+o TODO: Add &#39;theme: postcards.css&#39; to your site or article YAML
+
+See docs at &amp;lt;https://rstudio.github.io/distill/website.html#theming&amp;gt;
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;I want a full-site theme, so I added &lt;code&gt;theme: postcards.css&lt;/code&gt; to my &lt;code&gt;_site.yml&lt;/code&gt; file. I followed the distill docs on theming 
+&lt;a href=&#34;https://rstudio.github.io/distill/website.html#theming&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;here&lt;/a&gt;. Re-build my website, and now I see:&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;tobi-theme.png&#34; alt=&#34;Jolla postcard page in themed distill website&#34; title=&#34;Jolla postcard page in themed distill website&#34;&gt;&lt;/p&gt;
+
+
+
+
+&lt;h2 id=&#34;switch-the-homepage&#34;&gt;Switch the homepage
+  &lt;a href=&#34;#switch-the-homepage&#34;&gt;&lt;svg class=&#34;anchor-symbol&#34; aria-hidden=&#34;true&#34; height=&#34;26&#34; width=&#34;26&#34; viewBox=&#34;0 0 22 22&#34; xmlns=&#34;http://www.w3.org/2000/svg&#34;&gt;
+      &lt;path d=&#34;M0 0h24v24H0z&#34; fill=&#34;currentColor&#34;&gt;&lt;/path&gt;
+      &lt;path d=&#34;M3.9 12c0-1.71 1.39-3.1 3.1-3.1h4V7H7c-2.76.0-5 2.24-5 5s2.24 5 5 5h4v-1.9H7c-1.71.0-3.1-1.39-3.1-3.1zM8 13h8v-2H8v2zm9-6h-4v1.9h4c1.71.0 3.1 1.39 3.1 3.1s-1.39 3.1-3.1 3.1h-4V17h4c2.76.0 5-2.24 5-5s-2.24-5-5-5z&#34;&gt;&lt;/path&gt;
+    &lt;/svg&gt;&lt;/a&gt;
+&lt;/h2&gt;
+&lt;p&gt;Now you may be wishing that your postcards page was your homepage- the place where visitors first land when they visit your website. The homepage in a distill website is named &lt;code&gt;index.Rmd&lt;/code&gt;, so we need to remove the current &lt;code&gt;index.Rmd&lt;/code&gt; file and replace it with &lt;code&gt;tobi.Rmd&lt;/code&gt;. But we cannot just rename the files&amp;hellip;&lt;/p&gt;
+&lt;p&gt;If you open up &lt;code&gt;index.Rmd&lt;/code&gt;, you should see this yaml:&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-yaml&#34; data-lang=&#34;yaml&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#555&#34;&gt;---&lt;/span&gt;&lt;span style=&#34;color:#bbb&#34;&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#bbb&#34;&gt;&lt;/span&gt;&lt;span style=&#34;color:#000080&#34;&gt;title&lt;/span&gt;:&lt;span style=&#34;color:#bbb&#34;&gt; &lt;/span&gt;&lt;span style=&#34;color:#d14&#34;&gt;&amp;#34;mfeo&amp;#34;&lt;/span&gt;&lt;span style=&#34;color:#bbb&#34;&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#bbb&#34;&gt;&lt;/span&gt;&lt;span style=&#34;color:#000080&#34;&gt;description&lt;/span&gt;:&lt;span style=&#34;color:#bbb&#34;&gt; &lt;/span&gt;|&lt;span style=&#34;color:#d14&#34;&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#d14&#34;&gt;  Welcome to the website. I hope you enjoy it!&lt;/span&gt;&lt;span style=&#34;color:#bbb&#34;&gt;  
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#bbb&#34;&gt;&lt;/span&gt;&lt;span style=&#34;color:#000080&#34;&gt;site&lt;/span&gt;:&lt;span style=&#34;color:#bbb&#34;&gt; &lt;/span&gt;distill::distill_website&lt;span style=&#34;color:#bbb&#34;&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#bbb&#34;&gt;&lt;/span&gt;&lt;span style=&#34;color:#555&#34;&gt;---&lt;/span&gt;&lt;span style=&#34;color:#bbb&#34;&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;That &lt;code&gt;site&lt;/code&gt; key is very important to keep in the &lt;code&gt;index.Rmd&lt;/code&gt; file. Steps:&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;Let&amp;rsquo;s start by adding &lt;code&gt;site: distill::distill_website&lt;/code&gt; to the yaml of your postcards page, mine is named &lt;code&gt;tobi.Rmd&lt;/code&gt;.&lt;/li&gt;
+&lt;li&gt;After doing that, you can delete &lt;code&gt;index.Rmd&lt;/code&gt;.&lt;/li&gt;
+&lt;li&gt;Next, rename &lt;code&gt;tobi.Rmd&lt;/code&gt; -&amp;gt; &lt;code&gt;index.Rmd&lt;/code&gt;.&lt;/li&gt;
+&lt;li&gt;Finally, clean up your &lt;code&gt;_site.yml&lt;/code&gt; - you can remove the link we added above to &lt;code&gt;tobi.html&lt;/code&gt;.&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;Re-build your site and Tobi&amp;rsquo;s shining face should greet you from the homepage!&lt;/p&gt;
+
+
+
+
+&lt;h2 id=&#34;fill-in-your-postcard&#34;&gt;Fill-in your postcard
+  &lt;a href=&#34;#fill-in-your-postcard&#34;&gt;&lt;svg class=&#34;anchor-symbol&#34; aria-hidden=&#34;true&#34; height=&#34;26&#34; width=&#34;26&#34; viewBox=&#34;0 0 22 22&#34; xmlns=&#34;http://www.w3.org/2000/svg&#34;&gt;
+      &lt;path d=&#34;M0 0h24v24H0z&#34; fill=&#34;currentColor&#34;&gt;&lt;/path&gt;
+      &lt;path d=&#34;M3.9 12c0-1.71 1.39-3.1 3.1-3.1h4V7H7c-2.76.0-5 2.24-5 5s2.24 5 5 5h4v-1.9H7c-1.71.0-3.1-1.39-3.1-3.1zM8 13h8v-2H8v2zm9-6h-4v1.9h4c1.71.0 3.1 1.39 3.1 3.1s-1.39 3.1-3.1 3.1h-4V17h4c2.76.0 5-2.24 5-5s-2.24-5-5-5z&#34;&gt;&lt;/path&gt;
+    &lt;/svg&gt;&lt;/a&gt;
+&lt;/h2&gt;
+&lt;p&gt;Of course, you can add your own image file to the project root at this point, and then personalize your &lt;code&gt;index.Rmd&lt;/code&gt; using the postcards template:&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-yaml&#34; data-lang=&#34;yaml&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#555&#34;&gt;---&lt;/span&gt;&lt;span style=&#34;color:#bbb&#34;&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#bbb&#34;&gt;&lt;/span&gt;&lt;span style=&#34;color:#000080&#34;&gt;title&lt;/span&gt;:&lt;span style=&#34;color:#bbb&#34;&gt; &lt;/span&gt;&lt;span style=&#34;color:#d14&#34;&gt;&amp;#34;Alison Hill&amp;#34;&lt;/span&gt;&lt;span style=&#34;color:#bbb&#34;&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#bbb&#34;&gt;&lt;/span&gt;&lt;span style=&#34;color:#000080&#34;&gt;image&lt;/span&gt;:&lt;span style=&#34;color:#bbb&#34;&gt; &lt;/span&gt;&lt;span style=&#34;color:#d14&#34;&gt;&amp;#34;alison.jpg&amp;#34;&lt;/span&gt;&lt;span style=&#34;color:#bbb&#34;&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#bbb&#34;&gt;&lt;/span&gt;&lt;span style=&#34;color:#000080&#34;&gt;links&lt;/span&gt;:&lt;span style=&#34;color:#bbb&#34;&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#bbb&#34;&gt;  &lt;/span&gt;- &lt;span style=&#34;color:#000080&#34;&gt;label&lt;/span&gt;:&lt;span style=&#34;color:#bbb&#34;&gt; &lt;/span&gt;LinkedIn&lt;span style=&#34;color:#bbb&#34;&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#bbb&#34;&gt;    &lt;/span&gt;&lt;span style=&#34;color:#000080&#34;&gt;url&lt;/span&gt;:&lt;span style=&#34;color:#bbb&#34;&gt; &lt;/span&gt;&lt;span style=&#34;color:#d14&#34;&gt;&amp;#34;https://www.linkedin.com/in/alisonpresmaneshill/&amp;#34;&lt;/span&gt;&lt;span style=&#34;color:#bbb&#34;&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#bbb&#34;&gt;  &lt;/span&gt;- &lt;span style=&#34;color:#000080&#34;&gt;label&lt;/span&gt;:&lt;span style=&#34;color:#bbb&#34;&gt; &lt;/span&gt;Twitter&lt;span style=&#34;color:#bbb&#34;&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#bbb&#34;&gt;    &lt;/span&gt;&lt;span style=&#34;color:#000080&#34;&gt;url&lt;/span&gt;:&lt;span style=&#34;color:#bbb&#34;&gt; &lt;/span&gt;&lt;span style=&#34;color:#d14&#34;&gt;&amp;#34;https://twitter.com/apreshill&amp;#34;&lt;/span&gt;&lt;span style=&#34;color:#bbb&#34;&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#bbb&#34;&gt;  &lt;/span&gt;- &lt;span style=&#34;color:#000080&#34;&gt;label&lt;/span&gt;:&lt;span style=&#34;color:#bbb&#34;&gt; &lt;/span&gt;GitHub&lt;span style=&#34;color:#bbb&#34;&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#bbb&#34;&gt;    &lt;/span&gt;&lt;span style=&#34;color:#000080&#34;&gt;url&lt;/span&gt;:&lt;span style=&#34;color:#bbb&#34;&gt; &lt;/span&gt;&lt;span style=&#34;color:#d14&#34;&gt;&amp;#34;https://github.com/apreshill&amp;#34;&lt;/span&gt;&lt;span style=&#34;color:#bbb&#34;&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#bbb&#34;&gt;  &lt;/span&gt;- &lt;span style=&#34;color:#000080&#34;&gt;label&lt;/span&gt;:&lt;span style=&#34;color:#bbb&#34;&gt; &lt;/span&gt;ORCID iD&lt;span style=&#34;color:#bbb&#34;&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#bbb&#34;&gt;    &lt;/span&gt;&lt;span style=&#34;color:#000080&#34;&gt;url&lt;/span&gt;:&lt;span style=&#34;color:#bbb&#34;&gt; &lt;/span&gt;&lt;span style=&#34;color:#d14&#34;&gt;&amp;#34;https://orcid.org/0000-0002-8082-1890&amp;#34;&lt;/span&gt;&lt;span style=&#34;color:#bbb&#34;&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#bbb&#34;&gt;&lt;/span&gt;&lt;span style=&#34;color:#000080&#34;&gt;site&lt;/span&gt;:&lt;span style=&#34;color:#bbb&#34;&gt; &lt;/span&gt;distill::distill_website&lt;span style=&#34;color:#bbb&#34;&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#bbb&#34;&gt;&lt;/span&gt;&lt;span style=&#34;color:#000080&#34;&gt;output&lt;/span&gt;:&lt;span style=&#34;color:#bbb&#34;&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#bbb&#34;&gt;  &lt;/span&gt;postcards::jolla&lt;span style=&#34;color:#bbb&#34;&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#bbb&#34;&gt;&lt;/span&gt;&lt;span style=&#34;color:#555&#34;&gt;---&lt;/span&gt;&lt;span style=&#34;color:#bbb&#34;&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;Here is my &amp;ldquo;after&amp;rdquo;:&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;alison-home.png&#34; alt=&#34;Jolla as themed homepage&#34; title=&#34;Jolla as themed homepage&#34;&gt;&lt;/p&gt;
+
+
+
+
+&lt;h2 id=&#34;add-a-blog&#34;&gt;Add a blog
+  &lt;a href=&#34;#add-a-blog&#34;&gt;&lt;svg class=&#34;anchor-symbol&#34; aria-hidden=&#34;true&#34; height=&#34;26&#34; width=&#34;26&#34; viewBox=&#34;0 0 22 22&#34; xmlns=&#34;http://www.w3.org/2000/svg&#34;&gt;
+      &lt;path d=&#34;M0 0h24v24H0z&#34; fill=&#34;currentColor&#34;&gt;&lt;/path&gt;
+      &lt;path d=&#34;M3.9 12c0-1.71 1.39-3.1 3.1-3.1h4V7H7c-2.76.0-5 2.24-5 5s2.24 5 5 5h4v-1.9H7c-1.71.0-3.1-1.39-3.1-3.1zM8 13h8v-2H8v2zm9-6h-4v1.9h4c1.71.0 3.1 1.39 3.1 3.1s-1.39 3.1-3.1 3.1h-4V17h4c2.76.0 5-2.24 5-5s-2.24-5-5-5z&#34;&gt;&lt;/path&gt;
+    &lt;/svg&gt;&lt;/a&gt;
+&lt;/h2&gt;
+&lt;p&gt;Back in your console, we can add a blog, using distill:&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-r&#34; data-lang=&#34;r&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#900;font-weight:bold&#34;&gt;create_post&lt;/span&gt;(&lt;span style=&#34;color:#d14&#34;&gt;&amp;#34;welcome&amp;#34;&lt;/span&gt;)
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;If you do this with a blog already, it just adds a single post. But if you do this without posts set up, it does some nice things for you:&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;
+&lt;p&gt;Creates a directory called &lt;code&gt;_posts/&lt;/code&gt; to hold all your future blog posts.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Creates a new post with a &amp;ldquo;slug&amp;rdquo; including the date and the name of the post (here, mine was &lt;code&gt;&amp;quot;welcome&amp;quot;&lt;/code&gt;).&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;Your new post should open up - go ahead and knit this post. Posts in distill need to be knit intentionally, so they will never be automatically built when you rebuild your website.&lt;/p&gt;
+&lt;p&gt;We also probably want to add a listing page to list all our blog posts. Do this by adding a blank &lt;code&gt;.Rmd&lt;/code&gt; file to your project root, I&amp;rsquo;ll call mine &lt;code&gt;blog.Rmd&lt;/code&gt; but there is no magic to this file name:&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-r&#34; data-lang=&#34;r&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#900;font-weight:bold&#34;&gt;file.edit&lt;/span&gt;(&lt;span style=&#34;color:#d14&#34;&gt;&amp;#34;blog.Rmd&amp;#34;&lt;/span&gt;)
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;Then open up your new &lt;code&gt;blog.Rmd&lt;/code&gt; and add a YAML (no content below the YAML):&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-yaml&#34; data-lang=&#34;yaml&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#555&#34;&gt;---&lt;/span&gt;&lt;span style=&#34;color:#bbb&#34;&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#bbb&#34;&gt;&lt;/span&gt;&lt;span style=&#34;color:#000080&#34;&gt;title&lt;/span&gt;:&lt;span style=&#34;color:#bbb&#34;&gt; &lt;/span&gt;&lt;span style=&#34;color:#d14&#34;&gt;&amp;#34;Blog&amp;#34;&lt;/span&gt;&lt;span style=&#34;color:#bbb&#34;&gt;  &lt;/span&gt;&lt;span style=&#34;color:#998;font-style:italic&#34;&gt;# any name you want here&lt;/span&gt;&lt;span style=&#34;color:#bbb&#34;&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#bbb&#34;&gt;&lt;/span&gt;&lt;span style=&#34;color:#000080&#34;&gt;listing&lt;/span&gt;:&lt;span style=&#34;color:#bbb&#34;&gt; &lt;/span&gt;posts&lt;span style=&#34;color:#bbb&#34;&gt; &lt;/span&gt;&lt;span style=&#34;color:#998;font-style:italic&#34;&gt;# do this exactly&lt;/span&gt;&lt;span style=&#34;color:#bbb&#34;&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#bbb&#34;&gt;&lt;/span&gt;&lt;span style=&#34;color:#555&#34;&gt;---&lt;/span&gt;&lt;span style=&#34;color:#bbb&#34;&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;Finally, add a link to your blog in your upper navbar so people can actually find it! Do this by editing &lt;code&gt;_site.yml&lt;/code&gt; one last time (remember, since my listing &lt;code&gt;.Rmd&lt;/code&gt; is named &lt;code&gt;blog.Rmd&lt;/code&gt;, then the href I want to link to is &lt;code&gt;blog.html&lt;/code&gt;):&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-yaml&#34; data-lang=&#34;yaml&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#000080&#34;&gt;navbar&lt;/span&gt;:&lt;span style=&#34;color:#bbb&#34;&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#bbb&#34;&gt;  &lt;/span&gt;&lt;span style=&#34;color:#000080&#34;&gt;right&lt;/span&gt;:&lt;span style=&#34;color:#bbb&#34;&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#bbb&#34;&gt;    &lt;/span&gt;- &lt;span style=&#34;color:#000080&#34;&gt;text&lt;/span&gt;:&lt;span style=&#34;color:#bbb&#34;&gt; &lt;/span&gt;&lt;span style=&#34;color:#d14&#34;&gt;&amp;#34;Home&amp;#34;&lt;/span&gt;&lt;span style=&#34;color:#bbb&#34;&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#bbb&#34;&gt;      &lt;/span&gt;&lt;span style=&#34;color:#000080&#34;&gt;href&lt;/span&gt;:&lt;span style=&#34;color:#bbb&#34;&gt; &lt;/span&gt;index.html&lt;span style=&#34;color:#bbb&#34;&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#bbb&#34;&gt;    &lt;/span&gt;- &lt;span style=&#34;color:#000080&#34;&gt;text&lt;/span&gt;:&lt;span style=&#34;color:#bbb&#34;&gt; &lt;/span&gt;&lt;span style=&#34;color:#d14&#34;&gt;&amp;#34;About&amp;#34;&lt;/span&gt;&lt;span style=&#34;color:#bbb&#34;&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#bbb&#34;&gt;      &lt;/span&gt;&lt;span style=&#34;color:#000080&#34;&gt;href&lt;/span&gt;:&lt;span style=&#34;color:#bbb&#34;&gt; &lt;/span&gt;about.html&lt;span style=&#34;color:#bbb&#34;&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#bbb&#34;&gt;    &lt;/span&gt;- &lt;span style=&#34;color:#000080&#34;&gt;text&lt;/span&gt;:&lt;span style=&#34;color:#bbb&#34;&gt; &lt;/span&gt;&lt;span style=&#34;color:#d14&#34;&gt;&amp;#34;Blog&amp;#34;&lt;/span&gt;&lt;span style=&#34;color:#bbb&#34;&gt;      &lt;/span&gt;&lt;span style=&#34;color:#998;font-style:italic&#34;&gt;# add&lt;/span&gt;&lt;span style=&#34;color:#bbb&#34;&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#bbb&#34;&gt;      &lt;/span&gt;&lt;span style=&#34;color:#000080&#34;&gt;href&lt;/span&gt;:&lt;span style=&#34;color:#bbb&#34;&gt; &lt;/span&gt;blog.html  &lt;span style=&#34;color:#bbb&#34;&gt; &lt;/span&gt;&lt;span style=&#34;color:#998;font-style:italic&#34;&gt;# add&lt;/span&gt;&lt;span style=&#34;color:#bbb&#34;&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;Now, admire your final polished product!&lt;/p&gt;
+&lt;video width=&#34;800&#34; height=&#34;400&#34; controls&gt;
+&lt;source src=&#34;final-site.mov&#34; type=&#34;video/mp4&#34;&gt;
+&lt;/video&gt;
+
+
+
+
+&lt;h2 id=&#34;switch-your-postcard&#34;&gt;Switch your postcard
+  &lt;a href=&#34;#switch-your-postcard&#34;&gt;&lt;svg class=&#34;anchor-symbol&#34; aria-hidden=&#34;true&#34; height=&#34;26&#34; width=&#34;26&#34; viewBox=&#34;0 0 22 22&#34; xmlns=&#34;http://www.w3.org/2000/svg&#34;&gt;
+      &lt;path d=&#34;M0 0h24v24H0z&#34; fill=&#34;currentColor&#34;&gt;&lt;/path&gt;
+      &lt;path d=&#34;M3.9 12c0-1.71 1.39-3.1 3.1-3.1h4V7H7c-2.76.0-5 2.24-5 5s2.24 5 5 5h4v-1.9H7c-1.71.0-3.1-1.39-3.1-3.1zM8 13h8v-2H8v2zm9-6h-4v1.9h4c1.71.0 3.1 1.39 3.1 3.1s-1.39 3.1-3.1 3.1h-4V17h4c2.76.0 5-2.24 5-5s-2.24-5-5-5z&#34;&gt;&lt;/path&gt;
+    &lt;/svg&gt;&lt;/a&gt;
+&lt;/h2&gt;
+&lt;p&gt;Let&amp;rsquo;s say you decide you want to switch it up and use the &lt;code&gt;trestles&lt;/code&gt; theme, instead of &lt;code&gt;jolla&lt;/code&gt;. Easy. Open up your &lt;code&gt;index.Rmd&lt;/code&gt; and find these lines in the YAML:&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-yaml&#34; data-lang=&#34;yaml&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#555&#34;&gt;---&lt;/span&gt;&lt;span style=&#34;color:#bbb&#34;&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#bbb&#34;&gt;&lt;/span&gt;&lt;span style=&#34;color:#000080&#34;&gt;output&lt;/span&gt;:&lt;span style=&#34;color:#bbb&#34;&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#bbb&#34;&gt;  &lt;/span&gt;postcards::jolla&lt;span style=&#34;color:#bbb&#34;&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#bbb&#34;&gt;&lt;/span&gt;&lt;span style=&#34;color:#555&#34;&gt;---&lt;/span&gt;&lt;span style=&#34;color:#bbb&#34;&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;And change to:&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-yaml&#34; data-lang=&#34;yaml&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#555&#34;&gt;---&lt;/span&gt;&lt;span style=&#34;color:#bbb&#34;&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#bbb&#34;&gt;&lt;/span&gt;&lt;span style=&#34;color:#000080&#34;&gt;output&lt;/span&gt;:&lt;span style=&#34;color:#bbb&#34;&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#bbb&#34;&gt;  &lt;/span&gt;postcards::trestles&lt;span style=&#34;color:#bbb&#34;&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#bbb&#34;&gt;&lt;/span&gt;&lt;span style=&#34;color:#555&#34;&gt;---&lt;/span&gt;&lt;span style=&#34;color:#bbb&#34;&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;Re-build your site!&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;final-trestles.png&#34; alt=&#34;&#34;&gt;&lt;/p&gt;
+
+
+
+
+&lt;h2 id=&#34;publishing&#34;&gt;Publishing
+  &lt;a href=&#34;#publishing&#34;&gt;&lt;svg class=&#34;anchor-symbol&#34; aria-hidden=&#34;true&#34; height=&#34;26&#34; width=&#34;26&#34; viewBox=&#34;0 0 22 22&#34; xmlns=&#34;http://www.w3.org/2000/svg&#34;&gt;
+      &lt;path d=&#34;M0 0h24v24H0z&#34; fill=&#34;currentColor&#34;&gt;&lt;/path&gt;
+      &lt;path d=&#34;M3.9 12c0-1.71 1.39-3.1 3.1-3.1h4V7H7c-2.76.0-5 2.24-5 5s2.24 5 5 5h4v-1.9H7c-1.71.0-3.1-1.39-3.1-3.1zM8 13h8v-2H8v2zm9-6h-4v1.9h4c1.71.0 3.1 1.39 3.1 3.1s-1.39 3.1-3.1 3.1h-4V17h4c2.76.0 5-2.24 5-5s-2.24-5-5-5z&#34;&gt;&lt;/path&gt;
+    &lt;/svg&gt;&lt;/a&gt;
+&lt;/h2&gt;
+&lt;p&gt;I won&amp;rsquo;t be able to cover all the publishing options here, but you can read up on the options for 
+&lt;a href=&#34;https://rstudio.github.io/distill/publish_website.html&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;publishing distill websites here&lt;/a&gt;. If you want to take a site like mine that you built, I recommend GitHub Pages. You can use the &lt;code&gt;usethis&lt;/code&gt; package to run:&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-r&#34; data-lang=&#34;r&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;usethis&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;::&lt;/span&gt;&lt;span style=&#34;color:#900;font-weight:bold&#34;&gt;use_git&lt;/span&gt;()
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;usethis&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;::&lt;/span&gt;&lt;span style=&#34;color:#900;font-weight:bold&#34;&gt;use_github&lt;/span&gt;()
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;div class=&#34;alert alert-note&#34;&gt;
+  &lt;div&gt;
+    I also just learned about the new 
+&lt;a href=&#34;https://usethis.r-lib.org/reference/use_github_pages.html&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;&lt;code&gt;usethis::use_github_pages()&lt;/code&gt;&lt;/a&gt; to turn on and/or (re)configure GitHub Pages!
+  &lt;/div&gt;
+&lt;/div&gt;
+&lt;p&gt;Then in the GitHub project, navigate over to &amp;ldquo;Settings&amp;rdquo; and &lt;em&gt;scroooooooll down&lt;/em&gt; to choose:&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;gh-pages.png&#34; alt=&#34;GitHub Pages settings for distill websites&#34; title=&#34;GitHub Pages settings for distill websites&#34;&gt;&lt;/p&gt;
+&lt;p&gt;For this to work, make sure your site is building to &lt;code&gt;docs/&lt;/code&gt; locally, and that you are committing and pushing the &lt;code&gt;docs/&lt;/code&gt; directory to GitHub.&lt;/p&gt;
+</description>
+    </item>
+    
+  </channel>
+</rss>
+
+

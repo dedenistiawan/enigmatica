@@ -1,0 +1,544 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>R on Alison Hill, PhD</title>
+    <link>http://localhost:4321/categories/r/</link>
+    <description>Recent content in R on Alison Hill, PhD</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en</language>
+    <lastBuildDate>Sat, 12 Dec 2020 00:00:00 +0000</lastBuildDate><atom:link href="http://localhost:4321/categories/r/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Hugo Page Bundles</title>
+      <link>http://localhost:4321/blog/2019-02-spoonful-bundles/</link>
+      <pubDate>Thu, 21 Feb 2019 00:00:00 +0000</pubDate>
+      
+      <guid>http://localhost:4321/blog/2019-02-spoonful-bundles/</guid>
+      <description>&lt;blockquote&gt;
+&lt;p&gt;&amp;ldquo;Just a spoonful of Hugo helps the blog go down.&amp;rdquo;&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;ul&gt;
+&lt;li&gt;me, only somewhat kidding&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;In this series, I&amp;rsquo;m sharing small spoonfuls of Hugo that I have learned that hopefully can help you get your site &lt;em&gt;UP&lt;/em&gt; (and even better- more efficient, more streamlined, more automated). You can read the previous posts about my &amp;ldquo;Spoonful of Hugo&amp;rdquo; series 
+&lt;a href=&#34;http://localhost:4321/post/2019-02-19-hugo-archetypes/&#34;&gt;about Hugo archetypes&lt;/a&gt; and 
+&lt;a href=&#34;http://localhost:4321/post/2019-02-19-hugo-netlify-toml/&#34;&gt;Hugo versions&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;This is my third post in this series and it is breaking news.&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://media.giphy.com/media/dZCdA82qa8d4xVIwm3/giphy.gif&#34; alt=&#34;&#34;&gt;&lt;/p&gt;
+
+
+
+
+&lt;h2 id=&#34;hugo-page-bundles&#34;&gt;Hugo Page Bundles
+  &lt;a href=&#34;#hugo-page-bundles&#34;&gt;&lt;svg class=&#34;anchor-symbol&#34; aria-hidden=&#34;true&#34; height=&#34;26&#34; width=&#34;26&#34; viewBox=&#34;0 0 22 22&#34; xmlns=&#34;http://www.w3.org/2000/svg&#34;&gt;
+      &lt;path d=&#34;M0 0h24v24H0z&#34; fill=&#34;currentColor&#34;&gt;&lt;/path&gt;
+      &lt;path d=&#34;M3.9 12c0-1.71 1.39-3.1 3.1-3.1h4V7H7c-2.76.0-5 2.24-5 5s2.24 5 5 5h4v-1.9H7c-1.71.0-3.1-1.39-3.1-3.1zM8 13h8v-2H8v2zm9-6h-4v1.9h4c1.71.0 3.1 1.39 3.1 3.1s-1.39 3.1-3.1 3.1h-4V17h4c2.76.0 5-2.24 5-5s-2.24-5-5-5z&#34;&gt;&lt;/path&gt;
+    &lt;/svg&gt;&lt;/a&gt;
+&lt;/h2&gt;
+&lt;p&gt;Well, not really breaking news, but you still may not know about it! Hugo v0.32 
+&lt;a href=&#34;https://gohugo.io/news/0.32-relnotes/&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;introduced&lt;/a&gt; a new feature called Page Bundles, as a way to organize the content files. Blogdown users rejoice that 
+&lt;a href=&#34;https://twitter.com/dvaughan32&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;Davis Vaughn&lt;/a&gt; posted an 
+&lt;a href=&#34;https://github.com/rstudio/blogdown/issues/351&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;issue&lt;/a&gt; on the rstudio/blogdown repo to enable this option, which Yihui added shortly before rstudio::conf 2019 🎉. Here is the snippet from the &lt;code&gt;NEWS.md&lt;/code&gt;:&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;&amp;ldquo;One benefit of using a page bundle instead of a normal page is that you can put resource files associated with the post (such as images) under the same directory of the post itself. This means you no longer have to put them under the &lt;code&gt;static/&lt;/code&gt; directory, which has been quite confusing to Hugo beginners.&amp;rdquo;&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;What does a blogdown/Hugo site begin to look like without page bundles? I think here is a representative example from 
+&lt;a href=&#34;https://github.com/tidyverse/tidyverse.org/tree/c0eb070017cab794029b8ed3ac518f6e1a245a2b/content/articles&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;tidyverse.org&lt;/a&gt; &lt;em&gt;(sorry tidyverse team- it&amp;rsquo;s not you, it&amp;rsquo;s the old Hugo).&lt;/em&gt;&lt;/p&gt;
+&lt;p&gt;For this team, they need an image for every post, which gets out of control pretty fast. Also, some ended up in 
+&lt;a href=&#34;https://github.com/tidyverse/tidyverse.org/tree/c0eb070017cab794029b8ed3ac518f6e1a245a2b/static/images&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;&lt;code&gt;static/&lt;/code&gt;&lt;/a&gt; too, organized by post (which I have done on my own blog, though not well or consistently).&lt;/p&gt;
+&lt;p&gt;What would it look like to use page bundles?&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-r&#34; data-lang=&#34;r&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;content&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;/&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;├── about
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;│   ├── index.md
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;├── posts
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;│   ├── &lt;span style=&#34;color:#099&#34;&gt;2015-07-23&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;-&lt;/span&gt;hi&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;-&lt;/span&gt;world
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;│   │   ├── bakers.csv
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;│   │   ├── image1.jpg
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;│   │   ├── image2.png
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;│   │   └── index.Rmd
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;│   └── &lt;span style=&#34;color:#099&#34;&gt;2015-07-24&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;-&lt;/span&gt;bye&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;-&lt;/span&gt;world
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;│       └── index.Rmd
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;One could call this bundled file structure &amp;ldquo;tidier&amp;rdquo; 🍱.&lt;/p&gt;
+&lt;p&gt;In the above, after serving site, &lt;code&gt;index.html&lt;/code&gt; files also get added to the bundle. In Hugo&amp;rsquo;s terms, these are 
+&lt;a href=&#34;https://gohugo.io/content-management/page-bundles/&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;leaf bundles&lt;/a&gt;. The resource files allowed in a bundle include page and non-page items like images, pdf, .csv files, etc.&lt;/p&gt;
+&lt;p&gt;This is instead of:&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-r&#34; data-lang=&#34;r&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;content&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;/&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;├── about
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;│   ├── index.md
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;├── posts
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;│   ├── &lt;span style=&#34;color:#099&#34;&gt;2015-07-23&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;-&lt;/span&gt;hi&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;-&lt;/span&gt;world.Rmd
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;│   ├── bakers.csv
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;│   ├── image1.jpg
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;│   ├── image2.png
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;│   └── &lt;span style=&#34;color:#099&#34;&gt;2015-07-24&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;-&lt;/span&gt;bye&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;-&lt;/span&gt;world.Rmd
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;When you create a new bundled post, the actual content of the post goes in the index file of a page bundle. So:&lt;/p&gt;
+&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;# not bundled post
+post/2015-07-23-hi-world.Rmd
+# bundled post
+post/2015-07-24-bye-world/index.Rmd
+&lt;/code&gt;&lt;/pre&gt;
+
+
+
+&lt;h2 id=&#34;bundle-me-blogdown&#34;&gt;Bundle Me, blogdown!
+  &lt;a href=&#34;#bundle-me-blogdown&#34;&gt;&lt;svg class=&#34;anchor-symbol&#34; aria-hidden=&#34;true&#34; height=&#34;26&#34; width=&#34;26&#34; viewBox=&#34;0 0 22 22&#34; xmlns=&#34;http://www.w3.org/2000/svg&#34;&gt;
+      &lt;path d=&#34;M0 0h24v24H0z&#34; fill=&#34;currentColor&#34;&gt;&lt;/path&gt;
+      &lt;path d=&#34;M3.9 12c0-1.71 1.39-3.1 3.1-3.1h4V7H7c-2.76.0-5 2.24-5 5s2.24 5 5 5h4v-1.9H7c-1.71.0-3.1-1.39-3.1-3.1zM8 13h8v-2H8v2zm9-6h-4v1.9h4c1.71.0 3.1 1.39 3.1 3.1s-1.39 3.1-3.1 3.1h-4V17h4c2.76.0 5-2.24 5-5s-2.24-5-5-5z&#34;&gt;&lt;/path&gt;
+    &lt;/svg&gt;&lt;/a&gt;
+&lt;/h2&gt;
+&lt;p&gt;First, read the previous post on setting up a 
+&lt;a href=&#34;http://localhost:4321/post/2019-02-19-hugo-netlify-toml/&#34;&gt;netlify.toml file&lt;/a&gt;. Since using Hugo page bundles depends on Hugo v0.32 or higher, you should go ahead and update hugo then update your netlify.toml with your updated version:&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-r&#34; data-lang=&#34;r&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;blogdown&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;::&lt;/span&gt;&lt;span style=&#34;color:#900;font-weight:bold&#34;&gt;update_hugo&lt;/span&gt;()
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;blogdown&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;::&lt;/span&gt;&lt;span style=&#34;color:#900;font-weight:bold&#34;&gt;hugo_version&lt;/span&gt;()
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;Now, let&amp;rsquo;s use the 
+&lt;a href=&#34;https://usethis.r-lib.org/&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;&lt;strong&gt;usethis&lt;/strong&gt; package&lt;/a&gt;.&lt;/p&gt;
+
+
+
+
+&lt;h3 id=&#34;project-specific-rprofile&#34;&gt;Project-specific .Rprofile
+  &lt;a href=&#34;#project-specific-rprofile&#34;&gt;&lt;svg class=&#34;anchor-symbol&#34; aria-hidden=&#34;true&#34; height=&#34;26&#34; width=&#34;26&#34; viewBox=&#34;0 0 22 22&#34; xmlns=&#34;http://www.w3.org/2000/svg&#34;&gt;
+      &lt;path d=&#34;M0 0h24v24H0z&#34; fill=&#34;currentColor&#34;&gt;&lt;/path&gt;
+      &lt;path d=&#34;M3.9 12c0-1.71 1.39-3.1 3.1-3.1h4V7H7c-2.76.0-5 2.24-5 5s2.24 5 5 5h4v-1.9H7c-1.71.0-3.1-1.39-3.1-3.1zM8 13h8v-2H8v2zm9-6h-4v1.9h4c1.71.0 3.1 1.39 3.1 3.1s-1.39 3.1-3.1 3.1h-4V17h4c2.76.0 5-2.24 5-5s-2.24-5-5-5z&#34;&gt;&lt;/path&gt;
+    &lt;/svg&gt;&lt;/a&gt;
+&lt;/h3&gt;
+&lt;p&gt;First, I&amp;rsquo;m going to demo here how to create a project-specific .Rprofile file- but know that you can do a user-level .Rprofile file too.&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-r&#34; data-lang=&#34;r&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#998;font-style:italic&#34;&gt;# install.packages(&amp;#34;usethis&amp;#34;) # uncomment this to install&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;usethis&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;::&lt;/span&gt;&lt;span style=&#34;color:#900;font-weight:bold&#34;&gt;edit_r_profile&lt;/span&gt;(scope &lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;=&lt;/span&gt; &lt;span style=&#34;color:#d14&#34;&gt;&amp;#34;project&amp;#34;&lt;/span&gt;)
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;These helpful messages &lt;em&gt;should&lt;/em&gt; print to your console: please note the &amp;ldquo;restart&amp;rdquo; reminder&amp;hellip;&lt;/p&gt;
+&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;&amp;gt; usethis::edit_r_profile(scope = &amp;#34;project&amp;#34;)
+● Restart R for changes to take effect
+✔ Setting active project to &amp;#39;/Users/alison/rprojs/alison.rbind.io&amp;#39;
+● Modify &amp;#39;.Rprofile&amp;#39;
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;Now you could add this to your file:&lt;/p&gt;
+&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;# in .Rprofile of the website project
+if (file.exists(&amp;#34;~/.Rprofile&amp;#34;)) {
+  base::sys.source(&amp;#34;~/.Rprofile&amp;#34;, envir = environment())
+}
+
+options(blogdown.new_bundle = TRUE)
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;The first code chunk above is from the 
+&lt;a href=&#34;https://bookdown.org/yihui/blogdown/global-options.html#global-options&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;blogdown book&lt;/a&gt;, where we describe a workaround for loading both user and project .Rprofile files (since R technically only reads one startup profile file).&lt;/p&gt;
+&lt;p&gt;If you don&amp;rsquo;t want this, you could add the blogdown options to your user .Rprofile instead using:&lt;/p&gt;
+&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;usethis::edit_r_profile(scope = &amp;#34;user&amp;#34;)
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;Heck, while you are at it, you could set a &lt;em&gt;bunch&lt;/em&gt; of options to make your blogdown life easier:&lt;/p&gt;
+&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;# in .Rprofile of the website project
+if (file.exists(&amp;#34;~/.Rprofile&amp;#34;)) {
+  base::sys.source(&amp;#34;~/.Rprofile&amp;#34;, envir = environment())
+}
+
+options(
+  blogdown.author = &amp;#34;Alison Hill&amp;#34;,
+  blogdown.ext = &amp;#34;.Rmd&amp;#34;,
+  blogdown.subdir = &amp;#34;post&amp;#34;,
+  blogdown.yaml.empty = TRUE,
+  blogdown.new_bundle = TRUE,
+  blogdown.title_case = TRUE
+)
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;For the blogdown-specific options, any of these prepopulate content in your &amp;ldquo;New Post&amp;rdquo; Addin (I told you to use this 
+&lt;a href=&#34;http://localhost:4321/post/2019-02-19-hugo-archetypes/&#34;&gt;here&lt;/a&gt;). There is a handy 
+&lt;a href=&#34;https://bookdown.org/yihui/blogdown/global-options.html&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;table&lt;/a&gt; from the blogdown book, summarized here:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;code&gt;blogdown.author&lt;/code&gt; = author of new posts&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;blogdown.ext&lt;/code&gt; = default extension of new posts (can also be &amp;ldquo;.md&amp;rdquo; or &amp;ldquo;.Rmarkdown&amp;rdquo;)&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;blogdown.subdir&lt;/code&gt; = theme-specific, you need to know your theme and content folder here&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;blogdown.yaml.empty&lt;/code&gt; = I told you to do that 
+&lt;a href=&#34;http://localhost:4321/post/2019-02-19-hugo-archetypes/&#34;&gt;here&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;blogdown.new_bundle&lt;/code&gt; = what this whole post is about!&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;blogdown.title_case&lt;/code&gt; = &amp;ldquo;nEed More coFFee&amp;rdquo; &amp;ndash;&amp;gt; &amp;ldquo;Need More Coffee&amp;rdquo; (it tidies all your post titles to title case)&lt;/li&gt;
+&lt;/ul&gt;
+
+
+
+
+&lt;h3 id=&#34;the-newline-thing&#34;&gt;The Newline Thing
+  &lt;a href=&#34;#the-newline-thing&#34;&gt;&lt;svg class=&#34;anchor-symbol&#34; aria-hidden=&#34;true&#34; height=&#34;26&#34; width=&#34;26&#34; viewBox=&#34;0 0 22 22&#34; xmlns=&#34;http://www.w3.org/2000/svg&#34;&gt;
+      &lt;path d=&#34;M0 0h24v24H0z&#34; fill=&#34;currentColor&#34;&gt;&lt;/path&gt;
+      &lt;path d=&#34;M3.9 12c0-1.71 1.39-3.1 3.1-3.1h4V7H7c-2.76.0-5 2.24-5 5s2.24 5 5 5h4v-1.9H7c-1.71.0-3.1-1.39-3.1-3.1zM8 13h8v-2H8v2zm9-6h-4v1.9h4c1.71.0 3.1 1.39 3.1 3.1s-1.39 3.1-3.1 3.1h-4V17h4c2.76.0 5-2.24 5-5s-2.24-5-5-5z&#34;&gt;&lt;/path&gt;
+    &lt;/svg&gt;&lt;/a&gt;
+&lt;/h3&gt;
+&lt;p&gt;Here is a &lt;strong&gt;massive&lt;/strong&gt; .Rprofile gotcha: this file &lt;strong&gt;must&lt;/strong&gt; end with a blank line. So make sure you add an empty line at the end of the file, then save it, and restart your R session.&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;restart-r.png&#34; alt=&#34;&#34;&gt;&lt;/p&gt;
+&lt;p&gt;Want to make your general R life easier in the future? Follow Yihui&amp;rsquo;s 
+&lt;a href=&#34;https://yihui.name/en/2018/04/rprofile-trailing-newline/&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;advice&lt;/a&gt; and do this in RStudio to ensure that all source files end with a newline:&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://db.yihui.name/images/rstudio-newline.png&#34; alt=&#34;&#34;&gt;&lt;/p&gt;
+
+
+
+
+&lt;h2 id=&#34;use-bundles&#34;&gt;Use Bundles
+  &lt;a href=&#34;#use-bundles&#34;&gt;&lt;svg class=&#34;anchor-symbol&#34; aria-hidden=&#34;true&#34; height=&#34;26&#34; width=&#34;26&#34; viewBox=&#34;0 0 22 22&#34; xmlns=&#34;http://www.w3.org/2000/svg&#34;&gt;
+      &lt;path d=&#34;M0 0h24v24H0z&#34; fill=&#34;currentColor&#34;&gt;&lt;/path&gt;
+      &lt;path d=&#34;M3.9 12c0-1.71 1.39-3.1 3.1-3.1h4V7H7c-2.76.0-5 2.24-5 5s2.24 5 5 5h4v-1.9H7c-1.71.0-3.1-1.39-3.1-3.1zM8 13h8v-2H8v2zm9-6h-4v1.9h4c1.71.0 3.1 1.39 3.1 3.1s-1.39 3.1-3.1 3.1h-4V17h4c2.76.0 5-2.24 5-5s-2.24-5-5-5z&#34;&gt;&lt;/path&gt;
+    &lt;/svg&gt;&lt;/a&gt;
+&lt;/h2&gt;
+&lt;p&gt;After restarting R, try using the &amp;ldquo;New Post&amp;rdquo; Addin, this time &lt;em&gt;with feeling&lt;/em&gt;. There is &lt;em&gt;still&lt;/em&gt; one more gotcha though. Use the Addin to create your new bundled post. The only catch is that once you are looking at your exciting new post, you should &lt;strong&gt;delete the slug&lt;/strong&gt; in the YAML (I posted an issue about this 
+&lt;a href=&#34;https://github.com/rstudio/blogdown/issues/370&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;here&lt;/a&gt;).&lt;/p&gt;
+&lt;p&gt;The reason is that you want the link to your post to be:&lt;/p&gt;
+&lt;p&gt;&lt;code&gt;http://alison.rbind.io/post/2019-02-21-hugo-page-bundles/&lt;/code&gt;&lt;/p&gt;
+&lt;p&gt;If you include the slug, the link to your post will be:&lt;/p&gt;
+&lt;p&gt;&lt;code&gt;http://alison.rbind.io/post/2019-02-21-hugo-page-bundles/hugo-page-bundles&lt;/code&gt;&lt;/p&gt;
+&lt;p&gt;Another option is to update your &lt;code&gt;config.toml&lt;/code&gt; file with permalinks like 
+&lt;a href=&#34;https://bookdown.org/yihui/blogdown/configuration.html&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;Yihui suggests&lt;/a&gt; (but beware: this will change all your past links as well, requiring some 
+&lt;a href=&#34;https://yihui.name/en/2017/11/301-redirect/&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;Netlify redirects&lt;/a&gt;):&lt;/p&gt;
+&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;[permalinks]
+    post = &amp;#34;/:year/:month/:day/:slug/&amp;#34;
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;The default here from Hugo was &lt;code&gt;/post/:year-:month-:day-:slug/:slug/&lt;/code&gt;.&lt;/p&gt;
+&lt;p&gt;A small note: if you want to add relative links from a blog post to another post in your same blog. So &lt;code&gt;[this](/post/2019-02-19-hugo-archetypes/)&lt;/code&gt; becomes 
+&lt;a href=&#34;http://localhost:4321/post/2019-02-19-hugo-archetypes/&#34;&gt;this&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;Now, add images and data files to your ❤️&amp;rsquo;s content! But you may want to do one more thing&amp;hellip;&lt;/p&gt;
+
+
+
+
+&lt;h2 id=&#34;update-metadata&#34;&gt;Update Metadata
+  &lt;a href=&#34;#update-metadata&#34;&gt;&lt;svg class=&#34;anchor-symbol&#34; aria-hidden=&#34;true&#34; height=&#34;26&#34; width=&#34;26&#34; viewBox=&#34;0 0 22 22&#34; xmlns=&#34;http://www.w3.org/2000/svg&#34;&gt;
+      &lt;path d=&#34;M0 0h24v24H0z&#34; fill=&#34;currentColor&#34;&gt;&lt;/path&gt;
+      &lt;path d=&#34;M3.9 12c0-1.71 1.39-3.1 3.1-3.1h4V7H7c-2.76.0-5 2.24-5 5s2.24 5 5 5h4v-1.9H7c-1.71.0-3.1-1.39-3.1-3.1zM8 13h8v-2H8v2zm9-6h-4v1.9h4c1.71.0 3.1 1.39 3.1 3.1s-1.39 3.1-3.1 3.1h-4V17h4c2.76.0 5-2.24 5-5s-2.24-5-5-5z&#34;&gt;&lt;/path&gt;
+    &lt;/svg&gt;&lt;/a&gt;
+&lt;/h2&gt;
+&lt;p&gt;If you are anything like me, you may draft a blog post then come back to it later. For example, I started this post 2 days ago, but want to publish it today, 2021-05-24. The cool thing that was already built-in to blogdown is the &amp;ldquo;Update Metadata&amp;rdquo; Addin. With your blog post open (it should be called &lt;code&gt;index.Rmd&lt;/code&gt;)^[If no post is open, you will get an error: &lt;code&gt;Warning message: The current document does not seem to contain YAML metadata&lt;/code&gt;], click on Addins and select &amp;ldquo;Update Metadata&amp;rdquo;. You should see a window like this:&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;update-metadata.png&#34; alt=&#34;&#34;&gt;&lt;/p&gt;
+&lt;p&gt;Check the box to rename the file if the date has changed. RStudio will tell you your file has been deleted- which is technically true since the folder was renamed, but don&amp;rsquo;t panic!&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;file-deleted-warning.png&#34; alt=&#34;&#34;&gt;&lt;/p&gt;
+&lt;p&gt;Click YES. The &lt;code&gt;index.Rmd&lt;/code&gt; file that is now open should have an updated date field in the YAML. In your RStudio file viewer, you may want to click on &amp;ldquo;content&amp;rdquo; at this point then navigate back to view your post- then you will then see that the folder name now has an updated date too.&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>The netlify.toml File</title>
+      <link>http://localhost:4321/blog/2019-02-spoonful-netlify-toml/</link>
+      <pubDate>Wed, 20 Feb 2019 00:00:00 +0000</pubDate>
+      
+      <guid>http://localhost:4321/blog/2019-02-spoonful-netlify-toml/</guid>
+      <description>&lt;blockquote&gt;
+&lt;p&gt;&amp;ldquo;Just a spoonful of Hugo helps the blog go down.&amp;rdquo;&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;ul&gt;
+&lt;li&gt;me, only somewhat kidding&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;You can read the previous post about my &amp;ldquo;Spoonful of Hugo&amp;rdquo; series 
+&lt;a href=&#34;http://localhost:4321/post/2019-02-19-hugo-archetypes/&#34;&gt;here&lt;/a&gt;. In this series, I&amp;rsquo;m sharing small spoonfuls of Hugo that I have learned that hopefully can help you get your site &lt;em&gt;UP&lt;/em&gt; (and even better- more efficient, more streamlined, more automated).&lt;/p&gt;
+&lt;p&gt;This is my second post in this series, and it is a relatively quick one. Just do this. This one is a no-brainer.&lt;/p&gt;
+&lt;div class=&#34;alert alert-note&#34;&gt;
+  &lt;div&gt;
+    Thanks to 
+&lt;a href=&#34;https://twitter.com/dataandme&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;Mara Averick&lt;/a&gt; for alerting me that with Hugo version 0.54.0 and onward, there is a trailing zero at the end of 
+&lt;a href=&#34;https://github.com/gohugoio/hugo/issues/5639&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;Hugo versions now&lt;/a&gt;. So for versions before 0.54.0, use the format: 0.53; for later versions use 0.54.0 (0.54 will not work).
+  &lt;/div&gt;
+&lt;/div&gt;
+
+
+
+
+&lt;h2 id=&#34;use-netlify-to-deploy&#34;&gt;Use Netlify to Deploy
+  &lt;a href=&#34;#use-netlify-to-deploy&#34;&gt;&lt;svg class=&#34;anchor-symbol&#34; aria-hidden=&#34;true&#34; height=&#34;26&#34; width=&#34;26&#34; viewBox=&#34;0 0 22 22&#34; xmlns=&#34;http://www.w3.org/2000/svg&#34;&gt;
+      &lt;path d=&#34;M0 0h24v24H0z&#34; fill=&#34;currentColor&#34;&gt;&lt;/path&gt;
+      &lt;path d=&#34;M3.9 12c0-1.71 1.39-3.1 3.1-3.1h4V7H7c-2.76.0-5 2.24-5 5s2.24 5 5 5h4v-1.9H7c-1.71.0-3.1-1.39-3.1-3.1zM8 13h8v-2H8v2zm9-6h-4v1.9h4c1.71.0 3.1 1.39 3.1 3.1s-1.39 3.1-3.1 3.1h-4V17h4c2.76.0 5-2.24 5-5s-2.24-5-5-5z&#34;&gt;&lt;/path&gt;
+    &lt;/svg&gt;&lt;/a&gt;
+&lt;/h2&gt;
+&lt;p&gt;First, you&amp;rsquo;ll need to use Netlify! I am a very happy Netlify user and currently have approximately 33 sites deployed. To setup a new account, navigate to 
+&lt;a href=&#34;https://www.netlify.com/&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;Netlify&lt;/a&gt; and click on the &lt;em&gt;Sign Up&lt;/em&gt; link.&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://arm.rbind.io/slides/img/netlify-landing.png&#34; alt=&#34;&#34;&gt;&lt;/p&gt;
+&lt;p&gt;Sign up with &lt;em&gt;GitHub&lt;/em&gt; to connect your GitHub and Netlify accounts (as shown below).&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;netlify-sign-up.png&#34; alt=&#34;&#34;&gt;&lt;/p&gt;
+&lt;p&gt;If you use a different version control service, select GitLab or BitBucket instead.&lt;/p&gt;
+&lt;p&gt;The last step is to use the Netlify UI in browser do &lt;em&gt;New Site from Git&lt;/em&gt; &amp;gt; pick your repo. You&amp;rsquo;ll be prompted to fill in these fields, they are probably already filled in correctly for you:&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;netlify-deploy-settings.png&#34; alt=&#34;&#34;&gt;&lt;/p&gt;
+&lt;p&gt;The next part is the advanced build settings:&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;netlify-adv-build.png&#34; alt=&#34;&#34;&gt;&lt;/p&gt;
+&lt;p&gt;See that &lt;strong&gt;pro tip&lt;/strong&gt; about the netlify.toml? Let&amp;rsquo;s do that! You can leave these fields as is.&lt;/p&gt;
+
+
+
+
+&lt;h2 id=&#34;why-netlifytoml&#34;&gt;Why netlify.toml?
+  &lt;a href=&#34;#why-netlifytoml&#34;&gt;&lt;svg class=&#34;anchor-symbol&#34; aria-hidden=&#34;true&#34; height=&#34;26&#34; width=&#34;26&#34; viewBox=&#34;0 0 22 22&#34; xmlns=&#34;http://www.w3.org/2000/svg&#34;&gt;
+      &lt;path d=&#34;M0 0h24v24H0z&#34; fill=&#34;currentColor&#34;&gt;&lt;/path&gt;
+      &lt;path d=&#34;M3.9 12c0-1.71 1.39-3.1 3.1-3.1h4V7H7c-2.76.0-5 2.24-5 5s2.24 5 5 5h4v-1.9H7c-1.71.0-3.1-1.39-3.1-3.1zM8 13h8v-2H8v2zm9-6h-4v1.9h4c1.71.0 3.1 1.39 3.1 3.1s-1.39 3.1-3.1 3.1h-4V17h4c2.76.0 5-2.24 5-5s-2.24-5-5-5z&#34;&gt;&lt;/path&gt;
+    &lt;/svg&gt;&lt;/a&gt;
+&lt;/h2&gt;
+&lt;p&gt;In their 
+&lt;a href=&#34;https://www.netlify.com/docs/build-gotchas/&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;&lt;strong&gt;Build Gotchas&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;&amp;ldquo;If your build works locally, the next debugging step is to ensure the package versions we use to build match yours. You can find the settings for these in the 
+&lt;a href=&#34;https://www.netlify.com/docs/build-settings/&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;Build Settings&lt;/a&gt; doc. That’s the leading cause of build failure.&amp;rdquo;&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;Yes that is right- package version mismatches are the leading cause of build failure with Netlify. What does this look like for blogdown users? This means that you are running a version of Hugo locally that doesn&amp;rsquo;t match the version that Netlify is using to build your site. Most of the time, you are using a more recent version of Hugo than the one Netlify uses. This means that the files your theme relies on may be using newer Hugo functions that were introduced in later Hugo versions- functions that Netlify won&amp;rsquo;t be able to find working from an older Hugo version. You&amp;rsquo;ll get &lt;em&gt;all the build errors&lt;/em&gt;.&lt;/p&gt;
+&lt;p&gt;You can check your local Hugo version by running this code in your R console:&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-r&#34; data-lang=&#34;r&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;blogdown&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;::&lt;/span&gt;&lt;span style=&#34;color:#900;font-weight:bold&#34;&gt;hugo_version&lt;/span&gt;()
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;## [1] &amp;#39;0.80.0&amp;#39;
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;Now, we want Netlify to use this same version of Hugo when it builds your site. You can do this two ways:&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;Do this in your browser (👎)&lt;/li&gt;
+&lt;li&gt;Do this in your project root directory in a netlify.toml file (👍)&lt;/li&gt;
+&lt;/ol&gt;
+
+
+
+
+&lt;h2 id=&#34;add-the-netlifytoml-file&#34;&gt;Add the netlify.toml File
+  &lt;a href=&#34;#add-the-netlifytoml-file&#34;&gt;&lt;svg class=&#34;anchor-symbol&#34; aria-hidden=&#34;true&#34; height=&#34;26&#34; width=&#34;26&#34; viewBox=&#34;0 0 22 22&#34; xmlns=&#34;http://www.w3.org/2000/svg&#34;&gt;
+      &lt;path d=&#34;M0 0h24v24H0z&#34; fill=&#34;currentColor&#34;&gt;&lt;/path&gt;
+      &lt;path d=&#34;M3.9 12c0-1.71 1.39-3.1 3.1-3.1h4V7H7c-2.76.0-5 2.24-5 5s2.24 5 5 5h4v-1.9H7c-1.71.0-3.1-1.39-3.1-3.1zM8 13h8v-2H8v2zm9-6h-4v1.9h4c1.71.0 3.1 1.39 3.1 3.1s-1.39 3.1-3.1 3.1h-4V17h4c2.76.0 5-2.24 5-5s-2.24-5-5-5z&#34;&gt;&lt;/path&gt;
+    &lt;/svg&gt;&lt;/a&gt;
+&lt;/h2&gt;
+&lt;p&gt;Adding this file means that team members can see for themselves what version of Hugo you are running- if it is buried in the Netlify UI, you can&amp;rsquo;t see that information unless you sift through the public build logs (no thanks). Making the file as plain text in the root of your blogdown project directory means that:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;it is version controlled (yay!) and&lt;/li&gt;
+&lt;li&gt;other people who use/learn from/contribute to your blog can &lt;em&gt;actually&lt;/em&gt; reproduce your site with the same site configuration.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Bonus:&lt;/strong&gt; you can set the Hugo versions for branch deploys too.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;Here is an example from my own 
+&lt;a href=&#34;https://github.com/rbind/apreshill/blob/master/netlify.toml&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;netlify.toml&lt;/a&gt; file^[the leading zero matters for Hugo versions, so 0.53 works but .53 will not. For versions &amp;gt;= 0.54.0, the trailing zero also matters, so 0.54.0 works but 0.54 will not.]:&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-toml&#34; data-lang=&#34;toml&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;[build] 
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;  publish = &lt;span style=&#34;color:#d14&#34;&gt;&amp;#34;public&amp;#34;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;  command = &lt;span style=&#34;color:#d14&#34;&gt;&amp;#34;hugo&amp;#34;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;[context.production.environment]
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;  HUGO_VERSION = &lt;span style=&#34;color:#d14&#34;&gt;&amp;#34;0.54.0&amp;#34;&lt;/span&gt; &lt;span style=&#34;color:#998;font-style:italic&#34;&gt;# if older, use format: 0.53 (no trailing zero)&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;  HUGO_ENV = &lt;span style=&#34;color:#d14&#34;&gt;&amp;#34;production&amp;#34;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;  HUGO_ENABLEGITINFO = &lt;span style=&#34;color:#d14&#34;&gt;&amp;#34;true&amp;#34;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;  
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;[context.branch-deploy.environment]
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;  HUGO_VERSION = &lt;span style=&#34;color:#d14&#34;&gt;&amp;#34;0.54.0&amp;#34;&lt;/span&gt; &lt;span style=&#34;color:#998;font-style:italic&#34;&gt;# if older, use format: 0.53 (no trailing zero)&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;[context.deploy-preview.environment]
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;  HUGO_VERSION = &lt;span style=&#34;color:#d14&#34;&gt;&amp;#34;0.54.0&amp;#34;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;You can leave off the last two chunk if you don&amp;rsquo;t want to use 
+&lt;a href=&#34;https://www.netlify.com/blog/2017/11/16/get-full-control-over-your-deployed-branches/&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;branch deploys&lt;/a&gt; or 
+&lt;a href=&#34;https://www.netlify.com/blog/2016/07/20/introducing-deploy-previews-in-netlify/&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;preview deploys&lt;/a&gt;, but I ❤️ these two Netlify features and encourage you to try them out. I&amp;rsquo;ve starting drafting individual blog posts and tutorials in branches, and then I can see them rendered and share them for feedback without asking collaborators to clone and build the repository locally. It is &lt;strong&gt;lovely&lt;/strong&gt;. Every branch and pull request gets a link 🎉.&lt;/p&gt;
+&lt;p&gt;So add this file to your blogdown site repo and push to GitHub.&lt;/p&gt;
+&lt;p&gt;Note that, according to the 
+&lt;a href=&#34;https://www.netlify.com/docs/netlify-toml-reference/&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;Netlify docs&lt;/a&gt;:&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;&amp;ldquo;During a build, the following ordering determines which context covers a particular deploy: UI settings are overridden if a netlify.toml file is present in the root folder of the repo and there exists a setting for the same property/redirect/header in the toml file.&amp;rdquo;&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;If you look in your site&amp;rsquo;s Netlify deploy log, you should see entries like this:&lt;/p&gt;
+&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;7:47:13 PM: Found netlify.toml. Overriding site configuration
+7:47:13 PM: Starting build script
+7:47:13 PM: Installing dependencies
+7:47:14 PM: Started restoring cached node version
+7:47:17 PM: Finished restoring cached node version
+7:47:18 PM: v8.15.0 is already installed.
+7:47:19 PM: Now using node v8.15.0 (npm v6.4.1)
+7:47:19 PM: Attempting ruby version 2.3.6, read from environment
+7:47:20 PM: Using ruby version 2.3.6
+7:47:20 PM: Using PHP version 5.6
+7:47:20 PM: Installing Hugo 0.54.0
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;Success!&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>Hugo Archetypes</title>
+      <link>http://localhost:4321/blog/2019-02-spoonful-archetypes/</link>
+      <pubDate>Tue, 19 Feb 2019 00:00:00 +0000</pubDate>
+      
+      <guid>http://localhost:4321/blog/2019-02-spoonful-archetypes/</guid>
+      <description>&lt;blockquote&gt;
+&lt;p&gt;&amp;ldquo;Just a spoonful of Hugo helps the blog go down.&amp;rdquo;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;me, only somewhat kidding&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;As a happy blogdown user, a common story I hear from other #rstats users is that you try to change one little thing in Hugo, and the whole site breaks. 
+&lt;a href=&#34;https://en.wikipedia.org/wiki/Here_be_dragons&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;Here be dragons&lt;/a&gt; for folks who aren&amp;rsquo;t web developers.&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://upload.wikimedia.org/wikipedia/commons/e/ea/Carta_Marina.jpeg&#34; alt=&#34;&#34;&gt;&lt;/p&gt;
+&lt;p&gt;I&amp;rsquo;m here to tell you that there are small spoonfuls of Hugo that can help you get your site &lt;em&gt;UP&lt;/em&gt; (and even better- more efficient, more streamlined, more automated), even if you are not in the least bit interested in transitioning into a career in web development 😏.&lt;/p&gt;
+
+
+
+
+&lt;h2 id=&#34;my-project&#34;&gt;My Project
+  &lt;a href=&#34;#my-project&#34;&gt;&lt;svg class=&#34;anchor-symbol&#34; aria-hidden=&#34;true&#34; height=&#34;26&#34; width=&#34;26&#34; viewBox=&#34;0 0 22 22&#34; xmlns=&#34;http://www.w3.org/2000/svg&#34;&gt;
+      &lt;path d=&#34;M0 0h24v24H0z&#34; fill=&#34;currentColor&#34;&gt;&lt;/path&gt;
+      &lt;path d=&#34;M3.9 12c0-1.71 1.39-3.1 3.1-3.1h4V7H7c-2.76.0-5 2.24-5 5s2.24 5 5 5h4v-1.9H7c-1.71.0-3.1-1.39-3.1-3.1zM8 13h8v-2H8v2zm9-6h-4v1.9h4c1.71.0 3.1 1.39 3.1 3.1s-1.39 3.1-3.1 3.1h-4V17h4c2.76.0 5-2.24 5-5s-2.24-5-5-5z&#34;&gt;&lt;/path&gt;
+    &lt;/svg&gt;&lt;/a&gt;
+&lt;/h2&gt;
+&lt;p&gt;The education team at RStudio needs a website and we have a short wishlist:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;We want something we can maintain ourselves,&lt;/li&gt;
+&lt;li&gt;We want to look consistent with other RStudio sites on the outside, and&lt;/li&gt;
+&lt;li&gt;We want to be consistent on the inside so that we can get help if/when we need it.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;This led me to the current 
+&lt;a href=&#34;https://www.tidyverse.org/&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;tidyverse.org&lt;/a&gt; blogdown site. I wanted to make a copy of the site then customize for the education team, but I noticed that the 
+&lt;a href=&#34;https://github.com/tidyverse/tidyverse.org&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;source code&lt;/a&gt; for the site didn&amp;rsquo;t make it easy for me to copy the &lt;em&gt;structure&lt;/em&gt; of the site and edit only the &lt;em&gt;content&lt;/em&gt; of the site. This is one of the real strengths of Hugo, so I embarked on a learning adventure.&lt;/p&gt;
+&lt;center&gt;
+&lt;iframe src=&#34;https://giphy.com/embed/VGG8UY1nEl66Y&#34; width=&#34;480&#34; height=&#34;392&#34; frameBorder=&#34;0&#34; class=&#34;giphy-embed&#34; allowFullScreen&gt;&lt;/iframe&gt;&lt;p&gt;&lt;a href=&#34;https://giphy.com/gifs/adventure-latin-flinch-VGG8UY1nEl66Y&#34;&gt;via GIPHY&lt;/a&gt;&lt;/p&gt;
+&lt;/center&gt;
+&lt;p&gt;As a result, I have been living and breathing Hugo lately. As in, my husband now recognizes 
+&lt;a href=&#34;https://www.mikedane.com/&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;Mike Dane&amp;rsquo;s voice&lt;/a&gt;. You may not have have met Mike yet, but he appears in all the video tutorials in the 
+&lt;a href=&#34;https://gohugo.io/documentation/&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;Hugo docs&lt;/a&gt;. His screencasts have been really helpful to me, like this 
+&lt;a href=&#34;https://gohugo.io/templates/introduction/&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;one on templating&lt;/a&gt;. I&amp;rsquo;ve also spent a lot of time actually reading the 
+&lt;a href=&#34;https://gohugo.io/documentation/&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;docs&lt;/a&gt; (which are pretty good!), reading posts and answers on the 
+&lt;a href=&#34;https://discourse.gohugo.io/&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;Hugo discourse community site&lt;/a&gt;, and spelunking around inside the actual source code for two very well structured Hugo sites:&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;The actual 
+&lt;a href=&#34;https://gohugo.io/&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;Hugo&lt;/a&gt; site: 
+&lt;a href=&#34;https://github.com/gohugoio/hugoDocs&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;https://github.com/gohugoio/hugoDocs&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;The 
+&lt;a href=&#34;https://ropensci.org/&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;rOpenSci&lt;/a&gt; site: 
+&lt;a href=&#34;https://github.com/ropensci/roweb2&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;https://github.com/ropensci/roweb2&lt;/a&gt;&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;I&amp;rsquo;ll be using this post and other later posts to share some of the things I&amp;rsquo;ve learned about Hugo along the way. Mainly breadcrumbs to myself, but I hope these help other people too.&lt;/p&gt;
+&lt;p&gt;For reference, I&amp;rsquo;m using Hugo via the 
+&lt;a href=&#34;https://bookdown.org/yihui/blogdown/&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;blogdown R package&lt;/a&gt;, and within the 
+&lt;a href=&#34;https://www.rstudio.com/products/rstudio/#Desktop&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;RStudio IDE&lt;/a&gt;. These are my 
+&lt;a href=&#34;https://github.com/rstudio/blogdown&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;blogdown&lt;/a&gt; and Hugo versions:&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-r&#34; data-lang=&#34;r&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#900;font-weight:bold&#34;&gt;packageVersion&lt;/span&gt;(&lt;span style=&#34;color:#d14&#34;&gt;&amp;#34;blogdown&amp;#34;&lt;/span&gt;)
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;## [1] &amp;#39;1.3.1&amp;#39;
+&lt;/code&gt;&lt;/pre&gt;&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-r&#34; data-lang=&#34;r&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;blogdown&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;::&lt;/span&gt;&lt;span style=&#34;color:#900;font-weight:bold&#34;&gt;hugo_version&lt;/span&gt;()
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;## [1] &amp;#39;0.80.0&amp;#39;
+&lt;/code&gt;&lt;/pre&gt;
+
+
+
+&lt;h2 id=&#34;tldr-a-teaspoon-of-archetypes&#34;&gt;tl;dr: A Teaspoon of Archetypes
+  &lt;a href=&#34;#tldr-a-teaspoon-of-archetypes&#34;&gt;&lt;svg class=&#34;anchor-symbol&#34; aria-hidden=&#34;true&#34; height=&#34;26&#34; width=&#34;26&#34; viewBox=&#34;0 0 22 22&#34; xmlns=&#34;http://www.w3.org/2000/svg&#34;&gt;
+      &lt;path d=&#34;M0 0h24v24H0z&#34; fill=&#34;currentColor&#34;&gt;&lt;/path&gt;
+      &lt;path d=&#34;M3.9 12c0-1.71 1.39-3.1 3.1-3.1h4V7H7c-2.76.0-5 2.24-5 5s2.24 5 5 5h4v-1.9H7c-1.71.0-3.1-1.39-3.1-3.1zM8 13h8v-2H8v2zm9-6h-4v1.9h4c1.71.0 3.1 1.39 3.1 3.1s-1.39 3.1-3.1 3.1h-4V17h4c2.76.0 5-2.24 5-5s-2.24-5-5-5z&#34;&gt;&lt;/path&gt;
+    &lt;/svg&gt;&lt;/a&gt;
+&lt;/h2&gt;
+&lt;ol&gt;
+&lt;li&gt;
+&lt;p&gt;Add custom archetypes as &lt;code&gt;.md&lt;/code&gt; files to your project root directory (do &lt;em&gt;not&lt;/em&gt; touch the &lt;code&gt;archetypes&lt;/code&gt; folder in your &lt;code&gt;themes/archetypes&lt;/code&gt; folder).&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;If you don&amp;rsquo;t have that as an empty folder in your project root, make one, then add your archetype files to it.&lt;/li&gt;
+&lt;li&gt;If you are making a new blogdown site, I recommend using 
+&lt;a href=&#34;https://arm.rbind.io/slides/blogdown.html#start-here&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;these options&lt;/a&gt; to &lt;strong&gt;keep your empty directories&lt;/strong&gt;^[These setup options are newish to the blogdown package: https://github.com/rstudio-education/arm-workshop-rsc2019/issues/8]:&lt;/li&gt;
+&lt;/ul&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-r&#34; data-lang=&#34;r&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#900;font-weight:bold&#34;&gt;library&lt;/span&gt;(blogdown)
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#900;font-weight:bold&#34;&gt;new_site&lt;/span&gt;(theme &lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;=&lt;/span&gt; &lt;span style=&#34;color:#d14&#34;&gt;&amp;#34;jpescador/hugo-future-imperfect&amp;#34;&lt;/span&gt;, 
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;         sample &lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;=&lt;/span&gt; &lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;TRUE&lt;/span&gt;, 
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;         theme_example &lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;=&lt;/span&gt; &lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;TRUE&lt;/span&gt;, 
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;         empty_dirs &lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;=&lt;/span&gt; &lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;TRUE&lt;/span&gt;, &lt;span style=&#34;color:#998;font-style:italic&#34;&gt;# this!&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;         to_yaml &lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;=&lt;/span&gt; &lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;TRUE&lt;/span&gt;)
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt; &lt;div class=&#34;figure&#34;&gt;
+ &lt;img src=&#34;https://arm.rbind.io/slides/img/blogdown-workflow-wizard.png&#34; alt=&#34;Using the RStudio Project Wizard&#34;  /&gt;
+ &lt;p class=&#34;caption&#34;&gt;(\#fig:proj-wizard)Using the RStudio Project Wizard&lt;/p&gt;
+ &lt;/div&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Use the &amp;ldquo;New Post&amp;rdquo; Addin in RStudio to create &lt;strong&gt;any and all&lt;/strong&gt; new content for your site (not just &lt;em&gt;posts&lt;/em&gt;!). Be sure to use the handy dropdown menu to select from all the possible archetypes. Also, careful about the subdirectory here- some themes use &lt;em&gt;blog&lt;/em&gt;, others use &lt;em&gt;news&lt;/em&gt;, &lt;em&gt;articles&lt;/em&gt;, or &lt;em&gt;posts&lt;/em&gt;.&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://arm.rbind.io/slides/img/blogdown-newpost-bundle.png&#34; alt=&#34;&#34;&gt;&lt;!-- --&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Your archetypes, while only markdown files, &lt;em&gt;can&lt;/em&gt; include R code. When you use the Addin, be sure to choose &lt;code&gt;R Markdown (.Rmd)&lt;/code&gt; as the format so that you can run the code.&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Don&amp;rsquo;t miss this 
+&lt;a href=&#34;http://lcolladotor.github.io/2018/03/08/blogdown-archetype-template/&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;great blog post&lt;/a&gt; by my friend and the great educator 
+&lt;a href=&#34;https://twitter.com/fellgernon&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;Leo Collado-Torres&lt;/a&gt; on archetypes.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+
+
+
+
+&lt;h2 id=&#34;a-tablespoon-of-archetypes&#34;&gt;A Tablespoon of Archetypes
+  &lt;a href=&#34;#a-tablespoon-of-archetypes&#34;&gt;&lt;svg class=&#34;anchor-symbol&#34; aria-hidden=&#34;true&#34; height=&#34;26&#34; width=&#34;26&#34; viewBox=&#34;0 0 22 22&#34; xmlns=&#34;http://www.w3.org/2000/svg&#34;&gt;
+      &lt;path d=&#34;M0 0h24v24H0z&#34; fill=&#34;currentColor&#34;&gt;&lt;/path&gt;
+      &lt;path d=&#34;M3.9 12c0-1.71 1.39-3.1 3.1-3.1h4V7H7c-2.76.0-5 2.24-5 5s2.24 5 5 5h4v-1.9H7c-1.71.0-3.1-1.39-3.1-3.1zM8 13h8v-2H8v2zm9-6h-4v1.9h4c1.71.0 3.1 1.39 3.1 3.1s-1.39 3.1-3.1 3.1h-4V17h4c2.76.0 5-2.24 5-5s-2.24-5-5-5z&#34;&gt;&lt;/path&gt;
+    &lt;/svg&gt;&lt;/a&gt;
+&lt;/h2&gt;
+&lt;p&gt;One of the easiest things you can do for yourself is customize your site&amp;rsquo;s archetypes. From the 
+&lt;a href=&#34;https://gohugo.io/content-management/archetypes/&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;Hugo docs&lt;/a&gt;:&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;&amp;ldquo;Archetypes are templates used when creating new content.&amp;rdquo;&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;Right away when I cloned the tidyverse site, I noticed that there were instructions for how to contribute a new article (or blog post) in the 
+&lt;a href=&#34;https://github.com/tidyverse/tidyverse.org/blob/c0eb070017cab794029b8ed3ac518f6e1a245a2b/README.md&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;&lt;code&gt;README.md&lt;/code&gt;&lt;/a&gt; and in a separate 
+&lt;a href=&#34;https://github.com/tidyverse/tidyverse.org/blob/c0eb070017cab794029b8ed3ac518f6e1a245a2b/CONTRIBUTING.md&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;&lt;code&gt;CONTRIBUTING.md&lt;/code&gt;&lt;/a&gt; file. Then I noticed this 
+&lt;a href=&#34;https://github.com/tidyverse/tidyverse.org/issues/113&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;open GitHub issue&lt;/a&gt; from 
+&lt;a href=&#34;https://twitter.com/dataandme&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;Mara Averick&lt;/a&gt; (the tidyverse developer advocate) titled &amp;ldquo;Fix README/CONTRIBUTING so there&amp;rsquo;s one source of mechanical info?&amp;rdquo;.&lt;/p&gt;
+&lt;p&gt;I also noticed that there was no project root folder called &lt;code&gt;archetypes&lt;/code&gt;, which is where you would store your custom site archetype files as &lt;code&gt;.md&lt;/code&gt; files. In fact, there is no &lt;strong&gt;theme&lt;/strong&gt; folder as you might expect either, which is where you could view the default theme archetypes. Let&amp;rsquo;s look at some from other Hugo themes:&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;
+&lt;p&gt;The default Hugo theme for blogdown, 
+&lt;a href=&#34;https://github.com/yihui/hugo-lithium&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;Lithium&lt;/a&gt;, has just one archetype: 
+&lt;a href=&#34;https://github.com/yihui/hugo-lithium/tree/master/archetypes&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;&lt;code&gt;default.md&lt;/code&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-yaml&#34; data-lang=&#34;yaml&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#555&#34;&gt;---&lt;/span&gt;&lt;span style=&#34;color:#bbb&#34;&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#bbb&#34;&gt;&lt;/span&gt;&lt;span style=&#34;color:#000080&#34;&gt;title&lt;/span&gt;:&lt;span style=&#34;color:#bbb&#34;&gt; &lt;/span&gt;&lt;span style=&#34;color:#d14&#34;&gt;&amp;#39;&amp;#39;&lt;/span&gt;&lt;span style=&#34;color:#bbb&#34;&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#bbb&#34;&gt;&lt;/span&gt;&lt;span style=&#34;color:#000080&#34;&gt;date&lt;/span&gt;:&lt;span style=&#34;color:#bbb&#34;&gt; &lt;/span&gt;&lt;span style=&#34;color:#d14&#34;&gt;&amp;#39;&amp;#39;&lt;/span&gt;&lt;span style=&#34;color:#bbb&#34;&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#bbb&#34;&gt;&lt;/span&gt;&lt;span style=&#34;color:#555&#34;&gt;---&lt;/span&gt;&lt;span style=&#34;color:#bbb&#34;&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;In contrast, the 
+&lt;a href=&#34;https://github.com/gcushen/hugo-academic&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;Hugo Academic theme&lt;/a&gt; has A LOT: 
+&lt;a href=&#34;https://github.com/gcushen/hugo-academic/tree/master/archetypes;&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;https://github.com/gcushen/hugo-academic/tree/master/archetypes;&lt;/a&gt; here is the content of the one for new posts:&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-toml&#34; data-lang=&#34;toml&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#a61717;background-color:#e3d2d2&#34;&gt;+++&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;title = &lt;span style=&#34;color:#d14&#34;&gt;&amp;#34;{{ replace .Name &amp;#34;&lt;/span&gt;-&lt;span style=&#34;color:#d14&#34;&gt;&amp;#34; &amp;#34;&lt;/span&gt; &lt;span style=&#34;color:#d14&#34;&gt;&amp;#34; | title }}&amp;#34;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;subtitle = &lt;span style=&#34;color:#d14&#34;&gt;&amp;#34;&amp;#34;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#998;font-style:italic&#34;&gt;# Add a summary to display on homepage (optional).&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;summary = &lt;span style=&#34;color:#d14&#34;&gt;&amp;#34;&amp;#34;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;date = {{ .Date }}
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;draft = &lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;false&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#998;font-style:italic&#34;&gt;# Authors. Comma separated list, e.g. `[&amp;#34;Bob Smith&amp;#34;, &amp;#34;David Jones&amp;#34;]`.&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;authors = []
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#998;font-style:italic&#34;&gt;# Tags and categories&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#998;font-style:italic&#34;&gt;# For example, use `tags = []` for no tags, or the form `tags = [&amp;#34;A Tag&amp;#34;, &amp;#34;Another Tag&amp;#34;]` for one or more tags.&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;tags = []
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;categories = []
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#998;font-style:italic&#34;&gt;# Projects (optional).&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#998;font-style:italic&#34;&gt;#   Associate this post with one or more of your projects.&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#998;font-style:italic&#34;&gt;#   Simply enter your project&amp;#39;s folder or file name without extension.&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#998;font-style:italic&#34;&gt;#   E.g. `projects = [&amp;#34;deep-learning&amp;#34;]` references &lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#998;font-style:italic&#34;&gt;#   `content/project/deep-learning/index.md`.&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#998;font-style:italic&#34;&gt;#   Otherwise, set `projects = []`.&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#998;font-style:italic&#34;&gt;# projects = [&amp;#34;internal-project&amp;#34;]&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#998;font-style:italic&#34;&gt;# Featured image&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#998;font-style:italic&#34;&gt;# To use, add an image named `featured.jpg/png` to your page&amp;#39;s folder. &lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;[image]
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;  &lt;span style=&#34;color:#998;font-style:italic&#34;&gt;# Caption (optional)&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;  caption = &lt;span style=&#34;color:#d14&#34;&gt;&amp;#34;&amp;#34;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;  &lt;span style=&#34;color:#998;font-style:italic&#34;&gt;# Focal point (optional)&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;  &lt;span style=&#34;color:#998;font-style:italic&#34;&gt;# Options: Smart, Center, TopLeft, Top, TopRight, Left, Right, BottomLeft, Bottom, BottomRight&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;  focal_point = &lt;span style=&#34;color:#d14&#34;&gt;&amp;#34;&amp;#34;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#a61717;background-color:#e3d2d2&#34;&gt;+++&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;A quick note: you may have noticed differences in both the content between these two files but also the structure. The first is a 
+&lt;a href=&#34;https://learnxinyminutes.com/docs/yaml/&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;YAML file&lt;/a&gt;, the second is a 
+&lt;a href=&#34;https://learnxinyminutes.com/docs/toml/&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;TOML file&lt;/a&gt;. For blogdown users, you may want to use YAML. This is also why I recommend when you set up your site to use the &lt;code&gt;to_yaml = TRUE&lt;/code&gt; option (in the Project Wizard from figure &lt;a href=&#34;#fig:proj-wizard&#34;&gt;1&lt;/a&gt;, check the &amp;ldquo;Convert all metadata to YAML&amp;rdquo; box; otherwise, the exampleSite will contain TOML instead of YAML)^[If you end up with TOML in your content files, run this R code: &lt;code&gt;hugo_convert(to = &amp;quot;YAML&amp;quot;, unsafe = TRUE)&lt;/code&gt;].&lt;/p&gt;
+&lt;p&gt;If you read the original tidyverse 
+&lt;a href=&#34;https://github.com/tidyverse/tidyverse.org/blob/c0eb070017cab794029b8ed3ac518f6e1a245a2b/CONTRIBUTING.md&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;&lt;code&gt;CONTRIBUTING.md&lt;/code&gt;&lt;/a&gt; file, the instructions include a fair bit of R code that I would guess means a lot of copying and pasting into new posts. For example, the R Markdown setup chunk and the code for using &lt;code&gt;usethis::use_tidy_thanks()&lt;/code&gt; for package releases. I studied the contributing guidelines, and parsed three different &amp;ldquo;kinds&amp;rdquo; of articles that are commonly contributed, each with a different archetype:&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;
+&lt;p&gt;The &lt;code&gt;default.md&lt;/code&gt;- this is just for plain old markdown posts and basically sets up the YAML of the post to be the same as it is now (currently, there is no archetype dictating the content- it is pulling from a project-level 
+&lt;a href=&#34;https://github.com/tidyverse/tidyverse.org/blob/master/.Rprofile&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;.Rprofile&lt;/a&gt;).&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;A &lt;code&gt;default-rmarkdown.md&lt;/code&gt; which should only be used with an R Markdown post and provides only the setup chunk at the top.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;A &lt;code&gt;package-release.md&lt;/code&gt; which also should only be used with an R Markdown post and adds the &lt;code&gt;usethis::use_tidy_thanks()&lt;/code&gt; code chunk (this is pseudo-code so the default chunk option is set to &lt;code&gt;eval = FALSE&lt;/code&gt;).&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;So I drafted a 
+&lt;a href=&#34;https://github.com/tidyverse/tidyverse.org/pull/271&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;pull request&lt;/a&gt; that adds 
+&lt;a href=&#34;https://github.com/tidyverse/tidyverse.org/pull/271/commits/26a07ae881e57607e25ef0add77d0f5958a9c143&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;these three archetypes&lt;/a&gt; to the 
+&lt;a href=&#34;https://github.com/tidyverse/tidyverse.org&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;GitHub repository&lt;/a&gt; for the 
+&lt;a href=&#34;https://www.tidyverse.org/&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;tidyverse.org&lt;/a&gt;. Here is the &amp;ldquo;after&amp;rdquo; Addin view:&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;archetypes-after.png&#34; alt=&#34;&#34;&gt;&lt;/p&gt;
+&lt;p&gt;Here&amp;rsquo;s hoping Hugo archetypes make some things about adding new content to your site easier. There is no Hugo involved, other than realizing that Hugo will look first in your &lt;code&gt;themes/&amp;lt;THEME-NAME&amp;gt;/archetypes/&lt;/code&gt; folder, then in your project root &lt;code&gt;archetypes/&lt;/code&gt; folder next. 
+&lt;a href=&#34;https://twitter.com/apreshill/status/1083791211222073344&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;DO&lt;/a&gt; 
+&lt;a href=&#34;https://twitter.com/apreshill/status/1078494406301212672&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;NOT&lt;/a&gt; 
+&lt;a href=&#34;https://arm.rbind.io/slides/blogdown.html#35&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;TOUCH&lt;/a&gt; any files in your &lt;code&gt;themes/&lt;/code&gt; directory.^[Trust me on this one- if you ever want to update your site this will make that process way harder.]&lt;/p&gt;
+&lt;p&gt;You may want to set up archetypes for your blogdown site if you have a &amp;ldquo;signature&amp;rdquo; R setup chunk that loads your preferred &lt;code&gt;knitr&lt;/code&gt; chunk options, common libraries you always load at setup like &lt;code&gt;tidyverse&lt;/code&gt;, &lt;code&gt;ggplot2&lt;/code&gt; themes you prefer (&lt;code&gt;theme_minimal()&lt;/code&gt; FTW), etc. This may be especially helpful if you have multiple team members contributing to a single site and you want their posts to have a uniform setup. Then archetypes can be a real time- and sanity-saver. Get more ideas from Leo&amp;rsquo;s 
+&lt;a href=&#34;http://lcolladotor.github.io/2018/03/08/blogdown-archetype-template/&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;blog post&lt;/a&gt; on archetypes. You &lt;em&gt;can&lt;/em&gt; also make 
+&lt;a href=&#34;https://gohugo.io/content-management/archetypes/#directory-based-archetypes&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;directory based archetypes&lt;/a&gt; if you use Hugo page bundles, which is a topic of a future post.&lt;/p&gt;
+</description>
+    </item>
+    
+  </channel>
+</rss>
+
+

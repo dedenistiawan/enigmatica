@@ -1,0 +1,235 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Talk on Alison Hill, PhD</title>
+    <link>http://localhost:4321/categories/talk/</link>
+    <description>Recent content in Talk on Alison Hill, PhD</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en</language>
+    <lastBuildDate>Mon, 12 Apr 2021 18:00:00 +0000</lastBuildDate><atom:link href="http://localhost:4321/categories/talk/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Crafting Kind Tools</title>
+      <link>http://localhost:4321/talk/2021-ares-kind-tools/</link>
+      <pubDate>Mon, 12 Apr 2021 18:00:00 +0000</pubDate>
+      
+      <guid>http://localhost:4321/talk/2021-ares-kind-tools/</guid>
+      <description>
+
+
+
+&lt;h2 id=&#34;abstract&#34;&gt;Abstract:
+  &lt;a href=&#34;#abstract&#34;&gt;&lt;svg class=&#34;anchor-symbol&#34; aria-hidden=&#34;true&#34; height=&#34;26&#34; width=&#34;26&#34; viewBox=&#34;0 0 22 22&#34; xmlns=&#34;http://www.w3.org/2000/svg&#34;&gt;
+      &lt;path d=&#34;M0 0h24v24H0z&#34; fill=&#34;currentColor&#34;&gt;&lt;/path&gt;
+      &lt;path d=&#34;M3.9 12c0-1.71 1.39-3.1 3.1-3.1h4V7H7c-2.76.0-5 2.24-5 5s2.24 5 5 5h4v-1.9H7c-1.71.0-3.1-1.39-3.1-3.1zM8 13h8v-2H8v2zm9-6h-4v1.9h4c1.71.0 3.1 1.39 3.1 3.1s-1.39 3.1-3.1 3.1h-4V17h4c2.76.0 5-2.24 5-5s-2.24-5-5-5z&#34;&gt;&lt;/path&gt;
+    &lt;/svg&gt;&lt;/a&gt;
+&lt;/h2&gt;
+&lt;p&gt;We are all tool-makers. If you are an educator, your lessons are tools. You make them to be used by students. Students use your lessons to build mental models piece-by-piece, and learn processes step-by-step. If you are a researcher, you design experiments as tools to be used by participants. As a scientist, your analyses are tools used by other researchers to replicate and extend what you did. And finally, if you use software for making any of these tools, you are also using a tool that was crafted by someone else. Is it kind? What makes a tool kind? In this talk, I’ll share ideas and insights I’ve gained while working to make tools for everyday data science communication kinder for users. I’ll discuss some case studies from my work on free and open-source software at RStudio over the past 2.5 years.&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>Making R Markdown work better for you</title>
+      <link>http://localhost:4321/talk/2021-rmd-params/</link>
+      <pubDate>Wed, 24 Mar 2021 18:00:00 +0000</pubDate>
+      
+      <guid>http://localhost:4321/talk/2021-rmd-params/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Take a Sad Plot &amp; Make It Better</title>
+      <link>http://localhost:4321/talk/2021-rladies-jozi/</link>
+      <pubDate>Thu, 25 Feb 2021 12:00:00 +0000</pubDate>
+      
+      <guid>http://localhost:4321/talk/2021-rladies-jozi/</guid>
+      <description>&lt;p&gt;Alison Hill (I think her unofficial nickname is RMarkdown Whisperer) is going to talk to us on another of her strengths. Making things beautiful, and informative. She&amp;rsquo;s going to do her &amp;ldquo;Take a Sad Plot &amp;amp; Make it Better&amp;rdquo; talk, for us. In this talk, Alison will discuss one plot’s life cycle, from a sad Powerpoint slide to the finished product made with the ggplot2 package in R, and what she learnt from it.&lt;/p&gt;
+&lt;p&gt;Alison doesn&amp;rsquo;t need much introduction, she&amp;rsquo;ll be the main search result if you&amp;rsquo;re looking for RMarkdown info, xaringan inspiration, blogging and teaching online using R, among many other topics! Read about her here: 
+&lt;a href=&#34;https://alison.rbind.io/about/&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;https://alison.rbind.io/about/&lt;/a&gt;. If you&amp;rsquo;re on Twitter, you&amp;rsquo;d learn a lot by following 
+&lt;a href=&#34;https://twitter.com/apreshill&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;https://twitter.com/apreshill&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;Aside: Also have a look at Hugo Apéro, for some inspiration on building a presence online (
+&lt;a href=&#34;https://hugo-apero.netlify.app/%29&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;https://hugo-apero.netlify.app/)&lt;/a&gt;.&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>The download</title>
+      <link>http://localhost:4321/talk/2020-larug/</link>
+      <pubDate>Tue, 08 Dec 2020 20:30:00 +0000</pubDate>
+      
+      <guid>http://localhost:4321/talk/2020-larug/</guid>
+      <description>&lt;p&gt;The R Markdown family of packages has grown a lot over the past few years! While each new package is truly a bundle of joy, the past few months we have worked hard to make our family of existing packages more consistent, supportive, and intuitive. In this talk, I’ll share some of what we are up to lately and what to expect, with highlights from the distill, blogdown, bookdown, and xaringan packages.&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>InspiRing InstRuction: A panel on teaching #rstats for all audiences</title>
+      <link>http://localhost:4321/talk/2020-rladies-chicago-panel/</link>
+      <pubDate>Thu, 12 Nov 2020 09:00:00 +0000</pubDate>
+      
+      <guid>http://localhost:4321/talk/2020-rladies-chicago-panel/</guid>
+      <description>&lt;p&gt;Someone in your department, company, or class comes to you and says: &amp;ldquo;I want to learn R; where do I start?&amp;rdquo; Or, &amp;ldquo;how do I take my R skills to the next level?&amp;rdquo;&lt;/p&gt;
+&lt;p&gt;Come hear from 3 R-Ladies on how to make R pedagogy work for different groups of people!&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>Learning without a net</title>
+      <link>http://localhost:4321/talk/2020-latinr-learn/</link>
+      <pubDate>Wed, 07 Oct 2020 09:00:00 +0000</pubDate>
+      
+      <guid>http://localhost:4321/talk/2020-latinr-learn/</guid>
+      <description>&lt;p&gt;In this talk, I shared my experiences learning new data science skills on my own, and some broader strategies for learning when you have to do it by yourself.&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>Teaching in Production</title>
+      <link>http://localhost:4321/talk/2020-rstudio-tip/</link>
+      <pubDate>Wed, 23 Sep 2020 09:00:00 +0000</pubDate>
+      
+      <guid>http://localhost:4321/talk/2020-rstudio-tip/</guid>
+      <description>&lt;p&gt;This goal of this workshop is to equip educators with the tools that can help them make their teaching more robust and reproducible with R Markdown.&lt;/p&gt;
+&lt;p&gt;Trainings offered:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;2020-09-23&lt;/li&gt;
+&lt;li&gt;2020-09-20&lt;/li&gt;
+&lt;/ul&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>Sharing on Short Notice</title>
+      <link>http://localhost:4321/talk/2020-sharing-short-notice/</link>
+      <pubDate>Tue, 31 Mar 2020 09:00:00 +0000</pubDate>
+      
+      <guid>http://localhost:4321/talk/2020-sharing-short-notice/</guid>
+      <description>&lt;blockquote&gt;
+&lt;p&gt;This webinar was designed to help educators who needed to quickly transition to remote teaching due to COVID-19.&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;Educators create a lot of files for teaching- slides, exercises, solutions, assignments, data, figures- that all ultimately need to be shared with other people. Having a link for sharing your teaching materials can save you time and pain, but it is hard to get started if you’ve never shared your resources online before. In this webinar, we’ll give a tour of the R Markdown ecosystem for educators that you can start to use right away. We’ll show how it can help you make your teaching more shareable, reproducible, and resilient.&lt;/p&gt;
+&lt;p&gt;Read the accompanying Q&amp;amp;A blog post on the 
+&lt;a href=&#34;https://education.rstudio.com/blog/2020/04/sharing-on-short-notice/&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;RStudio Education blog&lt;/a&gt;.&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>Plot Twist: 10 Bake Offs, Visualized 11 Ways</title>
+      <link>http://localhost:4321/talk/2019-rladies-sydney/</link>
+      <pubDate>Fri, 04 Oct 2019 18:00:00 +0000</pubDate>
+      
+      <guid>http://localhost:4321/talk/2019-rladies-sydney/</guid>
+      <description>&lt;p&gt;Using data from 10 series of The Great British Bake Off, we will walk through eleven ways to visualize the same data using the &lt;code&gt;ggplot2&lt;/code&gt; package. We&amp;rsquo;ll talk a lot about geoms and variable mappings, but also about what it means to &amp;ldquo;tidy your data&amp;rdquo;, plus the new pivot functions in the &lt;code&gt;tidyr&lt;/code&gt; package.&lt;/p&gt;
+&lt;p&gt;You won&amp;rsquo;t need your laptops but you will get the most out of this talk if you know some basics about using &lt;code&gt;ggplot2&lt;/code&gt;. To brush up (or start learning now), you may want to play with the free RStudio.cloud 
+&lt;a href=&#34;https://rstudio.cloud/learn/primers/3&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;data visualization primer&lt;/a&gt; (you may use an existing Google or GitHub account to log in). Or of course you can check out 
+&lt;a href=&#34;https://rladiessydney.org/&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;R-Ladies Sydney&lt;/a&gt;&amp;rsquo;s own 
+&lt;a href=&#34;https://rladiessydney.org/post/2018/12/20/vizwhiz/&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;VizW(h)iz Module&lt;/a&gt; of 
+&lt;a href=&#34;https://rladiessydney.org/ryouwithme&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;#RYouWithMe&lt;/a&gt;!&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>The Art of Literate Projecting</title>
+      <link>http://localhost:4321/talk/2019-ysc-keynote/</link>
+      <pubDate>Wed, 02 Oct 2019 09:00:00 +0000</pubDate>
+      
+      <guid>http://localhost:4321/talk/2019-ysc-keynote/</guid>
+      <description>
+&lt;script src=&#34;http://localhost:4321/talk/2019-ysc-keynote/index_files/header-attrs/header-attrs.js&#34;&gt;&lt;/script&gt;
+&lt;link href=&#34;http://localhost:4321/talk/2019-ysc-keynote/index_files/anchor-sections/anchor-sections.css&#34; rel=&#34;stylesheet&#34; /&gt;
+&lt;script src=&#34;http://localhost:4321/talk/2019-ysc-keynote/index_files/anchor-sections/anchor-sections.js&#34;&gt;&lt;/script&gt;
+
+
+&lt;p&gt;“Literate programming” is an approach to writing software programs that weaves together the source code and documentation at the time of creation. The idea is to create programs that are easier for users to understand. But they are also easier for programmers to work on and maintain. In this talk, I will describe how data scientists can be inspired by this programming approach and start what I refer to as “literate projecting.” Literate projects are not only more pleasant to work on — they are also easier for others to discover and explore. In my experiences as a researcher and now a data scientist at RStudio, I’ve had the pleasure to work on many literate projects, and I’ve felt the pain of working on illiterate ones too. What is the difference? What are the benefits? Based on my experiences, I’ll share good literate projecting practices that have the potential to shift your mindset and reshape your workflow.&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>Take a Sad Plot &amp; Make It Better</title>
+      <link>http://localhost:4321/talk/2019-rladies-melbourne/</link>
+      <pubDate>Thu, 26 Sep 2019 18:15:00 +0000</pubDate>
+      
+      <guid>http://localhost:4321/talk/2019-rladies-melbourne/</guid>
+      <description>&lt;p&gt;In this talk, Alison will talk about one plot’s life cycle, from a sad Powerpoint slide to an Excel chart and finally to the finished product made with the ggplot2 package in R. Along the way, she will discuss why each version of the plot fails in different ways and how each iteration improved on the last one.&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://apreshill.github.io/ohsu-biodatavis/slides_files/figure-html/animated.gif&#34; alt=&#34;&#34;&gt;&lt;/p&gt;
+
+
+
+
+&lt;h1 id=&#34;latest-event&#34;&gt;Latest event
+  &lt;a href=&#34;#latest-event&#34;&gt;&lt;/a&gt;
+&lt;/h1&gt;
+&lt;p&gt;
+&lt;a href=&#34;https://alison.netlify.com/rlm-sad-plot-better/unsw&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;This talk&lt;/a&gt; was most recently given at the University of South Wales on 2019/10/04.&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>Teaching Students to Talk about Data Science</title>
+      <link>http://localhost:4321/talk/2019-jsm-talk-ds/</link>
+      <pubDate>Mon, 29 Jul 2019 14:00:01 -0700</pubDate>
+      
+      <guid>http://localhost:4321/talk/2019-jsm-talk-ds/</guid>
+      <description>
+&lt;script src=&#34;http://localhost:4321/talk/2019-jsm-talk-ds/index_files/header-attrs/header-attrs.js&#34;&gt;&lt;/script&gt;
+&lt;link href=&#34;http://localhost:4321/talk/2019-jsm-talk-ds/index_files/anchor-sections/anchor-sections.css&#34; rel=&#34;stylesheet&#34; /&gt;
+&lt;script src=&#34;http://localhost:4321/talk/2019-jsm-talk-ds/index_files/anchor-sections/anchor-sections.js&#34;&gt;&lt;/script&gt;
+
+
+&lt;p&gt;Data science educators have a unique opportunity to teach students the skills they need in their future careers. We know that practical skills matter, like being able to wrangle, explore, analyze, and visualize data (preferably using code), but what is easy to overlook is teaching students how to communicate about data science with other people. Being able to communicate about data, code, and insights gained are important skills we can strengthen in the classroom to make a real impact on students. I will talk about three ways to help strengthen data science communication skills that matter: self-reflection, iteration, and broadcasting. Self-reflection involves asking students to reflect on concepts and/or code that they struggled with to increase engagement with materials and independent problem-solving. Iteration involves revisiting old concepts/code, identifying areas for improvement, and making them better, either independently or in collaboration with peers or other experts/advanced users. Broadcasting involves practice (practice, practice, practice) “wrapping up” code with words into coherent narratives about what a data analysis or visualization means.&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>Using blogdown to Connect Beyond the Classroom</title>
+      <link>http://localhost:4321/talk/2019-sdss-blogdown/</link>
+      <pubDate>Thu, 30 May 2019 08:00:00 +0000</pubDate>
+      
+      <guid>http://localhost:4321/talk/2019-sdss-blogdown/</guid>
+      <description>
+
+
+
+</description>
+    </item>
+    
+    <item>
+      <title>Data Visualization in the Tidyverse</title>
+      <link>http://localhost:4321/talk/2018-uo-plotoff/</link>
+      <pubDate>Mon, 29 Oct 2018 16:00:00 +0000</pubDate>
+      
+      <guid>http://localhost:4321/talk/2018-uo-plotoff/</guid>
+      <description>&lt;p&gt;Using one dataset from The Great British Bake Off, I show eleven ways to visualize one dataset using eleven different versions of &amp;ldquo;tidy data.&amp;rdquo; Take-away messages:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Tidy data is the start of your data wrangling journey, not the end&lt;/li&gt;
+&lt;li&gt;There is not a single &amp;ldquo;tidy&amp;rdquo; version of a dataset&lt;/li&gt;
+&lt;li&gt;Tidy data &lt;em&gt;does&lt;/em&gt; make you more nimble!&lt;/li&gt;
+&lt;/ul&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>Big Magic with R: Creative Learning Beyond Fear</title>
+      <link>http://localhost:4321/talk/2018-cascadia-bigmagic/</link>
+      <pubDate>Sat, 02 Jun 2018 08:00:00 +0000</pubDate>
+      
+      <guid>http://localhost:4321/talk/2018-cascadia-bigmagic/</guid>
+      <description>&lt;p&gt;Inspired by the book “Big Magic: Creative Living Beyond Fear” by Elizabeth Gilbert, Alison will talk about the five essential ingredients needed to creatively learn R and why these elements are also essential for advanced users to take their R skills to the next level. You will hear practical advice for when, where, and how to start a project in R, and how your learning can add value- both to your own knowledge and to contribute to the larger community of R learners. Along the way, she will share recommended resources and evidence-based strategies for project-based learning. Alison’s background working with both new and advanced R users gives her a unique perspective on this topic.&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>Take a Sad Plot &amp; Make It Better</title>
+      <link>http://localhost:4321/talk/2018-ohsu-sad-plot-better/</link>
+      <pubDate>Fri, 06 Apr 2018 16:00:00 +0000</pubDate>
+      
+      <guid>http://localhost:4321/talk/2018-ohsu-sad-plot-better/</guid>
+      <description>&lt;p&gt;Join us on April 6 for a walk-through of how to take a sad plot and make it better by Alison Hill, who co-teaches the CS631 Data Visualization course. Alison will take us through one plot’s life cycle, from a sad Powerpoint slide to an Excel chart and finally to the finished product made with the ggplot2 package in R. We will discuss why each version of the plot fails in different ways, how each iteration improved on the last one, and which data visualization principles are at work in the final plot to communicate a clear scientific story.&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://apreshill.github.io/ohsu-biodatavis/slides_files/figure-html/animated.gif&#34; alt=&#34;&#34;&gt;&lt;/p&gt;
+&lt;p&gt;Following this, Eric Earl (Senior RA in the DCAN Labs) will show a case study of visualization in neuroimaging research.&lt;/p&gt;
+</description>
+    </item>
+    
+  </channel>
+</rss>
+
+

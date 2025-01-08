@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Meetup on Alison Hill, PhD</title>
+    <link>http://localhost:4321/categories/meetup/</link>
+    <description>Recent content in Meetup on Alison Hill, PhD</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en</language>
+    <lastBuildDate>Thu, 10 Nov 2022 13:00:00 +0000</lastBuildDate><atom:link href="http://localhost:4321/categories/meetup/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>The happiest notebooks on Earth</title>
+      <link>http://localhost:4321/talk/2022-canssi-happiest-nb/</link>
+      <pubDate>Thu, 10 Nov 2022 13:00:00 +0000</pubDate>
+      
+      <guid>http://localhost:4321/talk/2022-canssi-happiest-nb/</guid>
+      <description>&lt;p&gt;Notebooks hold a special place in every data scientist&amp;rsquo;s heart. They may treasure every moment creating their own, or commenting on others&amp;rsquo; notebooks. Or they may sincerely and truly hate notebooks. But notebooks are useful. How could we &amp;ldquo;imagineer&amp;rdquo; better notebooks? I’ve made and read hundreds of notebooks in the past decade. In this talk, I share key principles for developing happier notebooks – ones that are more fun to write, more fun to read, and more fun as an onramp to the next ride.&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>The happiest notebooks on Earth</title>
+      <link>http://localhost:4321/talk/2022-observable-happiest-nb/</link>
+      <pubDate>Thu, 27 Oct 2022 18:50:00 +0000</pubDate>
+      
+      <guid>http://localhost:4321/talk/2022-observable-happiest-nb/</guid>
+      <description>&lt;p&gt;Notebooks hold a special place in every data scientist&amp;rsquo;s heart. They may treasure every moment creating their own, or commenting on others&amp;rsquo; notebooks. Or they may sincerely and truly hate notebooks. But notebooks are useful. How could we &amp;ldquo;imagineer&amp;rdquo; better notebooks? I’ve made and read hundreds of notebooks in the past decade. In this talk, I share key principles for developing happier notebooks – ones that are more fun to write, more fun to read, and more fun as an onramp to the next ride.&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>The untold story of palmerpenguins</title>
+      <link>http://localhost:4321/talk/2022-user-penguins/</link>
+      <pubDate>Tue, 21 Jun 2022 08:45:00 +0000</pubDate>
+      
+      <guid>http://localhost:4321/talk/2022-user-penguins/</guid>
+      <description>&lt;p&gt;The &lt;strong&gt;palmerpenguins&lt;/strong&gt; R package provides a modern, approachable dataset containing body size measurements for three penguin species that nest on islands throughout the Palmer Archipelago, Western Antarctic Peninsula. Since &lt;strong&gt;palmerpenguins&lt;/strong&gt; was released on the Comprehensive R Archive Network (CRAN) in July 2020, the package has been downloaded over 340,000 times, was quickly adapted for use in other languages including Python&amp;rsquo;s seaborn package and Google&amp;rsquo;s TensorFlow datasets, and has become a go-to option for data science and statistics educators worldwide. In this talk, we share the untold story of the &lt;strong&gt;palmerpenguins&lt;/strong&gt; package. From original data collection on rocky Antarctic shores to CRAN submission and beyond, we describe the penguins&amp;rsquo; journey from polar research project to global teaching product. What started out as a simple methods paper for a dissertation project turned into a widely used data science product mainly because of initial efforts to make the data publicly available and easily accessible by others. The success of the &lt;strong&gt;palmerpenguins&lt;/strong&gt; R package underscores the importance of proper data archiving for unknown future applications.&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>Empowering women in data (science)</title>
+      <link>http://localhost:4321/talk/2022-rladies-cologne/</link>
+      <pubDate>Mon, 21 Feb 2022 10:00:00 +0000</pubDate>
+      
+      <guid>http://localhost:4321/talk/2022-rladies-cologne/</guid>
+      <description>&lt;p&gt;R-Ladies Cologne is kicking off with a roundtable on &amp;ldquo;Empowering Women in Data (Science)&amp;rdquo; on February 21, 2022, at 7 pm CET. We are excited to have four fantastic speakers from across the globe working in different fields to share their experiences, tips, tricks, and challenges with us! 🚀&lt;/p&gt;
+&lt;p&gt;Our four amazing panelists are:&lt;/p&gt;
+&lt;p&gt;✨ Alison Hill (Ph.D., Senior Data Scientist, AI Strategy &amp;amp; Innovation @IBM)&lt;/p&gt;
+&lt;p&gt;✨ Ana Carolina Leote (PhD Candidate @ Cologne Graduate School of Ageing Research)&lt;/p&gt;
+&lt;p&gt;✨ Angélica Becerra (Data Scientist @ cynkra GmbH)&lt;/p&gt;
+&lt;p&gt;✨ Nina Hauser (Head of Data Literacy @ CorrelAid e.V.)&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>Tidy your mental models</title>
+      <link>http://localhost:4321/talk/2022-rug-mskcc/</link>
+      <pubDate>Tue, 25 Jan 2022 09:00:00 +0000</pubDate>
+      
+      <guid>http://localhost:4321/talk/2022-rug-mskcc/</guid>
+      <description>&lt;p&gt;In this talk, I shared some lessons learned from teaching and learning tidymodels over the past two years.&lt;/p&gt;
+</description>
+    </item>
+    
+  </channel>
+</rss>
+
+

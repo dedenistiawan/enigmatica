@@ -1,0 +1,733 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr"><head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=4321&amp;path=livereload" data-no-instant defer></script>
+  
+                           
+     
+
+
+<meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<meta name="generator" content="Hugo 0.126.1">
+<title>Up and running with officedown | Alison Hill, PhD</title>
+
+
+<meta property="twitter:site" content="@apreshill">
+<meta property="twitter:creator" content="@apreshill">
+
+
+
+
+
+
+
+  
+    
+  
+<meta name="description" content="Inside you&#39;ll find my writing about products and projects I&#39;ve work on, along with my personal reflections about learning, teaching, and crafting kind tech tools.">
+
+
+<meta property="og:site_name" content="Alison Hill, PhD">
+<meta property="og:title" content="Up and running with officedown | Alison Hill, PhD">
+<meta property="og:description" content="Inside you&#39;ll find my writing about products and projects I&#39;ve work on, along with my personal reflections about learning, teaching, and crafting kind tech tools." />
+<meta property="og:type" content="page" />
+<meta property="og:url" content="http://localhost:4321/blog/2021-07-officedown/" />
+<meta property="og:locale" content="en">
+
+
+
+
+    
+        <meta property="og:image" content="http://localhost:4321/blog/2021-07-officedown/featured.jpg" >
+        <meta property="twitter:card" content="summary_large_image">
+        <meta name="twitter:image" content="http://localhost:4321/blog/2021-07-officedown/featured.jpg" >
+    
+    
+  
+  <meta itemprop="name" content="Up and running with officedown">
+  <meta itemprop="description" content="The most ‘in a nutshell’ version of the officedown package for knitting PowerPoint slides with R Markdown.">
+  <meta itemprop="datePublished" content="2021-07-27T00:00:00+00:00">
+  <meta itemprop="dateModified" content="2021-07-27T00:00:00+00:00">
+  <meta itemprop="wordCount" content="2249">
+  <meta itemprop="image" content="http://localhost:4321/blog/2021-07-officedown/featured.jpg">
+  <meta itemprop="keywords" content="Powerpoint,Rmarkdown">
+  
+  
+
+
+  <!--[if IE]><script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script><![endif]-->
+  <link rel="shortcut icon" href="/img/favicon.ico" type="image/x-icon">
+  <link rel="icon" href="/img/favicon.ico" type="image/x-icon">
+  
+  
+  <link rel="stylesheet" href="/style.main.min.6041db9742a65e35bbf4deca356e7c1ea7aca5585ac63be9b81a26a5904c8540.css" integrity="sha256-YEHbl0KmXjW79N7KNW58HqespVhaxjvpuBompZBMhUA=" media="screen">
+  
+  
+  <script src="/panelset.min.ed1ac24b6e16f4e2481e3d1d098ae66f5bc77438aef619e6e266d8ac5b00dc72.js" type="text/javascript"></script>
+  
+  
+  <script src="/main.min.b44d2e2e796cd9f2dd491e942e73c70ef631d82d2eb9c52c6ac45a1dbf16a403.js" type="text/javascript"></script>
+  
+  <script data-goatcounter="https://alison.goatcounter.com/count"
+        async src="//gc.zgo.at/count.js"></script>
+</head>
+<body>
+      <div class="grid-container single">
+<header class="site-header pt4 pb2 mb4 bb b--transparent ph5 headroom z-max" role="banner">
+  <nav class="site-nav db dt-l w-100" role="navigation">
+    <a class="site-brand db dtc-l v-mid link no-underline w-100 w-33-l tc tl-l" href="http://localhost:4321/" title="Home">
+      <img src="/img/penguin.png" class="dib db-l h2 w-auto" alt="Alison Hill, PhD">
+    </a>
+    <div class="site-links db dtc-l v-mid w-100 w-47-l tc tr-l mt3 mt0-l ttu tracked">
+      
+        
+        
+        
+      <a class="link f6 f5-l dib pv1 ph2 " href="/about/" title="About Alison Hill">About</a>
+      
+        
+        
+        
+      <a class="link f6 f5-l dib pv1 ph2 active" href="/blog/" title="Blog">Blog</a>
+      
+        
+        
+        
+      <a class="link f6 f5-l dib pv1 ph2 " href="/project/" title="Project Portfolio">Projects</a>
+      
+        
+        
+        
+      <a class="link f6 f5-l dib pv1 ph2 " href="/talk/" title="Talks">Talks</a>
+      
+      
+    </div>
+  </nav>
+</header>
+
+<main class="page-main pa4" role="main">
+  <section class="page-content mw7 center">
+    <article class="post-content pa0 ph4-l">
+      <header class="post-header">
+        <h1 class="f1 lh-solid measure-narrow mb3 fw4">Up and running with officedown</h1>
+        
+        <p class="f6 measure lh-copy mv1">By Alison Hill in <a href="http://localhost:4321/categories/rmarkdown">rmarkdown</a> </p>
+        <p class="f7 db mv0 ttu">July 27, 2021</p>
+
+      
+
+      </header>
+      <section class="post-body pt5 pb4">
+        <p>Lately, I&rsquo;ve been exploring the world of R Markdown through the lens of knitting to Microsoft output formats like Word and PowerPoint. I wanted to write down what I&rsquo;ve learned so far about the officedown package for making PowerPoint (PPT) slides with R Markdown. It is extremely powerful, and I&rsquo;ve now referred a lot of folks to it, but it was pretty hard for me to grasp at first. These notes are a rough account of my own personal 
+<a href="https://www.trychameleon.com/blog/friction-logs" target="_blank" rel="noopener">friction log</a> for the next time I use officedown.</p>
+
+
+
+
+<h2 id="why-use-officedown">Why use officedown?
+  <a href="#why-use-officedown"><svg class="anchor-symbol" aria-hidden="true" height="26" width="26" viewBox="0 0 22 22" xmlns="http://www.w3.org/2000/svg">
+      <path d="M0 0h24v24H0z" fill="currentColor"></path>
+      <path d="M3.9 12c0-1.71 1.39-3.1 3.1-3.1h4V7H7c-2.76.0-5 2.24-5 5s2.24 5 5 5h4v-1.9H7c-1.71.0-3.1-1.39-3.1-3.1zM8 13h8v-2H8v2zm9-6h-4v1.9h4c1.71.0 3.1 1.39 3.1 3.1s-1.39 3.1-3.1 3.1h-4V17h4c2.76.0 5-2.24 5-5s-2.24-5-5-5z"></path>
+    </svg></a>
+</h2>
+<p>Why use it? To knit to Microsoft PowerPoint (and Word). Naturally, you might ask, but Alison- there is an <code>rmarkdown::powerpoint_presentation</code> output format already. Yes 
+<a href="https://pkgs.rstudio.com/rmarkdown/reference/powerpoint_presentation.html" target="_blank" rel="noopener">there is</a>.</p>
+<p>Here is a great use case for not using that format though, from 
+<a href="https://www.pipinghotdata.com/about.html" target="_blank" rel="noopener">Shannon Pileggi</a>:</p>
+<blockquote>
+<p>&ldquo;I don&rsquo;t knit directly to ppt b/c editable graphics are key for finishing touches in our deliverables. If we could knit to powerpoint with an editable graphics option like in officer that would be a great feature.&rdquo;</p>
+<p>
+<a href="https://github.com/rstudio/rmarkdown/issues/2158" target="_blank" rel="noopener">Issue thread</a></p>
+</blockquote>
+<p>So officedown is definitely the answer for many users who wish to go beyond what the rmarkdown package can offer. For more on editable graphic workflows with R, Shannon has a 
+<a href="https://www.pipinghotdata.com/posts/2020-09-22-exporting-editable-ggplot-graphics-to-powerpoint-with-officer-and-purrr/" target="_blank" rel="noopener">great blog post</a>.</p>
+
+
+
+
+<h2 id="what-is-officedown">What is officedown?
+  <a href="#what-is-officedown"><svg class="anchor-symbol" aria-hidden="true" height="26" width="26" viewBox="0 0 22 22" xmlns="http://www.w3.org/2000/svg">
+      <path d="M0 0h24v24H0z" fill="currentColor"></path>
+      <path d="M3.9 12c0-1.71 1.39-3.1 3.1-3.1h4V7H7c-2.76.0-5 2.24-5 5s2.24 5 5 5h4v-1.9H7c-1.71.0-3.1-1.39-3.1-3.1zM8 13h8v-2H8v2zm9-6h-4v1.9h4c1.71.0 3.1 1.39 3.1 3.1s-1.39 3.1-3.1 3.1h-4V17h4c2.76.0 5-2.24 5-5s-2.24-5-5-5z"></path>
+    </svg></a>
+</h2>
+<p>It is a package whose goal is to allows users to write Word and Powerpoint documents using R Markdown. Install from CRAN:</p>
+<div class="highlight"><pre tabindex="0" style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-r" data-lang="r"><span style="display:flex;"><span><span style="color:#900;font-weight:bold">install.packages</span>(<span style="color:#d14">&#34;officedown&#34;</span>)
+</span></span></code></pre></div><p>(It will also download the officer package for you).</p>
+<p>Note that the GitHub page for this package does not include an <strong>Issues</strong> tab: 
+<a href="https://github.com/davidgohel/officedown" target="_blank" rel="noopener">https://github.com/davidgohel/officedown</a> This means there is no way for users to file bug reports, feature requests, etc. This is definitely a developer&rsquo;s choice, but I&rsquo;m not sure how to find a community of users for officedown questions or to get help if you suspect a bug. RStudio Community has a tag but only two posts as of today, one of which was asked by an RStudio employee and never answered &#x1f62d; : 
+<a href="https://community.rstudio.com/tag/officedown" target="_blank" rel="noopener">https://community.rstudio.com/tag/officedown</a></p>
+<p>Officedown works with editable graphics <em>by default</em>. This is huge plus for some workflows (like Shannon&rsquo;s), but also a huge gotcha because it depends on another package that I didn&rsquo;t know about and that officedown did not import for me: the 
+<a href="https://davidgohel.github.io/rvg/" target="_blank" rel="noopener">rvg package</a>. You must install it separately:</p>
+<div class="highlight"><pre tabindex="0" style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-r" data-lang="r"><span style="display:flex;"><span><span style="color:#900;font-weight:bold">install.packages</span>(<span style="color:#d14">&#34;rvg&#34;</span>)
+</span></span></code></pre></div><p>I suspect but cannot confirm that the name of the package is r + vg (vector graphics). Then there is a function in that package that you <em>must</em> use: <code>rvg::dml()</code>, which I can with certainty tell you stands for DrawingML.</p>
+<p>What is DrawingML? Oh I&rsquo;m so glad you asked, here is a link about it: 
+<a href="http://officeopenxml.com/drwOverview.php" target="_blank" rel="noopener">http://officeopenxml.com/drwOverview.php</a></p>
+<blockquote>
+<p>&ldquo;DrawingML is the language for defining graphical objects such as pictures, shapes, charts, and diagrams within ooxml documents.&rdquo;</p>
+</blockquote>
+<p>What is ooxml?</p>
+<blockquote>
+<p>&ldquo;Office Open XML, also known as OpenXML or OOXML, is an XML-based format for office documents, including word processing documents, spreadsheets, presentations, as well as charts, diagrams, shapes, and other graphical material.&rdquo;</p>
+</blockquote>
+<p>Want more weird acronyms?</p>
+<blockquote>
+<p>&ldquo;It is important to keep in mind that OOXML is not the same as Open Office XML or the Open Document Format (ODF) that underlies the OpenOffice.org and other open source office software. Office Open XML and Open Office XML or ODF are in some sense competing XML standards for office documents.&rdquo;</p>
+</blockquote>
+<p>What is XML?</p>
+<p>Learn here: 
+<a href="https://learnxinyminutes.com/docs/xml/" target="_blank" rel="noopener">https://learnxinyminutes.com/docs/xml/</a></p>
+<p>Still want more? A brief history here:</p>
+<p>
+<a href="https://en.wikipedia.org/wiki/Office_Open_XML_file_formats" target="_blank" rel="noopener">https://en.wikipedia.org/wiki/Office_Open_XML_file_formats</a></p>
+<p>Do you need to know much of these acronyms? No, not really, but you&rsquo;ll want <code>rvg::dml()</code> burned into your brain as you&rsquo;ll be typing it often.</p>
+
+
+
+
+<h2 id="where-are-the-docs-at">Where are the docs at?
+  <a href="#where-are-the-docs-at"><svg class="anchor-symbol" aria-hidden="true" height="26" width="26" viewBox="0 0 22 22" xmlns="http://www.w3.org/2000/svg">
+      <path d="M0 0h24v24H0z" fill="currentColor"></path>
+      <path d="M3.9 12c0-1.71 1.39-3.1 3.1-3.1h4V7H7c-2.76.0-5 2.24-5 5s2.24 5 5 5h4v-1.9H7c-1.71.0-3.1-1.39-3.1-3.1zM8 13h8v-2H8v2zm9-6h-4v1.9h4c1.71.0 3.1 1.39 3.1 3.1s-1.39 3.1-3.1 3.1h-4V17h4c2.76.0 5-2.24 5-5s-2.24-5-5-5z"></path>
+    </svg></a>
+</h2>
+<p>The creator of the officeverse collection of packages, which officedown is a part of, is named David Gohel. He has a bookdown book with a chapter on officedown, but it is only about Word rather than PPT output:</p>
+<p>
+<a href="https://ardata-fr.github.io/officeverse/officedown-for-word.html" target="_blank" rel="noopener">https://ardata-fr.github.io/officeverse/officedown-for-word.html</a></p>
+<p>For this reason alone, you may not realize you can use officedown to knit to PPT! I certainly didn&rsquo;t until my colleague 
+<a href="https://cderv.rbind.io/about/" target="_blank" rel="noopener">Christophe Dervieux</a> gave me enough support to try it on my own.</p>
+<p>Here is the documentation for the PPT output format, although I found it minimally helpful:
+
+<a href="https://davidgohel.github.io/officedown/reference/rpptx_document.html" target="_blank" rel="noopener">https://davidgohel.github.io/officedown/reference/rpptx_document.html</a></p>
+<p>I also found this video from a recent meetup by the package author helpful to watch:</p>
+
+
+    
+    <div style="position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden;">
+      <iframe allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen="allowfullscreen" loading="eager" referrerpolicy="strict-origin-when-cross-origin" src="https://www.youtube-nocookie.com/embed/sWDhPI8gKGg?autoplay=0&controls=1&end=0&loop=0&mute=0&start=0" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; border:0;" title="YouTube video"
+      ></iframe>
+    </div>
+
+
+
+
+
+<h2 id="so-how-do-i-use-it">So how do I use it?
+  <a href="#so-how-do-i-use-it"><svg class="anchor-symbol" aria-hidden="true" height="26" width="26" viewBox="0 0 22 22" xmlns="http://www.w3.org/2000/svg">
+      <path d="M0 0h24v24H0z" fill="currentColor"></path>
+      <path d="M3.9 12c0-1.71 1.39-3.1 3.1-3.1h4V7H7c-2.76.0-5 2.24-5 5s2.24 5 5 5h4v-1.9H7c-1.71.0-3.1-1.39-3.1-3.1zM8 13h8v-2H8v2zm9-6h-4v1.9h4c1.71.0 3.1 1.39 3.1 3.1s-1.39 3.1-3.1 3.1h-4V17h4c2.76.0 5-2.24 5-5s-2.24-5-5-5z"></path>
+    </svg></a>
+</h2>
+<p>The new output format officedown gives you is:</p>
+<div class="highlight"><pre tabindex="0" style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-.yaml" data-lang=".yaml"><span style="display:flex;"><span><span style="color:#555">---</span><span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb"></span><span style="color:#000080">output</span>:<span style="color:#bbb"> </span>officedown::rpptx_document<span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb"></span><span style="color:#555">---</span><span style="color:#bbb">
+</span></span></span></code></pre></div><p>Christophe shared this link with me, and it helped lot: 
+<a href="https://github.com/davidgohel/officedown/blob/master/inst/examples/minimal_powerpoint.Rmd" target="_blank" rel="noopener">https://github.com/davidgohel/officedown/blob/master/inst/examples/minimal_powerpoint.Rmd</a></p>
+<p>I didn&rsquo;t realize at first that the package contains built-in R Markdown templates, which is now where I wish I had started. Use RStudio to access: <em>File &gt; New File &gt; R Markdown &gt; From Template</em> then find:</p>
+<img src="template.png" width="662" />
+<p>Once you are inside, go ahead and knit freely. I also recommend loading up a reference template sooner rather than later so you aren&rsquo;t looking at that default deck for long. Here is how you add a reference template:</p>
+<div class="highlight"><pre tabindex="0" style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-.yaml" data-lang=".yaml"><span style="display:flex;"><span><span style="color:#555">---</span><span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb"></span><span style="color:#000080">output</span>:<span style="color:#bbb"> 
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb">  </span><span style="color:#000080">officedown::rpptx_document</span>:<span style="color:#bbb"> 
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb">    </span><span style="color:#000080">reference_doc</span>:<span style="color:#bbb"> </span>alison-template.pptx<span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb"></span><span style="color:#555">---</span><span style="color:#bbb">
+</span></span></span></code></pre></div><p>You can download my simple one here: 
+<a href="https://github.com/apreshill/rmd2ppt/tree/main/templates" target="_blank" rel="noopener">https://github.com/apreshill/rmd2ppt/tree/main/templates</a></p>
+
+
+
+
+<h2 id="a-brief-walk-through-the-template">A brief walk through the template
+  <a href="#a-brief-walk-through-the-template"><svg class="anchor-symbol" aria-hidden="true" height="26" width="26" viewBox="0 0 22 22" xmlns="http://www.w3.org/2000/svg">
+      <path d="M0 0h24v24H0z" fill="currentColor"></path>
+      <path d="M3.9 12c0-1.71 1.39-3.1 3.1-3.1h4V7H7c-2.76.0-5 2.24-5 5s2.24 5 5 5h4v-1.9H7c-1.71.0-3.1-1.39-3.1-3.1zM8 13h8v-2H8v2zm9-6h-4v1.9h4c1.71.0 3.1 1.39 3.1 3.1s-1.39 3.1-3.1 3.1h-4V17h4c2.76.0 5-2.24 5-5s-2.24-5-5-5z"></path>
+    </svg></a>
+</h2>
+<p>First, you have the packages loaded. Both <code>officedown</code> and <code>rvg</code> are critical here.</p>
+<div class="highlight"><pre tabindex="0" style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-r" data-lang="r"><span style="display:flex;"><span>```{r setup, include=FALSE}
+</span></span><span style="display:flex;"><span>knitr::opts_chunk$set(echo = FALSE, fig.cap = TRUE)
+</span></span><span style="display:flex;"><span>library(officedown)
+</span></span><span style="display:flex;"><span>library(ggplot2)
+</span></span><span style="display:flex;"><span>library(rvg)
+</span></span><span style="display:flex;"><span>```
+</span></span></code></pre></div><p>If you try to knit the same deck without the <code>officedown</code> package loaded, you will see slides like this:</p>
+<div class="figure">
+<img src="oops-plot1.png" alt="Two bad slides." width="49%" /><img src="oops-plot2.png" alt="Two bad slides." width="49%" />
+<p class="caption">Figure 1: Two bad slides.</p>
+</div>
+<p>With officedown loaded, you should instead see:</p>
+<img src="good-tabs.png" width="1065" />
+<p>Next up, you&rsquo;ll see slide number 1 (not to be confused with your title slide, which is populated from the YAML):</p>
+<div class="highlight"><pre tabindex="0" style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-md" data-lang="md"><span style="display:flex;"><span><span style="color:#aaa">## Table
+</span></span></span><span style="display:flex;"><span><span style="color:#aaa"></span>
+</span></span><span style="display:flex;"><span>```{r layout=&#39;Two Content&#39;, ph=officer::ph_location_left()}
+</span></span><span style="display:flex;"><span>head(cars)
+</span></span><span style="display:flex;"><span><span style="color:#d14">```
+</span></span></span><span style="display:flex;"><span><span style="color:#d14"></span>
+</span></span><span style="display:flex;"><span>```{r layout=&#39;Two Content&#39;, ph=officer::ph_location_right()}
+</span></span><span style="display:flex;"><span>head(iris)
+</span></span><span style="display:flex;"><span><span style="color:#d14">```</span>
+</span></span></code></pre></div><p>The above creates two columns of R-based content. You won&rsquo;t be able to add normal text to this slide. If you want normal text in one column opposite a plot, scroll down to this text in the template to see how:</p>
+<div class="highlight"><pre tabindex="0" style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-md" data-lang="md"><span style="display:flex;"><span><span style="color:#aaa">## ggplot in right column
+</span></span></span><span style="display:flex;"><span><span style="color:#aaa"></span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#000;font-weight:bold">-</span> Some
+</span></span><span style="display:flex;"><span><span style="color:#000;font-weight:bold">-</span> Bullets
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>```{r ph=officer::ph_location_right()}
+</span></span><span style="display:flex;"><span>mygg &lt;<span style="color:#000080">-</span> <span style="color:#008080">ggplot</span><span style="color:#a61717;background-color:#e3d2d2">(</span><span style="color:#008080">pressure</span><span style="color:#a61717;background-color:#e3d2d2">,</span> <span style="color:#008080">aes</span><span style="color:#a61717;background-color:#e3d2d2">(</span><span style="color:#008080">x </span><span style="color:#000;font-weight:bold">=</span> <span style="color:#d14">temperature,</span> <span style="color:#008080">y </span><span style="color:#000;font-weight:bold">=</span> <span style="color:#d14">pressure))</span> <span style="color:#a61717;background-color:#e3d2d2">+</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#008080">geom_point</span><span style="color:#a61717;background-color:#e3d2d2">()</span>
+</span></span><span style="display:flex;"><span><span style="color:#008080">dml</span><span style="color:#a61717;background-color:#e3d2d2">(</span><span style="color:#008080">ggobj </span><span style="color:#000;font-weight:bold">=</span> <span style="color:#d14">mygg)</span>
+</span></span><span style="display:flex;"><span><span style="color:#a61717;background-color:#e3d2d2">```</span> 
+</span></span></code></pre></div><p>Which produces:</p>
+<img src="two-col.png" width="1068" style="display: block; margin: auto;" />
+<p>If you only wanted to use Markdown in each column, you&rsquo;ll need to fall back on Pandoc&rsquo;s two column syntax:</p>
+<div class="highlight"><pre tabindex="0" style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-md" data-lang="md"><span style="display:flex;"><span><span style="color:#aaa">## Pandoc columns
+</span></span></span><span style="display:flex;"><span><span style="color:#aaa"></span>
+</span></span><span style="display:flex;"><span>:::: {.columns}
+</span></span><span style="display:flex;"><span>::: {.column}
+</span></span><span style="display:flex;"><span>over here
+</span></span><span style="display:flex;"><span>:::
+</span></span><span style="display:flex;"><span>::: {.column}
+</span></span><span style="display:flex;"><span>over there
+</span></span><span style="display:flex;"><span>:::
+</span></span><span style="display:flex;"><span>::::
+</span></span></code></pre></div><p>Before you get any further, let&rsquo;s explain these <code>ph</code> things.</p>
+
+
+
+
+<h3 id="placeholders">Placeholders
+  <a href="#placeholders"><svg class="anchor-symbol" aria-hidden="true" height="26" width="26" viewBox="0 0 22 22" xmlns="http://www.w3.org/2000/svg">
+      <path d="M0 0h24v24H0z" fill="currentColor"></path>
+      <path d="M3.9 12c0-1.71 1.39-3.1 3.1-3.1h4V7H7c-2.76.0-5 2.24-5 5s2.24 5 5 5h4v-1.9H7c-1.71.0-3.1-1.39-3.1-3.1zM8 13h8v-2H8v2zm9-6h-4v1.9h4c1.71.0 3.1 1.39 3.1 3.1s-1.39 3.1-3.1 3.1h-4V17h4c2.76.0 5-2.24 5-5s-2.24-5-5-5z"></path>
+    </svg></a>
+</h3>
+<p>These <code>ph</code> knitr code chunk options are part of the officedown package, so in order to use them you must load the package! <code>ph</code> stands for placeholder, and this is a specific way that Microsoft pours your 
+<a href="https://support.microsoft.com/en-us/office/add-edit-or-remove-a-placeholder-on-a-slide-layout-a8d93d28-66cb-43fd-9f9d-e12d0a7a1f06" target="_blank" rel="noopener">slide content into a PowerPoint template</a>.</p>
+<img src="ph.png" width="276" style="display: block; margin: auto;" />
+<p>It is essentially a bunch of rectangles on a slide, each called a placeholder. Placeholders typically can hold either text or an image, but not both. For example, in a typical PowerPoint slide like the one above, you can insert either text (often with bullets) or an image &ndash; but that is <strong>it</strong>! The title is text, and is a separate placeholder.</p>
+<p>Placeholder values are themselves functions from the officer package with optional function arguments. Now I personally feel that <code>officer::ph_location_left()</code> and <code>officer::ph_location_right()</code> are a little long to type over and over again, which you will. Obviously you could load the officer package at the top, but still that function name is lengthy. I don&rsquo;t have an answer for simplifying because there is no code completion for knitr chunk options. Maybe 
+<a href="https://github.com/gadenbuie/snippets" target="_blank" rel="noopener">snippets</a>?</p>
+<p>Technically you can do left vs right with <code>rmarkdown::powerpoint_presentation</code> too, but you have more options here:</p>
+<ul>
+<li><code>ph_location_type(type=&quot;body&quot;)</code></li>
+<li><code>ph_location_fullsize()</code></li>
+<li><code>ph_location(width = 2, height = 2, left = 2, top = 2)</code> (for example)</li>
+<li>More documented here: 
+<a href="https://davidgohel.github.io/officer/reference/index.html#section-slide-content" target="_blank" rel="noopener">https://davidgohel.github.io/officer/reference/index.html#section-slide-content</a></li>
+</ul>
+
+
+
+
+<h3 id="layouts">Layouts
+  <a href="#layouts"><svg class="anchor-symbol" aria-hidden="true" height="26" width="26" viewBox="0 0 22 22" xmlns="http://www.w3.org/2000/svg">
+      <path d="M0 0h24v24H0z" fill="currentColor"></path>
+      <path d="M3.9 12c0-1.71 1.39-3.1 3.1-3.1h4V7H7c-2.76.0-5 2.24-5 5s2.24 5 5 5h4v-1.9H7c-1.71.0-3.1-1.39-3.1-3.1zM8 13h8v-2H8v2zm9-6h-4v1.9h4c1.71.0 3.1 1.39 3.1 3.1s-1.39 3.1-3.1 3.1h-4V17h4c2.76.0 5-2.24 5-5s-2.24-5-5-5z"></path>
+    </svg></a>
+</h3>
+<p>The <code>layout</code> chunk option is harder. I think this name comes from the template you are using. To see your <em>actual</em> options, I recommend now using the officer package directly to <code>read_pptx()</code> of your template file, and the using <code>layout_summary()</code>:</p>
+<div class="highlight"><pre tabindex="0" style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-r" data-lang="r"><span style="display:flex;"><span><span style="color:#998;font-style:italic">## Seeing my layout options</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>This is handy, `officer::layout_summary()`
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>```{r echo=FALSE}
+</span></span><span style="display:flex;"><span>library(officer)
+</span></span><span style="display:flex;"><span>my_template &lt;- read_pptx(&#34;alison-template.pptx&#34;) 
+</span></span><span style="display:flex;"><span>layout_summary(my_template) %&gt;% knitr::kable()
+</span></span><span style="display:flex;"><span>```
+</span></span></code></pre></div><p>Here was my output:</p>
+<table>
+<thead>
+<tr>
+<th style="text-align:left">layout</th>
+<th style="text-align:left">master</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left">Title Slide</td>
+<td style="text-align:left">Office Theme</td>
+</tr>
+<tr>
+<td style="text-align:left">Title and Vertical Text</td>
+<td style="text-align:left">Office Theme</td>
+</tr>
+<tr>
+<td style="text-align:left">Vertical Title and Text</td>
+<td style="text-align:left">Office Theme</td>
+</tr>
+<tr>
+<td style="text-align:left">Title and Content</td>
+<td style="text-align:left">Office Theme</td>
+</tr>
+<tr>
+<td style="text-align:left">Section Header</td>
+<td style="text-align:left">Office Theme</td>
+</tr>
+<tr>
+<td style="text-align:left">Two Content</td>
+<td style="text-align:left">Office Theme</td>
+</tr>
+<tr>
+<td style="text-align:left">Comparison</td>
+<td style="text-align:left">Office Theme</td>
+</tr>
+<tr>
+<td style="text-align:left">Title Only</td>
+<td style="text-align:left">Office Theme</td>
+</tr>
+<tr>
+<td style="text-align:left">Blank</td>
+<td style="text-align:left">Office Theme</td>
+</tr>
+<tr>
+<td style="text-align:left">Content with Caption</td>
+<td style="text-align:left">Office Theme</td>
+</tr>
+<tr>
+<td style="text-align:left">Picture with Caption</td>
+<td style="text-align:left">Office Theme</td>
+</tr>
+</tbody>
+</table>
+<p>You can use any of these as valid <code>layout</code>s. This is another difference between <code>rmarkdown::powerpoint_presentation</code> which only supports four layouts:</p>
+<ol>
+<li>Title Slide</li>
+<li>Title and Content</li>
+<li>Section Header</li>
+<li>Two Content</li>
+</ol>
+
+
+
+
+<h3 id="new-slides">New slides
+  <a href="#new-slides"><svg class="anchor-symbol" aria-hidden="true" height="26" width="26" viewBox="0 0 22 22" xmlns="http://www.w3.org/2000/svg">
+      <path d="M0 0h24v24H0z" fill="currentColor"></path>
+      <path d="M3.9 12c0-1.71 1.39-3.1 3.1-3.1h4V7H7c-2.76.0-5 2.24-5 5s2.24 5 5 5h4v-1.9H7c-1.71.0-3.1-1.39-3.1-3.1zM8 13h8v-2H8v2zm9-6h-4v1.9h4c1.71.0 3.1 1.39 3.1 3.1s-1.39 3.1-3.1 3.1h-4V17h4c2.76.0 5-2.24 5-5s-2.24-5-5-5z"></path>
+    </svg></a>
+</h3>
+<p>You might be wondering at this point is &ldquo;how do I make new slides?&rdquo; and &ldquo;how does it know where a new slide starts?&rdquo; This format derives from <code>rmarkdown::powerpoint_presentation</code>, which derives from Pandoc. Pandoc documents 
+<a href="https://pandoc.org/MANUAL.html#structuring-the-slide-show" target="_blank" rel="noopener">slide separators</a> as follows:</p>
+<blockquote>
+<p>By default, the slide level is the highest heading level in the hierarchy that is followed immediately by content, and not another heading, somewhere in the document. In the example above, level-1 headings are always followed by level-2 headings, which are followed by content, so the slide level is 2. This default can be overridden using the &ndash;slide-level option.</p>
+<p>The document is carved up into slides according to the following rules:</p>
+<ol>
+<li>
+<p>A horizontal rule always starts a new slide.</p>
+</li>
+<li>
+<p>A heading at the slide level always starts a new slide.</p>
+</li>
+<li>
+<p>Headings below the slide level in the hierarchy create headings within a slide.</p>
+</li>
+<li>
+<p>Headings above the slide level in the hierarchy create “title slides,” which just contain the section title and help to break the slide show into sections. Non-slide content under these headings will be included on the title slide (for HTML slide shows) or in a subsequent slide with the same title (for beamer).</p>
+</li>
+<li>
+<p>A title page is constructed automatically from the document’s title block, if present. (In the case of beamer, this can be disabled by commenting out some lines in the default template.)</p>
+</li>
+</ol>
+</blockquote>
+<p>Clear? Right, yea it confuses me too every time.</p>
+<p>The default <code>slide_level</code> is 2, which means that you should expect to start new slides with <code>## My slide title</code>. Starting a slide with <code># A level 1 header</code> will create a section title slide, using your section header layout (see 
+<a href="#layouts">layouts above</a>), and none of your body text will be displayed. You could change this in your YAML, but I recommend keeping the default:</p>
+<div class="highlight"><pre tabindex="0" style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-.yaml" data-lang=".yaml"><span style="display:flex;"><span><span style="color:#555">---</span><span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb"></span><span style="color:#000080">output</span>:<span style="color:#bbb"> 
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb">  </span><span style="color:#000080">officedown::rpptx_document</span>:<span style="color:#bbb"> 
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb">    </span><span style="color:#000080">reference_doc</span>:<span style="color:#bbb"> </span>alison-template.pptx<span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb">    </span><span style="color:#000080">slide_level</span>:<span style="color:#bbb"> </span><span style="color:#099">2</span><span style="color:#bbb"> </span><span style="color:#998;font-style:italic"># default + recommended</span><span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb"></span><span style="color:#555">---</span><span style="color:#bbb">
+</span></span></span></code></pre></div><p>With that default, if you added:</p>
+<div class="highlight"><pre tabindex="0" style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-md" data-lang="md"><span style="display:flex;"><span><span style="color:#999"># Let&#39;s goooo
+</span></span></span><span style="display:flex;"><span><span style="color:#999"></span>
+</span></span><span style="display:flex;"><span><span style="color:#aaa">## Tables
+</span></span></span></code></pre></div><p>You would see:</p>
+<img src="title-slide.png" width="479" />
+<p>You cannot have normal body text on a section slide, so don&rsquo;t add anything between those two slides or Pandoc will helpfully split off a new slide:</p>
+<div class="highlight"><pre tabindex="0" style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-md" data-lang="md"><span style="display:flex;"><span><span style="color:#999"># Let&#39;s goooo
+</span></span></span><span style="display:flex;"><span><span style="color:#999"></span>
+</span></span><span style="display:flex;"><span>anybody home?  &lt;<span style="color:#000080">-</span> <span style="color:#008080">don</span><span style="color:#a61717;background-color:#e3d2d2">&#39;</span><span style="color:#008080">t</span> <span style="color:#008080">do</span> <span style="color:#008080">this</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#aaa">## Table
+</span></span></span></code></pre></div><p>With <code>slide_level: 2</code>, here is how a deck gets chopped up:</p>
+<div class="highlight"><pre tabindex="0" style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-md" data-lang="md"><span style="display:flex;"><span><span style="color:#999"># I&#39;m a new slide- a section header
+</span></span></span><span style="display:flex;"><span><span style="color:#999"></span>
+</span></span><span style="display:flex;"><span><span style="color:#aaa">## I&#39;m slide number 2, with content
+</span></span></span><span style="display:flex;"><span><span style="color:#aaa"></span>
+</span></span><span style="display:flex;"><span><span style="color:#aaa">### I&#39;m also slide number 2, text is slightly bold
+</span></span></span><span style="display:flex;"><span><span style="color:#aaa"></span>
+</span></span><span style="display:flex;"><span>I&#39;m content on slide number 2
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#aaa">## I&#39;m slide number 3
+</span></span></span><span style="display:flex;"><span><span style="color:#aaa"></span>
+</span></span><span style="display:flex;"><span><span style="color:#999"># I&#39;m slide number 4- another section header
+</span></span></span></code></pre></div><p>You can force a slide break using <code>---</code>, but headers will still work the same way.</p>
+<div class="highlight"><pre tabindex="0" style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-md" data-lang="md"><span style="display:flex;"><span><span style="color:#999"># I&#39;m a new slide- a section header
+</span></span></span><span style="display:flex;"><span><span style="color:#999"></span>
+</span></span><span style="display:flex;"><span><span style="color:#aaa">## I&#39;m slide number 2, with content
+</span></span></span><span style="display:flex;"><span><span style="color:#aaa"></span>
+</span></span><span style="display:flex;"><span><span style="color:#aaa">### I&#39;m also slide number 2, text is slightly bold
+</span></span></span><span style="display:flex;"><span><span style="color:#aaa"></span>
+</span></span><span style="display:flex;"><span>---
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>I&#39;m slide number 3
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>---
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#aaa">## I&#39;m slide number 4
+</span></span></span><span style="display:flex;"><span><span style="color:#aaa"></span>
+</span></span><span style="display:flex;"><span><span style="color:#999"># I&#39;m slide number 5- another section header
+</span></span></span></code></pre></div>
+
+
+
+<h3 id="plots">Plots
+  <a href="#plots"><svg class="anchor-symbol" aria-hidden="true" height="26" width="26" viewBox="0 0 22 22" xmlns="http://www.w3.org/2000/svg">
+      <path d="M0 0h24v24H0z" fill="currentColor"></path>
+      <path d="M3.9 12c0-1.71 1.39-3.1 3.1-3.1h4V7H7c-2.76.0-5 2.24-5 5s2.24 5 5 5h4v-1.9H7c-1.71.0-3.1-1.39-3.1-3.1zM8 13h8v-2H8v2zm9-6h-4v1.9h4c1.71.0 3.1 1.39 3.1 3.1s-1.39 3.1-3.1 3.1h-4V17h4c2.76.0 5-2.24 5-5s-2.24-5-5-5z"></path>
+    </svg></a>
+</h3>
+<p>Including plots for me was sadly a long drawn-out affair. I didn&rsquo;t understand:</p>
+<ol>
+<li>
+<p>I had to use the <code>rvg::dml()</code> wrapper for plots, even if I didn&rsquo;t care if they were editable or not. This is <em>required</em> if you don&rsquo;t want <strong>TRUE</strong> printed after each plot. In a two-column slide layout, non-<code>dml()</code> wrapped plots will also appear on a slide by themselves, without an error.</p>
+<p><img src="true-plot1.png" width="49%" /><img src="true-plot2.png" width="49%" /></p>
+</li>
+<li>
+<p>If you further want to use ggplot2, you <em>also</em> cannot just print your plot object, you must use <code>dml(ggobj = my_plot)</code>. This one <em>really</em> got me. Again, in the template, but less well-documented elsewhere. If you try to wrap a ggplot2 object in <code>dml()</code> only, you might see this error:</p>
+ <img src="dml-error.png" width="730" />
+</li>
+<li>
+<p>You cannot combine text and code or plots inside the same placeholder. They cannot co-exist. If you do, the text is either overlaid or covered up by your code/output. This is how <code>rmarkdown::powerpoint_presentation</code> works as well. A way around it is to use figure and table captions.</p>
+</li>
+<li>
+<p>I use <code>ref.label</code> all the time to 
+<a href="https://yihui.org/en/2021/05/knitr-reuse/" target="_blank" rel="noopener">reuse code chunks</a>, especially for plots. Because of the above, you&rsquo;ll need to always create and save a plot object, then wrap it is <code>rvg::dml(ggobj=mygg)</code> in the origin chunk. I get an error if I try to use the magrittr pipe here (<code>%&gt;%</code> , so this gets a bit laborious to change your plotting ways. For example:</p>
+</li>
+</ol>
+<div class="highlight"><pre tabindex="0" style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-r" data-lang="r"><span style="display:flex;"><span><span style="color:#998;font-style:italic">## Testing officedown</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>```{r flipper-hist, include=FALSE}
+</span></span><span style="display:flex;"><span>library(palmerpenguins)
+</span></span><span style="display:flex;"><span>library(dplyr)
+</span></span><span style="display:flex;"><span>library(ggplot2)
+</span></span><span style="display:flex;"><span># Histogram example: flipper length by species
+</span></span><span style="display:flex;"><span>flipper-hist &lt;- ggplot(data = penguins, 
+</span></span><span style="display:flex;"><span>       aes(x = flipper_length_mm)) +
+</span></span><span style="display:flex;"><span>  geom_histogram(
+</span></span><span style="display:flex;"><span>    aes(fill = species),
+</span></span><span style="display:flex;"><span>    alpha = 0.5, 
+</span></span><span style="display:flex;"><span>    position = &#34;identity&#34;) + 
+</span></span><span style="display:flex;"><span>  scale_fill_manual(values = c(&#34;darkorange&#34;,&#34;darkorchid&#34;,&#34;cyan4&#34;)) 
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>rvg::dml(ggobj = flipper-hist) # you must do this!
+</span></span><span style="display:flex;"><span>```
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>```{r layout=&#39;Two Content&#39;, width=2, ph=officer::ph_location_left(), warning=FALSE, message=FALSE, echo=FALSE}
+</span></span><span style="display:flex;"><span>penguins %&gt;% 
+</span></span><span style="display:flex;"><span>  count(species)
+</span></span><span style="display:flex;"><span>```
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>```{r ref.label=&#39;flipper-hist&#39;, width=2, layout=&#39;Two Content&#39;, ph=officer::ph_location_right(), echo=FALSE, warning=FALSE, message=FALSE}
+</span></span><span style="display:flex;"><span>```
+</span></span></code></pre></div>
+
+
+
+<h2 id="wrapping-up">Wrapping up
+  <a href="#wrapping-up"><svg class="anchor-symbol" aria-hidden="true" height="26" width="26" viewBox="0 0 22 22" xmlns="http://www.w3.org/2000/svg">
+      <path d="M0 0h24v24H0z" fill="currentColor"></path>
+      <path d="M3.9 12c0-1.71 1.39-3.1 3.1-3.1h4V7H7c-2.76.0-5 2.24-5 5s2.24 5 5 5h4v-1.9H7c-1.71.0-3.1-1.39-3.1-3.1zM8 13h8v-2H8v2zm9-6h-4v1.9h4c1.71.0 3.1 1.39 3.1 3.1s-1.39 3.1-3.1 3.1h-4V17h4c2.76.0 5-2.24 5-5s-2.24-5-5-5z"></path>
+    </svg></a>
+</h2>
+<p>This is as far as I got with officedown. I can see it being very useful to users who need more control over their Microsoft outputs than base rmarkdown and Pandoc can provide. However, there are definitely some places where a typical R Markdown user will accumulate pretty serious papercuts.</p>
+<p>I&rsquo;d love to hear about happy officedown use cases and the problems it solves for teams! I know a lot of organizations run on Microsoft Office products, so I appreciate the hard work that has gone into this suite of tools.</p>
+
+        
+        <details closed class="f6 fw7 input-reset">
+  <dl class="f6 lh-copy">
+    <dt class="fw7">Posted on:</dt>
+    <dd class="fw5 ml0">July 27, 2021</dd>
+  </dl>
+  <dl class="f6 lh-copy">
+    <dt class="fw7">Length:</dt>
+    <dd class="fw5 ml0">11 minute read, 2249 words</dd>
+  </dl>
+  
+  <dl class="f6 lh-copy">
+    <dt class="fw7">Categories:</dt>
+    <dd class="fw5 ml0"> <a href="http://localhost:4321/categories/rmarkdown">rmarkdown</a> </dd>
+  </dl>
+  
+  
+  
+  <dl class="f6 lh-copy">
+    <dt class="fw7">Tags:</dt>
+    <dd class="fw5 ml0"> <a href="http://localhost:4321/tags/powerpoint">powerpoint</a>  <a href="http://localhost:4321/tags/rmarkdown">rmarkdown</a> </dd>
+  </dl>
+  
+  <dl class="f6 lh-copy">
+    <dt class="fw7">See Also:</dt>
+    
+    <dd class="fw5 ml0"><a href="/talk/2021-iyo-tunis/">Introduce yourself online with blogdown &amp; Hugo Apéro</a></dd>
+    
+    <dd class="fw5 ml0"><a href="/talk/2021-ares-kind-tools/">Crafting Kind Tools</a></dd>
+    
+    <dd class="fw5 ml0"><a href="/talk/2021-rmd-params/">Making R Markdown work better for you</a></dd>
+    
+  </dl>
+</details>
+
+      </section>
+      <footer class="post-footer">
+        <div class="post-pagination dt w-100 mt4 mb2">
+  
+  
+  
+  
+    <a class="next dtc pl2 tr v-top fw6"
+    href="http://localhost:4321/blog/2020-12-new-year-new-blogdown/">Up &amp; running with blogdown in 2021 &rarr;</a>
+  
+</div>
+
+      </footer>
+    </article>
+    
+      <div class="post-comments pa0 pa4-l mt4">
+  
+      
+        <script src="https://giscus.app/client.js"
+            data-repo=rbind/apreshill
+            data-repo-id=MDEwOlJlcG9zaXRvcnk5MTAwNTYxNQ&#61;&#61;
+            data-category=Comments
+            data-category-id=DIC_kwDOBWyir84CfrDg
+            data-mapping=pathname
+            data-reactions-enabled=1
+            data-emit-metadata=0
+            data-theme=light_protanopia
+            data-lang=en
+            crossorigin="anonymous"
+            async>
+        </script>
+      
+  
+</div>
+
+    
+  </section>
+</main>
+<footer class="site-footer pv4 bt b--transparent ph5" role="contentinfo">
+  <nav class="db dt-l w-100">
+    <p class="site-copyright f7 db dtc-l v-mid w-100 w-33-l tc tl-l pv2 pv0-l mv0 lh-copy">
+      &copy; 2025 Alison Hill
+      <span class="middot-divider"></span>
+      Made with <span xmlns:dct="http://purl.org/dc/terms/" property="dct:title"><a xmlns:dct="http://purl.org/dc/terms/" href="https://github.com/hugo-apero/" rel="dct:source">Hugo Apéro</a></span>.
+      <br />
+      
+Based on <span xmlns:dct="http://purl.org/dc/terms/" property="dct:title"><a xmlns:dct="http://purl.org/dc/terms/" href="https://github.com/formspree/blogophonic-hugo" rel="dct:source">Blogophonic</a></span> by <a xmlns:cc="http://creativecommons.org/ns#" href="https://formspree.io" property="cc:attributionName" rel="cc:attributionURL">Formspree</a>.
+    </p>
+    
+    <div class="site-social-links db dtc-l v-mid w-100 w-33-l tc pv2 pv0-l mv0">
+      <div class="social-icon-links" aria-hidden="true">
+  
+  
+    
+    
+    
+      
+    
+    
+    
+    
+    
+      
+    
+    <a class="link dib h1 w1 ml0 mr2 f6 o-90 glow" href="https://github.com/apreshill" title="github" target="_blank" rel="me noopener">
+      <i class="fab fa-github fa-lg fa-fw"></i>
+    </a>
+  
+    
+    
+    
+      
+    
+    
+    
+    
+    
+      
+    
+    <a class="link dib h1 w1 ml0 mr2 f6 o-90 glow" href="https://www.linkedin.com/in/apreshill/" title="linkedin-in" target="_blank" rel="me noopener">
+      <i class="fab fa-linkedin-in fa-lg fa-fw"></i>
+    </a>
+  
+    
+    
+    
+      
+    
+    
+    
+    
+    
+      
+    
+    <a class="link dib h1 w1 ml0 mr2 f6 o-90 glow" href="https://bsky.app/profile/apreshill.com" title="bluesky" target="_blank" rel="me noopener">
+      <i class="fab fa-bluesky fa-lg fa-fw"></i>
+    </a>
+  
+    
+    
+    
+      
+    
+    
+    
+    
+    
+      
+    
+    <a class="link dib h1 w1 ml0 mr2 f6 o-90 glow" href="https://www.youtube.com/@alisonhill" title="youtube" target="_blank" rel="me noopener">
+      <i class="fab fa-youtube fa-lg fa-fw"></i>
+    </a>
+  
+    
+    
+    
+      
+    
+    
+    
+    
+    
+      
+    
+    <a class="link dib h1 w1 ml0 mr2 f6 o-90 glow" href="https://twitter.com/apreshill" title="x-twitter" target="_blank" rel="me noopener">
+      <i class="fab fa-x-twitter fa-lg fa-fw"></i>
+    </a>
+  
+</div>
+
+    </div>
+    
+    <div class="site-links f6 db dtc-l v-mid w-100 w-67-l tc tr-l pv2 pv0-l mv0">
+      
+      <a class="dib pv1 ph2 link" href="/license/" title="License">License</a>
+      
+      <a class="dib pv1 ph2 link" href="/contact/" title="Contact form">Contact</a>
+      
+      <a class="dib pv1 ph2 link" href="/blog/index.xml" title="RSS">RSS</a>
+      
+    </div>
+  </nav>
+  
+</footer>
+
+      </div>
+    </body>
+</html>

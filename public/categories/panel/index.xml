@@ -1,0 +1,100 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Panel on Alison Hill, PhD</title>
+    <link>http://localhost:4321/categories/panel/</link>
+    <description>Recent content in Panel on Alison Hill, PhD</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en</language>
+    <lastBuildDate>Wed, 15 Dec 2021 10:45:00 +0000</lastBuildDate><atom:link href="http://localhost:4321/categories/panel/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>R Markdown Notebooks for Scientific Communication</title>
+      <link>http://localhost:4321/talk/2021-agu-panel/</link>
+      <pubDate>Wed, 15 Dec 2021 10:45:00 +0000</pubDate>
+      
+      <guid>http://localhost:4321/talk/2021-agu-panel/</guid>
+      <description>
+
+
+
+&lt;h2 id=&#34;speakers&#34;&gt;Speakers
+  &lt;a href=&#34;#speakers&#34;&gt;&lt;svg class=&#34;anchor-symbol&#34; aria-hidden=&#34;true&#34; height=&#34;26&#34; width=&#34;26&#34; viewBox=&#34;0 0 22 22&#34; xmlns=&#34;http://www.w3.org/2000/svg&#34;&gt;
+      &lt;path d=&#34;M0 0h24v24H0z&#34; fill=&#34;currentColor&#34;&gt;&lt;/path&gt;
+      &lt;path d=&#34;M3.9 12c0-1.71 1.39-3.1 3.1-3.1h4V7H7c-2.76.0-5 2.24-5 5s2.24 5 5 5h4v-1.9H7c-1.71.0-3.1-1.39-3.1-3.1zM8 13h8v-2H8v2zm9-6h-4v1.9h4c1.71.0 3.1 1.39 3.1 3.1s-1.39 3.1-3.1 3.1h-4V17h4c2.76.0 5-2.24 5-5s-2.24-5-5-5z&#34;&gt;&lt;/path&gt;
+    &lt;/svg&gt;&lt;/a&gt;
+&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;Alison Hill, RStudio&lt;/li&gt;
+&lt;li&gt;Fernando Pérez, University of California, Berkeley&lt;/li&gt;
+&lt;li&gt;Simon Goring, University of Wisconsin / Leah Wasser, Earth Lab at CU Boulder / Laura DeCicco, USGS&lt;/li&gt;
+&lt;li&gt;Loren Shure, MathWorks&lt;/li&gt;
+&lt;li&gt;Hugh Shanahan, University of London / RDA&lt;/li&gt;
+&lt;li&gt;Chris Erdmann, American Geophysical Union&lt;/li&gt;
+&lt;li&gt;Kenton McHenry or Dan Katz (moderator), University of Illinois&lt;/li&gt;
+&lt;/ul&gt;
+
+
+
+
+&lt;h2 id=&#34;panel-abstract&#34;&gt;Panel abstract
+  &lt;a href=&#34;#panel-abstract&#34;&gt;&lt;svg class=&#34;anchor-symbol&#34; aria-hidden=&#34;true&#34; height=&#34;26&#34; width=&#34;26&#34; viewBox=&#34;0 0 22 22&#34; xmlns=&#34;http://www.w3.org/2000/svg&#34;&gt;
+      &lt;path d=&#34;M0 0h24v24H0z&#34; fill=&#34;currentColor&#34;&gt;&lt;/path&gt;
+      &lt;path d=&#34;M3.9 12c0-1.71 1.39-3.1 3.1-3.1h4V7H7c-2.76.0-5 2.24-5 5s2.24 5 5 5h4v-1.9H7c-1.71.0-3.1-1.39-3.1-3.1zM8 13h8v-2H8v2zm9-6h-4v1.9h4c1.71.0 3.1 1.39 3.1 3.1s-1.39 3.1-3.1 3.1h-4V17h4c2.76.0 5-2.24 5-5s-2.24-5-5-5z&#34;&gt;&lt;/path&gt;
+    &lt;/svg&gt;&lt;/a&gt;
+&lt;/h2&gt;
+&lt;p&gt;As science becomes more and more dependent on data and software, capturing these elements of the modern scientific procedure has become critical in achieving reproducibility. Computational notebooks have emerged as an increasingly valued way of capturing not only the traditional elements of a scientific paper but also the software steps in an executable and reproducible manner. As part of the 2020 EarthCube Annual Meeting, the EarthCube office, Leadership Council, and Technical Architecture Committee experimented by issuing a call focused on notebook submissions as peer reviewed publications. The call was well received by the community: 21 Jupyter notebooks were submitted, and 12 of these were accepted for publication. As part of the 2021 call for notebooks, the idea of expanding this call to more types of “notebooks” is being discussed, with the goal of eliciting submissions from a wider group of researchers, who may be more comfortable with other notebook technologies.&lt;/p&gt;
+&lt;p&gt;The proposed session will bring together representatives from the major “notebook” efforts, efforts such as Jupyter, RStudio, and commercial efforts such as MATLAB live scripts. Presenters will discuss the latest developments in each of their technologies, emphasizing elements that support the notions of ease of use, long-term executability, interoperability, and software publication. Lessons learned from building a geoscience-focused notebook directory, notebook template, and long-term preservation in AGU’s ESSOaR will be discussed as well as how this relates to international efforts to elevate notebooks and make them FAIR.&lt;/p&gt;
+
+
+
+
+&lt;h2 id=&#34;talk-abstract&#34;&gt;Talk abstract
+  &lt;a href=&#34;#talk-abstract&#34;&gt;&lt;svg class=&#34;anchor-symbol&#34; aria-hidden=&#34;true&#34; height=&#34;26&#34; width=&#34;26&#34; viewBox=&#34;0 0 22 22&#34; xmlns=&#34;http://www.w3.org/2000/svg&#34;&gt;
+      &lt;path d=&#34;M0 0h24v24H0z&#34; fill=&#34;currentColor&#34;&gt;&lt;/path&gt;
+      &lt;path d=&#34;M3.9 12c0-1.71 1.39-3.1 3.1-3.1h4V7H7c-2.76.0-5 2.24-5 5s2.24 5 5 5h4v-1.9H7c-1.71.0-3.1-1.39-3.1-3.1zM8 13h8v-2H8v2zm9-6h-4v1.9h4c1.71.0 3.1 1.39 3.1 3.1s-1.39 3.1-3.1 3.1h-4V17h4c2.76.0 5-2.24 5-5s-2.24-5-5-5z&#34;&gt;&lt;/path&gt;
+    &lt;/svg&gt;&lt;/a&gt;
+&lt;/h2&gt;
+&lt;p&gt;In this talk, I&amp;rsquo;ll describe the R Markdown ecosystem for computational notebooks that support the full lifecycle of scientific communication, including basic reports, presentations, peer-reviewed journal article submissions, and long-form books. The ecosystem has roots in the Pandoc open source project, and includes a family of R packages scientists can use for research.&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>R Markdown</title>
+      <link>http://localhost:4321/talk/2021-earthcube-panel/</link>
+      <pubDate>Tue, 15 Jun 2021 12:00:00 +0000</pubDate>
+      
+      <guid>http://localhost:4321/talk/2021-earthcube-panel/</guid>
+      <description>
+
+
+
+&lt;h2 id=&#34;speakers&#34;&gt;Speakers
+  &lt;a href=&#34;#speakers&#34;&gt;&lt;svg class=&#34;anchor-symbol&#34; aria-hidden=&#34;true&#34; height=&#34;26&#34; width=&#34;26&#34; viewBox=&#34;0 0 22 22&#34; xmlns=&#34;http://www.w3.org/2000/svg&#34;&gt;
+      &lt;path d=&#34;M0 0h24v24H0z&#34; fill=&#34;currentColor&#34;&gt;&lt;/path&gt;
+      &lt;path d=&#34;M3.9 12c0-1.71 1.39-3.1 3.1-3.1h4V7H7c-2.76.0-5 2.24-5 5s2.24 5 5 5h4v-1.9H7c-1.71.0-3.1-1.39-3.1-3.1zM8 13h8v-2H8v2zm9-6h-4v1.9h4c1.71.0 3.1 1.39 3.1 3.1s-1.39 3.1-3.1 3.1h-4V17h4c2.76.0 5-2.24 5-5s-2.24-5-5-5z&#34;&gt;&lt;/path&gt;
+    &lt;/svg&gt;&lt;/a&gt;
+&lt;/h2&gt;
+&lt;p&gt;Kenton McHenry (University of Illinois) and Dan Katz (University of Illinois) will moderate a discussion with presenters:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Alison Hill (RStudio),&lt;/li&gt;
+&lt;li&gt;Chris Holdgraf (2i2c - Jupyter),&lt;/li&gt;
+&lt;li&gt;Chris Erdmann (American Geophysical Union), and&lt;/li&gt;
+&lt;li&gt;Loren Shure (MathWorks - Matlab).&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;The talks will focus on the latest developments in each of the presenters&amp;rsquo; technologies, emphasizing elements that support the notions of ease of use, long-term executability, interoperability, and software publication. Lessons learned from building a geoscience-focused notebook directory,  notebook template, and long-term preservation in AGU’s ESSOaR will also be discussed - as well as how this all relates to international efforts to elevate notebooks and make them FAIR. This session has been designed for attendees that are already developing notebooks, those interested in doing so, and organizers who want to support these technologies in their events and proceedings.&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>Free &amp; Open Source Software</title>
+      <link>http://localhost:4321/talk/2021-foss-panel/</link>
+      <pubDate>Tue, 18 May 2021 10:00:00 +0000</pubDate>
+      
+      <guid>http://localhost:4321/talk/2021-foss-panel/</guid>
+      <description></description>
+    </item>
+    
+  </channel>
+</rss>
+
+

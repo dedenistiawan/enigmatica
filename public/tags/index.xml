@@ -1,0 +1,337 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Tags on Alison Hill, PhD</title>
+    <link>http://localhost:4321/tags/</link>
+    <description>Recent content in Tags on Alison Hill, PhD</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en</language>
+    <lastBuildDate>Wed, 01 May 2024 00:00:00 +0000</lastBuildDate><atom:link href="http://localhost:4321/tags/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Software</title>
+      <link>http://localhost:4321/tags/software/</link>
+      <pubDate>Wed, 01 May 2024 00:00:00 +0000</pubDate>
+      
+      <guid>http://localhost:4321/tags/software/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Python</title>
+      <link>http://localhost:4321/tags/python/</link>
+      <pubDate>Wed, 01 May 2024 00:00:00 +0000</pubDate>
+      
+      <guid>http://localhost:4321/tags/python/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Product-Management</title>
+      <link>http://localhost:4321/tags/product-management/</link>
+      <pubDate>Mon, 04 Apr 2022 00:00:00 +0000</pubDate>
+      
+      <guid>http://localhost:4321/tags/product-management/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Tidymodels</title>
+      <link>http://localhost:4321/tags/tidymodels/</link>
+      <pubDate>Wed, 15 Sep 2021 03:00:00 +0000</pubDate>
+      
+      <guid>http://localhost:4321/tags/tidymodels/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Machine Learning</title>
+      <link>http://localhost:4321/tags/machine-learning/</link>
+      <pubDate>Wed, 15 Sep 2021 03:00:00 +0000</pubDate>
+      
+      <guid>http://localhost:4321/tags/machine-learning/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Rmarkdown</title>
+      <link>http://localhost:4321/tags/rmarkdown/</link>
+      <pubDate>Tue, 27 Jul 2021 00:00:00 +0000</pubDate>
+      
+      <guid>http://localhost:4321/tags/rmarkdown/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Powerpoint</title>
+      <link>http://localhost:4321/tags/powerpoint/</link>
+      <pubDate>Tue, 27 Jul 2021 00:00:00 +0000</pubDate>
+      
+      <guid>http://localhost:4321/tags/powerpoint/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Blogdown</title>
+      <link>http://localhost:4321/tags/blogdown/</link>
+      <pubDate>Wed, 26 May 2021 11:00:00 +0000</pubDate>
+      
+      <guid>http://localhost:4321/tags/blogdown/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Hugo</title>
+      <link>http://localhost:4321/tags/hugo/</link>
+      <pubDate>Sun, 23 May 2021 00:00:00 +0000</pubDate>
+      
+      <guid>http://localhost:4321/tags/hugo/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Xaringan</title>
+      <link>http://localhost:4321/tags/xaringan/</link>
+      <pubDate>Thu, 25 Feb 2021 12:00:00 +0000</pubDate>
+      
+      <guid>http://localhost:4321/tags/xaringan/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Oz2019</title>
+      <link>http://localhost:4321/tags/oz2019/</link>
+      <pubDate>Thu, 25 Feb 2021 12:00:00 +0000</pubDate>
+      
+      <guid>http://localhost:4321/tags/oz2019/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Ggplot2</title>
+      <link>http://localhost:4321/tags/ggplot2/</link>
+      <pubDate>Thu, 25 Feb 2021 12:00:00 +0000</pubDate>
+      
+      <guid>http://localhost:4321/tags/ggplot2/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Data Visualization</title>
+      <link>http://localhost:4321/tags/data-visualization/</link>
+      <pubDate>Thu, 25 Feb 2021 12:00:00 +0000</pubDate>
+      
+      <guid>http://localhost:4321/tags/data-visualization/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Netlify</title>
+      <link>http://localhost:4321/tags/netlify/</link>
+      <pubDate>Thu, 31 Dec 2020 00:00:00 +0000</pubDate>
+      
+      <guid>http://localhost:4321/tags/netlify/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Postcards</title>
+      <link>http://localhost:4321/tags/postcards/</link>
+      <pubDate>Tue, 22 Dec 2020 00:00:00 +0000</pubDate>
+      
+      <guid>http://localhost:4321/tags/postcards/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Distill</title>
+      <link>http://localhost:4321/tags/distill/</link>
+      <pubDate>Tue, 22 Dec 2020 00:00:00 +0000</pubDate>
+      
+      <guid>http://localhost:4321/tags/distill/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Teaching</title>
+      <link>http://localhost:4321/tags/teaching/</link>
+      <pubDate>Sun, 13 Dec 2020 00:00:00 +0000</pubDate>
+      
+      <guid>http://localhost:4321/tags/teaching/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>R</title>
+      <link>http://localhost:4321/tags/r/</link>
+      <pubDate>Sun, 01 Nov 2020 00:00:00 +0000</pubDate>
+      
+      <guid>http://localhost:4321/tags/r/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Learning</title>
+      <link>http://localhost:4321/tags/learning/</link>
+      <pubDate>Wed, 07 Oct 2020 09:00:00 +0000</pubDate>
+      
+      <guid>http://localhost:4321/tags/learning/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Workshop</title>
+      <link>http://localhost:4321/tags/workshop/</link>
+      <pubDate>Wed, 23 Sep 2020 00:00:00 +0000</pubDate>
+      
+      <guid>http://localhost:4321/tags/workshop/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Website</title>
+      <link>http://localhost:4321/tags/website/</link>
+      <pubDate>Tue, 21 Apr 2020 00:00:00 +0000</pubDate>
+      
+      <guid>http://localhost:4321/tags/website/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Bookdown</title>
+      <link>http://localhost:4321/tags/bookdown/</link>
+      <pubDate>Tue, 21 Apr 2020 00:00:00 +0000</pubDate>
+      
+      <guid>http://localhost:4321/tags/bookdown/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Tidy Data</title>
+      <link>http://localhost:4321/tags/tidy-data/</link>
+      <pubDate>Fri, 04 Oct 2019 18:00:00 +0000</pubDate>
+      
+      <guid>http://localhost:4321/tags/tidy-data/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Education</title>
+      <link>http://localhost:4321/tags/education/</link>
+      <pubDate>Tue, 24 Sep 2019 00:00:00 +0000</pubDate>
+      
+      <guid>http://localhost:4321/tags/education/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>R Markdown</title>
+      <link>http://localhost:4321/tags/r-markdown/</link>
+      <pubDate>Thu, 12 Sep 2019 00:00:00 +0000</pubDate>
+      
+      <guid>http://localhost:4321/tags/r-markdown/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Talk</title>
+      <link>http://localhost:4321/tags/talk/</link>
+      <pubDate>Mon, 29 Jul 2019 14:00:01 -0700</pubDate>
+      
+      <guid>http://localhost:4321/tags/talk/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Flexdashboard</title>
+      <link>http://localhost:4321/tags/flexdashboard/</link>
+      <pubDate>Tue, 15 Jan 2019 11:00:00 +0000</pubDate>
+      
+      <guid>http://localhost:4321/tags/flexdashboard/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Science</title>
+      <link>http://localhost:4321/tags/science/</link>
+      <pubDate>Fri, 08 Dec 2017 16:00:00 +0000</pubDate>
+      
+      <guid>http://localhost:4321/tags/science/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Research</title>
+      <link>http://localhost:4321/tags/research/</link>
+      <pubDate>Fri, 08 Dec 2017 16:00:00 +0000</pubDate>
+      
+      <guid>http://localhost:4321/tags/research/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Reproducibility</title>
+      <link>http://localhost:4321/tags/reproducibility/</link>
+      <pubDate>Thu, 14 Sep 2017 00:00:00 +0000</pubDate>
+      
+      <guid>http://localhost:4321/tags/reproducibility/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Github</title>
+      <link>http://localhost:4321/tags/github/</link>
+      <pubDate>Thu, 14 Sep 2017 00:00:00 +0000</pubDate>
+      
+      <guid>http://localhost:4321/tags/github/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Dataviz</title>
+      <link>http://localhost:4321/tags/dataviz/</link>
+      <pubDate>Fri, 24 Jun 2016 00:00:00 +0000</pubDate>
+      
+      <guid>http://localhost:4321/tags/dataviz/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Tidyverse</title>
+      <link>http://localhost:4321/tags/tidyverse/</link>
+      <pubDate>Wed, 27 Apr 2016 00:00:00 +0000</pubDate>
+      
+      <guid>http://localhost:4321/tags/tidyverse/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Statistics</title>
+      <link>http://localhost:4321/tags/statistics/</link>
+      <pubDate>Wed, 27 Apr 2016 00:00:00 +0000</pubDate>
+      
+      <guid>http://localhost:4321/tags/statistics/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Course</title>
+      <link>http://localhost:4321/tags/course/</link>
+      <pubDate>Wed, 27 Apr 2016 00:00:00 +0000</pubDate>
+      
+      <guid>http://localhost:4321/tags/course/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Book</title>
+      <link>http://localhost:4321/tags/book/</link>
+      <pubDate>Wed, 27 Apr 2016 00:00:00 +0000</pubDate>
+      
+      <guid>http://localhost:4321/tags/book/</guid>
+      <description></description>
+    </item>
+    
+  </channel>
+</rss>
+
+

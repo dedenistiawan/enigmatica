@@ -1,10 +1,9 @@
 ---
 ## Configure sidebar content in narrow column
-author: "Alison Hill"
-role: "Data Science + Product"
+author: "Deden Istiawan"
+role: "Lecturer + Data Science"
 avatar_shape: rounded # circle, square, rounded
 show_social_links: true # specify social accounts in site config
-audio_link_label: "How to say my name"
 link_list_label: "Talk to me about..." # bookmarks, elsewhere, etc.
 link_list:
 - name: "I loved Shrinking"

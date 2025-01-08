@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Python on Alison Hill, PhD</title>
+    <link>http://localhost:4321/tags/python/</link>
+    <description>Recent content in Python on Alison Hill, PhD</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en</language>
+    <lastBuildDate>Wed, 01 May 2024 00:00:00 +0000</lastBuildDate><atom:link href="http://localhost:4321/tags/python/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>The Theseus Benchmarks Report</title>
+      <link>http://localhost:4321/project/benchmarks/</link>
+      <pubDate>Wed, 01 May 2024 00:00:00 +0000</pubDate>
+      
+      <guid>http://localhost:4321/project/benchmarks/</guid>
+      <description>&lt;p&gt;The Benchmarks Report is a deep dive into how and why Voltron Data does benchmarking differently, and presents data comparing compute performance of our engine, Theseus, to Spark.&lt;/p&gt;
+&lt;p&gt;I led the development of the report, which involved industry/market research, subject matter expert interviews with engineers, and cross-functional strategic storytelling alignment with founders. I also drove the development of the interactive data visualizations, which were created by the talented 
+&lt;a href=&#34;https://www.tanyashapiro.com/&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;Tanya Shapiro&lt;/a&gt;. This report defined our first feature launch for the Theseus engine in spring 2024, announced at Nvidia&amp;rsquo;s GTC conference.&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>The Composable Codex</title>
+      <link>http://localhost:4321/project/codex/</link>
+      <pubDate>Wed, 01 May 2024 00:00:00 +0000</pubDate>
+      
+      <guid>http://localhost:4321/project/codex/</guid>
+      <description>&lt;p&gt;The Composable Codex is a 5-part guide to building composable data systems layer by layer with open standards like Apache Arrow. I researched, wrote, and designed the Codex as part of my role on Voltron Data&amp;rsquo;s Go-To-Market Strategy team. This initiative was the onramp to our first product launch for the Theseus engine in fall 2023.&lt;/p&gt;
+</description>
+    </item>
+    
+  </channel>
+</rss>
+
+
