@@ -106,23 +106,23 @@ enableEmoji = true
   [[params.social]]
       icon      = "github" # icon name without the 'fa-'
       icon_pack = "fab"
-      url       = "https://github.com/apreshill"
+      url       = "https://github.com/dedenistiawan"
   [[params.social]]
       icon      = "linkedin-in" # icon name without the 'fa-'
       icon_pack = "fab"
-      url       = "https://www.linkedin.com/in/apreshill/"
+      url       = "https://www.linkedin.com/in/deden-istiawan-149806255/"
  [[params.social]]
       icon      = "bluesky" # icon name without the 'fa-'
       icon_pack = "fab"
-      url       = "https://bsky.app/profile/apreshill.com"
+      url       = "https://bsky.app/profile/"
   [[params.social]]
       icon      = "youtube" # icon name without the 'fa-'
       icon_pack = "fab"
-      url       = "https://www.youtube.com/@alisonhill"
+      url       = "https://www.youtube.com/"
   [[params.social]]
       icon      = "x-twitter" # icon name without the 'fa-'
       icon_pack = "fab"
-      url       = "https://twitter.com/apreshill"
+      url       = "https://twitter.com/dedenistiawan"
   #[[params.social]]
       #icon      = "mastodon" # icon name without the 'fa-'
       #icon_pack = "fab"
@@ -166,6 +166,11 @@ enableEmoji = true
     name = "Talks"
     title = "Talks"
     url = "/talk/"
+    weight = 4
+    [[menu.header]]
+    name = "Publication"
+    title = "Publication"
+    url = "/publication/"
     weight = 4
 
   # Configure footer

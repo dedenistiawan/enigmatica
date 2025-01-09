@@ -1,7 +1,7 @@
 ---
-title: "Alison Hill, PhD"
-subtitle: "Data Science + Product"
-description: "I am a cognitive scientist turned data scientist turned product leader, which makes perfect sense once you get to know me."
+title: "Deden Istiawan"
+subtitle: "Lecturer + Data Analyst"
+description: "I'm Deden lecture and data analyst specializing in data mining and data processing with 5+ years' experience. Advanced knowledge on R, Python, Tableau, Google Data Studio and Ms. Excel."
 images:
   - img/disney.png
 image_left: false
