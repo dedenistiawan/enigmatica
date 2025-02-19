@@ -1,7 +1,7 @@
 ---
 title: "Deden Istiawan"
 subtitle: "Lecturer + Data Analyst"
-description: "I'm Deden lecture and data analyst specializing in data mining and data processing with 5+ years' experience. Advanced knowledge on R, Python, Tableau, Google Data Studio and Ms. Excel."
+description: "I am Deden Istiawan, a lecturer and data analyst with a research focus on data mining. With a background in statistics and data analysis, I have a deep interest in exploring hidden patterns in data and developing predictive models that can be used for better decision making."
 images:
   - img/disney.png
 image_left: false

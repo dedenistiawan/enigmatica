@@ -1,8 +1,8 @@
 ---
 title: Blog
 description: |
-  A blog about data science + product. Expect sporadic but deep thoughts.
-author: "Alison Hill"
+  This blog presents in-depth ideas and insights on data science and data visualization.
+author: "Deden Istiawan"
 show_post_thumbnail: true
 thumbnail_left: false
 show_author_byline: true
@@ -14,15 +14,15 @@ layout: list-sidebar # list, list-sidebar, list-grid
 sidebar: 
   title: Blog
   description: |
-    A blog about data science + product. Expect sporadic but deep thoughts.
-  author: "Alison Hill"
+    This blog presents in-depth ideas and insights on data science and data visualization, aimed at supporting knowledge development and academic research.
+  author: "Deden Istiawan"
   text_link_label: Subscribe via RSS
   text_link_url: /index.xml
   show_sidebar_adunit: true # show ad container
 
 # set up common front matter for all pages inside blog/
 cascade:
-  author: "Alison Hill"
+  author: "Deden Istiawan"
   show_author_byline: true
   show_post_date: true
   show_comments: true # see site config to choose Disqus or Utterances

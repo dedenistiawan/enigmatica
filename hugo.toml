@@ -1,8 +1,8 @@
-baseURL = "https://www.apreshill.com"
+baseURL = "https://dedenistiawan.netlify.app/"
 theme = "hugo-apero"
 languageCode = "en"
-title = "Alison Hill, PhD"
-author = "Alison Hill"
+title = "Deden Istiawan"
+author = "Deden Istiawan"
 copyright = "" # set to override the auto generated copyright using org info and now year
 googleAnalytics = ""
 # disqusShortname = "" # see params.comments to use utterances or giscus instead of Disqus
@@ -33,11 +33,11 @@ enableEmoji = true
     style = "github"
 
 [params]
-  orgName = "Alison Hill"
+  orgName = "Deden Istiawan"
   orgLocal = ""
-  description = "Inside you'll find my writing about products and projects I've work on, along with my personal reflections about learning, teaching, and crafting kind tech tools."
-  favicon = "/img/favicon.ico"
-  logo = "/img/penguin.png"
+  description = "Bind Knowledge with Writing."
+  favicon = "/img/icon.ico"
+  logo = "/img/pen.png"
   mainSections = ["project", "talk"]
   navallcaps = true
   # show/hide social icons in site header & footer
@@ -48,7 +48,7 @@ enableEmoji = true
   # Place image file in `static` folder and specify image name here.
   sharing_image = "/img/papillons.jpg"
   # Twitter username (without @). Used when a visitor shares your site on Twitter.
-  twitter = "apreshill"
+  twitter = "dedenistiawan"
 
   # use a built-in color theme
   # one of: forest / grayscale / peach / plum /
@@ -149,7 +149,7 @@ enableEmoji = true
   # Configure header
   [[menu.header]]
     name = "About"
-    title = "About Alison Hill"
+    title = "About Deden Istiawan"
     url = "/about/"
     weight = 1
   [[menu.header]]
@@ -170,7 +170,7 @@ enableEmoji = true
     [[menu.header]]
     name = "Publication"
     title = "Publication"
-    url = "/publication/"
+    url = "/project/"
     weight = 4
 
   # Configure footer
